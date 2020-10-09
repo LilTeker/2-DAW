@@ -1,0 +1,269 @@
+{
+  "mockup": {
+    "controls": {
+      "control": [
+        {
+          "ID": "0",
+          "typeID": "BrowserWindow",
+          "zOrder": "0",
+          "w": "676",
+          "h": "455",
+          "measuredW": "450",
+          "measuredH": "400",
+          "x": "526",
+          "y": "73",
+          "locked": "true",
+          "properties": {
+            "text": "Practica Interfaz - Carrito\nhttps://practicaInterfaz.com/carrito\n\n",
+            "color": "15768913"
+          }
+        },
+        {
+          "ID": "1",
+          "typeID": "Image",
+          "zOrder": "1",
+          "w": "135",
+          "h": "80",
+          "measuredW": "77",
+          "measuredH": "79",
+          "x": "526",
+          "y": "147",
+          "locked": "true",
+          "properties": {
+            "text": "Logotipo"
+          }
+        },
+        {
+          "ID": "2",
+          "typeID": "MenuBar",
+          "zOrder": "2",
+          "w": "541",
+          "h": "35",
+          "measuredW": "296",
+          "measuredH": "32",
+          "x": "661",
+          "y": "147",
+          "locked": "true",
+          "properties": {
+            "size": "15",
+            "text": "Categorias, Sobre Nosotros, Log In"
+          }
+        },
+        {
+          "ID": "3",
+          "typeID": "AppBar",
+          "zOrder": "3",
+          "w": "541",
+          "h": "45",
+          "measuredW": "320",
+          "measuredH": "44",
+          "x": "661",
+          "y": "182",
+          "locked": "true",
+          "properties": {
+            "navIcon": "false",
+            "filterIcon": "false",
+            "color": "15264235",
+            "text": "",
+            "menuIcon": "false"
+          }
+        },
+        {
+          "ID": "4",
+          "typeID": "Icon",
+          "zOrder": "4",
+          "measuredW": "32",
+          "measuredH": "32",
+          "x": "667",
+          "y": "188",
+          "locked": "true",
+          "properties": {
+            "icon": {
+              "ID": "search",
+              "size": "medium"
+            }
+          }
+        },
+        {
+          "ID": "5",
+          "typeID": "Icon",
+          "zOrder": "5",
+          "measuredW": "32",
+          "measuredH": "32",
+          "x": "1164",
+          "y": "149",
+          "locked": "true",
+          "properties": {
+            "icon": {
+              "ID": "shopping-cart",
+              "size": "medium"
+            }
+          }
+        },
+        {
+          "ID": "13",
+          "typeID": "HRule",
+          "zOrder": "6",
+          "w": "471",
+          "measuredW": "100",
+          "measuredH": "10",
+          "x": "708",
+          "y": "220"
+        },
+        {
+          "ID": "38",
+          "typeID": "SubTitle",
+          "zOrder": "7",
+          "measuredW": "75",
+          "measuredH": "28",
+          "x": "826",
+          "y": "236",
+          "properties": {
+            "text": "Carrito"
+          }
+        },
+        {
+          "ID": "39",
+          "typeID": "Image",
+          "zOrder": "8",
+          "measuredW": "77",
+          "measuredH": "79",
+          "x": "568",
+          "y": "272"
+        },
+        {
+          "ID": "40",
+          "typeID": "Paragraph",
+          "zOrder": "9",
+          "w": "153",
+          "h": "67",
+          "measuredW": "275",
+          "measuredH": "80",
+          "x": "651",
+          "y": "278",
+          "properties": {
+            "text": "*Nombre Producto*\nDescripción del producto\n-Precio-\t\t\n+ o - "
+          }
+        },
+        {
+          "ID": "41",
+          "typeID": "Image",
+          "zOrder": "10",
+          "measuredW": "77",
+          "measuredH": "79",
+          "x": "568",
+          "y": "377"
+        },
+        {
+          "ID": "42",
+          "typeID": "Paragraph",
+          "zOrder": "11",
+          "w": "153",
+          "h": "67",
+          "measuredW": "275",
+          "measuredH": "80",
+          "x": "651",
+          "y": "383",
+          "properties": {
+            "text": "*Nombre Producto*\nDescripción del producto\n-Precio-\n+ o -"
+          }
+        },
+        {
+          "ID": "43",
+          "typeID": "VRule",
+          "zOrder": "12",
+          "h": "200",
+          "measuredW": "10",
+          "measuredH": "100",
+          "x": "859",
+          "y": "272"
+        },
+        {
+          "ID": "44",
+          "typeID": "Paragraph",
+          "zOrder": "13",
+          "w": "140",
+          "h": "23",
+          "measuredW": "275",
+          "measuredH": "80",
+          "x": "958",
+          "y": "272",
+          "properties": {
+            "text": "*(Nº Productos) Totales* "
+          }
+        },
+        {
+          "ID": "45",
+          "typeID": "TextInput",
+          "zOrder": "14",
+          "measuredW": "79",
+          "measuredH": "27",
+          "x": "1055",
+          "y": "298"
+        },
+        {
+          "ID": "46",
+          "typeID": "Paragraph",
+          "zOrder": "15",
+          "w": "134",
+          "h": "21",
+          "measuredW": "275",
+          "measuredH": "80",
+          "x": "912",
+          "y": "301",
+          "properties": {
+            "text": "Codigo de descuento:"
+          }
+        },
+        {
+          "ID": "47",
+          "typeID": "Paragraph",
+          "zOrder": "16",
+          "w": "109",
+          "h": "22",
+          "measuredW": "275",
+          "measuredH": "80",
+          "x": "973",
+          "y": "377",
+          "properties": {
+            "text": "Importe total: x",
+            "size": "16"
+          }
+        },
+        {
+          "ID": "48",
+          "typeID": "HRule",
+          "zOrder": "17",
+          "w": "240",
+          "measuredW": "100",
+          "measuredH": "10",
+          "x": "917",
+          "y": "351"
+        },
+        {
+          "ID": "49",
+          "typeID": "Button",
+          "zOrder": "18",
+          "measuredW": "76",
+          "measuredH": "27",
+          "x": "990",
+          "y": "423",
+          "properties": {
+            "text": "Comprar"
+          }
+        }
+      ]
+    },
+    "attributes": {
+      "name": "Carrito",
+      "order": 938469.7022074019,
+      "parentID": null
+    },
+    "resourceID": "D79BD495-709A-4C48-B9B1-8E7E04F7C922",
+    "mockupH": "455",
+    "mockupW": "676",
+    "measuredW": "1202",
+    "measuredH": "528",
+    "version": "1.0"
+  }
+}
