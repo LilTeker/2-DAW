@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Nuevo Usuario</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Nuevo Usuario">
+        <meta name="keywords" content="HTML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form>
+            <table bgcolor="#000000">
+                <tbody>                    
+                    <tr bgcolor="#ffffff">
+                        <th colspan="2"><p>Datos Personales</p></th>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Nombre</td>
+                        <td><input type="text" id="nombre" name="nombre" placeholder="Miguel" autofocus required></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Apellidos</td>
+                        <td><input type="text" id="apellidos" name="apellidos" placeholder="Robles" required></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Sexo</td>
+                        <td>
+                            <input type="radio" id="hombre" name="sexo" value="hombre" required>
+                            <label for="hombre">Hombre</label><br>
+                            
+                            <input type="radio" id="mujer" name="sexo" value="mujer" required>
+                            <label for="mujer">Mujer</label><br>
+                        </td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Fecha Nacimiento</td>
+                        <td><input type="date" id="fechaNacimiento" name="fechaNacimiento" required></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Edad</td>
+                        <td><input type="number" id="edad" name="edad" placeholder="20" min="15" max="110"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>DNI</td>
+                        <td><input type="number" id="DNI" name="DNI" placeholder="12345678A" pattern="[0-9]{8}[A-Za-z]{1}" required></td>
+                    </tr>
+
+
+
+                    <tr bgcolor="#ffffff">
+                        <th colspan="2"><p>Domicilio</p></th>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Domicilio</td>
+                        <td><input type="text" id="domicilio" name="domicilio" placeholder="C/ Goya Nº1"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Codigo Postal</td>
+                        <td><input type="number" id="codPostal" name="codPostal" placeholder="12345" pattern="[0-9]{5}" required></td>
+                    </tr>
+
+
+
+                    <tr bgcolor="#ffffff">
+                        <th colspan="2"><p>Contacto</p></th>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Teléfono</td>
+                        <td><input type="tel" id="tlf" name="tlf" placeholder="123456789" pattern="[0-9]{9}"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>E-mail</td>
+                        <td><input type="email" id="mail" name="mail" placeholder="ejemplo@ejemplo.com"></td>
+                    </tr>
+
+                    
+
+                    <tr bgcolor="#ffffff">
+                        <th colspan="2"><p>Datos Tarjeta</p></th>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Numero Tarjeta de Crédito</td>
+                        <td><input type="number" id="tarjetaCredito" name="tarjetaCredito" placeholder="1234 1234 1234 1234"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Caducidad Tarjeta de Credito</td>
+                        <td><input type="date" id="caducidadTarjeta" name="caducidadTarjeta" placeholder="01/02"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>CVV Tarjeta</td>
+                        <td><input type="number" id="cvv" name="cvv" placeholder="632"></td>
+                    </tr>
+
+
+
+                    <tr bgcolor="#ffffff">
+                        <th colspan="2"><p>Otros</p></th>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Color Favorito</td>
+                        <td><input type="text" id="numNoches" name="numNoches" placeholder="Rojo"></td>
+                    </tr>
+
+
+                    
+                    <tr bgcolor="#ffffff">
+                        <td colspan="2">
+                            <input type="checkbox" id="privacidad" name="privacidad" value="privacidadAceptada">
+                            <label for="privacidad">Acepto las <a href="https://www.lipsum.com/">politicas de privacidad</a></label><br>
+                        </td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td><input type="reset"></td>
+                        <td><input type="submit"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Form</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Form">
+        <meta name="keywords" content="HTML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="mailto:reservas@mihotel.com">
+            <table bgcolor="#000000">
+                <thead>
+                    <tr bgcolor="#ffffff">
+                        <th colspan="2"><p>Mi HOTEL reserva online</p></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr bgcolor="#ffffff">
+                        <td>Nombre</td>
+                        <td><input type="text" id="nombre" name="nombre" placeholder="Miguel"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Apellidos</td>
+                        <td><input type="text" id="apellidos" name="apellidos" placeholder="Robles"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Teléfono</td>
+                        <td><input type="tel" id="tlf" name="tlf" placeholder="+34123456789"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>E-mail</td>
+                        <td><input type="email" id="mail" name="mail" placeholder="ejemplo@ejemplo.com"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Número de Noches</td>
+                        <td><input type="number" id="numNoches" name="numNoches" placeholder="2"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>Fecha de entrada</td>
+                        <td><input type="date" id="fechaEntrada" name="fechaEntrada"></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td>
+                            <input type="radio" id="habSimple" name="habitacion" value="Habitacion Simple">
+                            <label for="habSimple">Habitacion Simple</label><br>
+                         
+                            <input type="radio" id="habDoble" name="habitacion" value="Habitacion Doble">
+                            <label for="habDoble">Habitacion Doble</label><br>
+                         
+                            <input type="radio" id="habMatrimonio" name="habitacion" value="Habitacion Matrimonio">
+                            <label for="habMatrimonio">Habitacion Matrimonio</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="desayuno" name="extras" value="Desayuno">
+                            <label for="habMatrimonio">Desayuno</label><br>
+                        
+                            <input type="checkbox" id="comida" name="extras" value="Comida">
+                            <label for="habMatrimonio">Comida</label><br>
+                         
+                            <input type="checkbox" id="cena" name="extras" value="Cena">
+                            <label for="habMatrimonio">Cena</label><br>
+                          
+                            <input type="checkbox" id="camaExtra" name="extras" value="CamaExtra">
+                            <label for="habMatrimonio">Cama Extra</label><br>                            
+                        </td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td colspan="2">
+                            <textarea cols="50" rows="10" placeholder="Si tiene algo que debamos saber puede comunicarnoslo en este espacio"></textarea>
+                        </td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td><input type="reset"></td>
+                        <td><input type="submit"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
