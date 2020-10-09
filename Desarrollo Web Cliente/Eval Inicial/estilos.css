@@ -1,0 +1,121 @@
+body {
+    background-color: brown;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+#contenido {
+    background-color: brown;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+#contenedorLogoMenuInfo {
+    width: 95%;
+    height: 62.5%;
+    float: left;
+    margin-left: 2.5%;
+    margin-top: 1%;
+}
+#contenedorLogoMenu {
+    width: 100%;
+    height: 20%;
+    float: left;
+}
+#logo {
+    background-color: gray;
+    height: 100%;
+    width: 30%;
+    float: left;
+
+}
+#menu {
+    background-color: darkblue;
+    height: 100%;
+    width: 70%;
+    float: left;
+
+}
+#info {
+    background-color: lightblue;
+    width: 100%;
+    height: 80%;
+    float: left;
+
+}
+#pie {
+    background-color: orange;
+    width: 95%;
+    height: 32.5%;
+    clear: both;
+    float: left;
+    margin-left: 2.5%;
+}
+#galeria {
+    background-color: blue;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    float: left;
+}
+
+
+
+
+#imgLogo {
+    width: 30%;
+    margin-left: 32%;
+    height: 100%;
+}
+#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+    margin-top: 1.8em;
+}
+#navbar li {
+    display: inline;
+    margin-left: 7.5em;
+}
+
+
+
+.imgGanador1 {
+    float: left;
+    width: 16.66666%;
+    height: 80%;
+    background: url("img/ganardor1_a.jpg") no-repeat;
+}
+.imgGanador2 {
+    float: left;
+    width: 16.66666%;
+    height: 80%;
+    background: url("img/ganardor1_a.jpg") no-repeat;
+}
+.imgGanador3 {
+    float: left;
+    width: 16.66666%;
+    height: 80%;
+    background: url("img/ganardor1_a.jpg") no-repeat;
+}
+.imgGanador4 {
+    float: left;
+    width: 16.66666%;
+    height: 80%;
+    background: url("img/ganardor1_a.jpg") no-repeat;
+}
+.imgGanador5 {
+    float: left;
+    width: 16.66666%;
+    height: 80%;
+    background: url("img/ganardor1_a.jpg") no-repeat;
+}
+.imgGanador6 {
+    float: left;
+    width: 16.66666%;
+    height: 80%;
+    background: url("img/ganardor1_a.jpg") no-repeat;
+}
