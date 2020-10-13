@@ -1,0 +1,14 @@
+h1 {
+    color: blue !important;
+}
+
+p {
+    color: chartreuse;
+}
+
+p.pregunta {
+    font-size: larger;
+    color: black;
+    font-weight: bold;
+}
+
