@@ -5,9 +5,13 @@
   <meta charset="utf-8">
   <script type="text/javascript">
 
+    digito1 = 0;
+    operador = "+";         //variables usadas en la suma y multiplicacion
+    digito2 = 0;
+    checker = false;        //Check usado para comprobar si antes de darle a eq() hemos usado la suma o la multiplicacion
 
 
-    function rellenar_info(result) {
+    function rellenar_info(result) {                                //Rellenar info
 
       if (result < 100) {
         document.getElementById("info").innerHTML = "El resultado es menor que 100";
@@ -19,26 +23,26 @@
     }
 
 
-    const vaciar = () => {
+    const vaciar = () => {                                        //Vaciar
       document.getElementById("pantalla").value = "";
     }
 
-    const cuadrado = () => {
+    const cuadrado = () => {                                      //Cuadrado
       let num = document.getElementById("pantalla");
       num.value = num.value * num.value;
       rellenar_info(num.value);
     }
 
-    const mod = () => {
+    const mod = () => {                                           //Modulo
       let num = document.getElementById("pantalla");
     
       num.value = Math.abs(num.value);;
       rellenar_info(num.value);
     }
 
-    const fact = () => {
+    const fact = () => {                                          //Factorial
       let num = document.getElementById("pantalla");
-      var total = 1;
+      let total = 1;
       
       for (i = 1; i <= num.value; i++) {
         total = total * i;
@@ -48,14 +52,101 @@
       rellenar_info(total);
     }
 
+    const add = () => {                                             //Suma
+      
+      digito1 = parseInt(document.getElementById("pantalla").value);
+      operador = "+";
+      checker = true;
+      vaciar();
+
+    }
+
+    const mul = () => {                                             //Suma
+      
+      digito1 = parseInt(document.getElementById("pantalla").value);
+      operador = "*";
+      checker = true;
+      vaciar();
+
+    }
+  
+    const eq = () => {                                             //Igual
+      
+      digito2 = parseInt(document.getElementById("pantalla").value);
+
+
+      let total = 0;
+      
+      if (checker) {
+        if (operador == "+") {
+          total = digito1 + digito2;
+          document.getElementById("pantalla").value = total;
+          rellenar_info(total);
+        } else if (operador == "*") {
+          total = digito1 * digito2;
+          document.getElementById("pantalla").value = total;
+          rellenar_info(total);
+        }
+      }    
+      
+      checker = false;
+      
+    }
+
+    const sumatorio = () => {                                             //Suma
+      
+      let input = document.getElementById("pantalla").value;
+      let numArray = input.split(',');
+      let total = 0;
+      
+      for (i = 0; i < numArray.length; i++) {
+        total += parseInt(numArray[i]);
+      }
+
+      document.getElementById("pantalla").value = total;
+      rellenar_info(total);
+    }
+
+    const ordenar = () => {                                             //Suma
+      
+      let input = document.getElementById("pantalla").value;
+      let numArray = input.split(',');
+      let total = 0;
+      
+      for (i = 0; i < numArray.length; i++) {
+        total += parseInt(numArray[i]);
+      }
+
+      document.getElementById("pantalla").value = total;
+      rellenar_info(total);
+    }
+
   </script>
 </head>
 <body>
   <h2 id="info" class="grande" title="Info sobre número">Info Sobre Número</h2>
   Número:
   <input type="text" id="pantalla" onclick="vaciar()">
+
+  <h3>Operaciones Unitarias</h3>
+
   <button id="cuadrado" onclick="cuadrado()">x<sup>2</sup></button>
   <button id="modulo" onclick="mod()">mod</button>
   <button id="factorial" onclick="fact()">Fact</button>
+
+  <h3>Operaciones Binarias</h3>
+
+  <button id="suma" onclick="add()">+</button>
+  <button id="multiplicacion" onclick="mul()">x</button>
+  <button id="igual" onclick="eq()">=</button>
+
+  <h3>Operaciones CSV</h3>
+
+  <button id="sumatorio" onclick="sumatorio()">Σx</button>
+  <button id="ordenar" onclick="ordenar()">Ordenar</button>
+  <button id="revertir" onclick="revertir()">Revertir</button>
+  <button id="quitar" onclick="quitar()">Quitar</button>
+  
+
  </body>
 </html>
