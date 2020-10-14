@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+
+
+    function rellenar_info(result) {
+
+      if (result < 100) {
+        document.getElementById("info").innerHTML = "El resultado es menor que 100";
+      } else if (result >= 100 && result <= 200) {
+        document.getElementById("info").innerHTML = "El resultado está entre 100 y 200";
+      } else {
+        document.getElementById("info").innerHTML = "El resultado es superior a 200";
+      }
+    }
+
+
+    const vaciar = () => {
+      document.getElementById("pantalla").value = "";
+    }
+
+    const cuadrado = () => {
+      let num = document.getElementById("pantalla");
+      num.value = num.value * num.value;
+      rellenar_info(num.value);
+    }
+
+    const mod = () => {
+      let num = document.getElementById("pantalla");
+    
+      num.value = Math.abs(num.value);;
+      rellenar_info(num.value);
+    }
+
+    const fact = () => {
+      let num = document.getElementById("pantalla");
+      var total = 1;
+      
+      for (i = 1; i <= num.value; i++) {
+        total = total * i;
+      }
+
+      num.value = total;
+      rellenar_info(total);
+    }
+
+  </script>
+</head>
+<body>
+  <h2 id="info" class="grande" title="Info sobre número">Info Sobre Número</h2>
+  Número:
+  <input type="text" id="pantalla" onclick="vaciar()">
+  <button id="cuadrado" onclick="cuadrado()">x<sup>2</sup></button>
+  <button id="modulo" onclick="mod()">mod</button>
+  <button id="factorial" onclick="fact()">Fact</button>
+ </body>
+</html>
