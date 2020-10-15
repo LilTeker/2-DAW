@@ -43,3 +43,13 @@ button {
     font-size: x-large;
     padding-right: 2em;
 }
+.unitarias {
+    background-color: #4a4f57;
+}
+.binarias {
+    background-color: #565c66;
+}
+
+.csv {
+    background-color: #4a4f57;
+}
