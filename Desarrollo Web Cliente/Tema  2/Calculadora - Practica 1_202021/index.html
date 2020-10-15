@@ -27,20 +27,30 @@
       document.getElementById("pantalla").value = "";
     }
 
-    const cuadrado = () => {                                      //Cuadrado
+    const cuadrado = () => {                
+      
+      if (validar()) {          //Cuadrado
       let num = document.getElementById("pantalla");
       num.value = num.value * num.value;
       rellenar_info(num.value);
+      }
+
     }
 
-    const mod = () => {                                           //Modulo
+    const mod = () => {    
+      
+      if (validar()) {                                       //Modulo
       let num = document.getElementById("pantalla");
     
       num.value = Math.abs(num.value);;
       rellenar_info(num.value);
+      }
+
     }
 
-    const fact = () => {                                          //Factorial
+    const fact = () => {      
+      
+      if (validar()) {                                    //Factorial
       let num = document.getElementById("pantalla");
       let total = 1;
       
@@ -50,28 +60,35 @@
 
       num.value = total;
       rellenar_info(total);
+      }
+
     }
 
     const add = () => {                                             //Suma
       
+      if (validar()) {
       digito1 = parseInt(document.getElementById("pantalla").value);
       operador = "+";
       checker = true;
       vaciar();
+      }
 
     }
 
-    const mul = () => {                                             //Suma
+    const mul = () => {                                             //Multiplicación
       
+      if (validar()) {
       digito1 = parseInt(document.getElementById("pantalla").value);
       operador = "*";
       checker = true;
       vaciar();
+      }
 
     }
   
     const eq = () => {                                             //Igual
       
+      if (validar()) {
       digito2 = parseInt(document.getElementById("pantalla").value);
 
 
@@ -90,40 +107,79 @@
       }    
       
       checker = false;
+      }
       
     }
 
-    const sumatorio = () => {                                             //Suma
-      
-      let input = document.getElementById("pantalla").value;
-      let numArray = input.split(',');
-      let total = 0;
-      
-      for (i = 0; i < numArray.length; i++) {
-        total += parseInt(numArray[i]);
+    const sumatorio = () => {                                             //Sumatorio
+
+      if (validar()) {
+        let input = document.getElementById("pantalla").value;
+        let numArray = input.split(',');
+        let total = 0;
+        
+        for (i = 0; i < numArray.length; i++) {
+          total += parseInt(numArray[i]);
+        }
+
+        document.getElementById("pantalla").value = total;
+        rellenar_info(total);
       }
 
-      document.getElementById("pantalla").value = total;
-      rellenar_info(total);
     }
 
-    const ordenar = () => {                                             //Suma
+    const ordenar = () => {                                             //Ordenar
       
+      if (validar()) {
       let input = document.getElementById("pantalla").value;
       let numArray = input.split(',');
-      let total = 0;
       
-      for (i = 0; i < numArray.length; i++) {
-        total += parseInt(numArray[i]);
+      document.getElementById("pantalla").value = numArray.sort((a,b)=>a-b);
       }
-
-      document.getElementById("pantalla").value = total;
-      rellenar_info(total);
     }
+
+    const revertir = () => {                                             //Revertir
+      
+      if (validar()) {
+      let input = document.getElementById("pantalla").value;
+      let numArray = input.split(',');
+      
+      document.getElementById("pantalla").value = numArray.reverse();
+      }
+    }
+
+    const quitar = () => {                                             //Quitar
+      
+      if (validar()) {
+      let input = document.getElementById("pantalla").value;
+      let numArray = input.split(',');
+      numArray.pop();
+      
+      document.getElementById("pantalla").value = numArray;
+      }
+    }
+
+    const validar = () => {                                             //Validación - sin terminar, mirar https://stackoverflow.com/questions/5917082/regular-expression-to-match-numbers-with-or-without-commas-and-decimals-in-text
+      
+      let input = document.getElementById("pantalla").value;
+      
+      if (input.match("[,.|0-9]+")) {
+        
+        return true;
+
+      } else {
+        
+        document.getElementById("pantalla").value = "error";
+        return false;
+
+      }
+    }
+
 
   </script>
 </head>
 <body>
+
   <h2 id="info" class="grande" title="Info sobre número">Info Sobre Número</h2>
   Número:
   <input type="text" id="pantalla" onclick="vaciar()">
