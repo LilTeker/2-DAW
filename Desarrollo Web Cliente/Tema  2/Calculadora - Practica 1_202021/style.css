@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header, #header h1{
+    background-color: lightgray;
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#table {
+    width: 100%;
+}
+table, th, td {
+
+    background-color: #575a5e;
+
+}
+thead tr td {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+    width: 33.3333%;
+}
+tbody tr td {
+    text-align: center;
+}
+button {
+    width: 5em;
+    height: 3em;
+    padding: 0;
+    margin-bottom: 2em;
+}
+.colorOperaciones {
+    color: White;
+}
+
+#textoNumero {
+    font-weight: bold;
+    font-size: x-large;
+    padding-right: 2em;
+}
