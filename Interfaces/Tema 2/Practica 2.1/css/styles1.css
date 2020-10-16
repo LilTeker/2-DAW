@@ -1,0 +1,78 @@
+
+#body {
+
+    background-color: gray;
+
+}
+
+#header {
+
+    background-color: aqua;
+
+}
+
+#footer {
+
+    background-color: lawngreen;
+
+}
+
+#navbar {
+
+    background-color: tomato;
+
+}
+
+/*Selector de tipo*/
+
+p {
+    color: white;
+}
+/*Selector de clase*/
+.clase  {
+    font-weight: bold;
+}
+/*Selector de identificador*/
+#id {
+    font-size: x-large;
+}
+/*Selector descendente*/
+div p {
+    background-color: deeppink;
+}
+/*Selector de hijos*/
+div > p {
+    color: gold;
+}
+/*Selector adyacente*/
+p + p {
+    font-style: italic;
+}
+/*Selector de atributos*/
+p[atributo] {
+    text-transform: uppercase;
+}
+
+/*Pseudo-clases*/
+
+a:link {
+    color: #FF0000;
+}
+
+a:visited {
+    color: #00FF00;
+}
+
+a:hover {
+    color: #FF00FF;
+}
+
+a:active {
+    color: #0000FF;
+}
+
+/*Pseudoelementos*/
+p::first-letter {
+    color: white;
+    font-size: xx-large;
+}
