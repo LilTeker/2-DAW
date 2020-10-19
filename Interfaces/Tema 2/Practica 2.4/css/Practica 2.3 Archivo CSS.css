@@ -1,0 +1,207 @@
+ul,ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+h1,h2,h3,p,form {
+  margin: 0;
+  padding: 0;
+}
+
+.clear { clear: both; }
+
+img{ border: none; }
+
+main { 
+  width: 90%;
+  max-width: 900px;
+  width: expression(document.body.clientWidth > 901? "900px":"auto");
+  margin: 0 auto
+}
+
+/*borro los border*/
+
+header { clear: both; }
+
+nav { clear: both; }
+
+aside {
+    float: left;
+    width: 20%;
+}
+
+#contenido {
+    float: right;
+    width: 78%;
+}
+
+#contenido #principal { 
+    float: left;
+    width: 75%;
+}
+
+#contenido #secundario {
+    float: right;
+    width: 18%;
+}
+
+footer { clear: both; }
+
+header #logo { float: left; }
+
+header #buscador { float: right }
+
+nav ul#menu_principal li{
+  display: inline;
+  float: left;
+}
+
+#contenido #principal article img {
+  width: 100px;
+  float: left;
+}
+
+footer .enlaces{ float: left; }
+
+footer .copyright { float: right; }
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */
+
+
+   header {
+    padding: 1em;
+    margin-bottom: 0.5em;
+   }
+
+   nav {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px #004C99 solid;
+   }
+
+   #noticias, #publicidad, #principal, #secundario { /*Al aplicar este padding se desajustan el #principal y el #secundario asique rebajo un poco sus width*/
+     padding: 0.5em;
+   }
+
+   footer {
+     padding-top: 0.5em;
+     padding-bottom: 0.5em;
+     margin-top: 1em;
+     border-top: 1px solid #C5C5C5;
+     border-bottom: 1px solid #C5C5C5;
+   }
+
+   article {
+     margin: 1em;
+   }
+
+   article img {
+     margin: 0.5em;
+   }
+
+   #publicidad {
+     margin-top: 1em;
+   }
+
+   #noticias {
+     border: 1px solid #C5C5C5;
+   }
+
+   #publicidad {
+     border: 1px dashed #CC6600;
+   }
+
+   #secundario {
+     border: 1px solid #CC6600;
+   }
+
+   /*
+   ============
+   Practica 2.4
+   ============
+   */
+
+   #noticias, footer {
+     background-color: #F8F8F8;
+   }
+   #publicidad {
+     background-color: #FFF6CD;
+   }
+   
+   #secundario h2 {
+     background-color: #DB905C;
+     padding: 0.2em;
+   }   
+
+   nav {
+    background-image: url("../imagenes/fondo_menu.gif");
+   }
+
+   header h1 {
+    background-image: url("../imagenes/logo.gif");
+    width: 5em;
+    height: 2em;
+   }
+
+   
+   p {
+     font-family: Arial;
+     color: black;
+     font-size: 0.9em;
+     line-height: 1.4;
+   }
+
+   article h2 {
+    color: #CC6600;
+    font-size: 1.6em;
+    line-height: 1.2;
+    margin-bottom: 0.3em;
+   }
+   nav * {
+    margin-right: 1em;
+   }
+   nav a {
+     color: white;
+     font-size: 1.3em;
+   }
+
+   aside * {
+     font-size: 0.9em;
+   }
+
+   span[class=fecha] {
+     width: 100%;
+     display: inline-block; /*No se como conseguir que se muestren con el ancho debido sin esta propiedad -> 
+                            4. El tamaño del texto de todos los contenidos de aside debe ser de 0.9em. La fecha
+                            de cada noticia debe ocupar el espacio de toda su línea y mostrarse en color gris
+                            claro #999. El elemento <h3> de #noticias debe mostrarse de color #003366.*/
+    color: #999;
+   }
+   #noticias h3 {
+     color: #003366;
+   }
+
+   #publicidad p {
+     color: #555;
+   }
+   #publicidad a {
+     color: #CC6600;
+   }
+
+   article a {
+     color: #CC6600;
+   }
+
+   article p {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+   }
+
+   #secundario h2 {
+     color: white;
+     font-size: 1em;
+   }

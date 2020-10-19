@@ -1,0 +1,120 @@
+ul,ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+h1,h2,h3,p,form {
+  margin: 0;
+  padding: 0;
+}
+
+.clear { clear: both; }
+
+img{ border: none; }
+
+main { 
+  width: 90%;
+  max-width: 900px;
+  width: expression(document.body.clientWidth > 901? "900px":"auto");
+  margin: 0 auto
+}
+
+/*borro los border*/
+
+header { clear: both; }
+
+nav { clear: both; }
+
+aside {
+    float: left;
+    width: 20%;
+}
+
+#contenido {
+    float: right;
+    width: 78%;
+}
+
+#contenido #principal { 
+    float: left;
+    width: 75%;
+}
+
+#contenido #secundario {
+    float: right;
+    width: 18%;
+}
+
+footer { clear: both; }
+
+header #logo { float: left; }
+
+header #buscador { float: right }
+
+nav ul#menu_principal li{
+  display: inline;
+  float: left;
+}
+
+#contenido #principal article img {
+  width: 100px;
+  float: left;
+}
+
+footer .enlaces{ float: left; }
+
+footer .copyright { float: right; }
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */
+
+
+   header {
+    padding: 1em;
+    margin-bottom: 0.5em;
+   }
+
+   nav {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px #004C99 solid;
+   }
+
+   #noticias, #publicidad, #principal, #secundario { /*Al aplicar este padding se desajustan el #principal y el #secundario asique rebajo un poco sus width*/
+     padding: 0.5em;
+   }
+
+   footer {
+     padding-top: 0.5em;
+     padding-bottom: 0.5em;
+     margin-top: 1em;
+     border-top: 1px solid #C5C5C5;
+     border-bottom: 1px solid #C5C5C5;
+   }
+
+   article {
+     margin: 1em;
+   }
+
+   article img {
+     margin: 0.5em;
+   }
+
+   #publicidad {
+     margin-top: 1em;
+   }
+
+   #noticias {
+     border: 1px solid #C5C5C5;
+   }
+
+   #publicidad {
+     border: 1px dashed #CC6600;
+   }
+
+   #secundario {
+     border: 1px solid #CC6600;
+   }
