@@ -1,0 +1,33 @@
+.menu {
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #7C7C7C;
+}
+
+.menu li {
+    background-color: #F4F4F4;
+    border-bottom: 1px solid #7C7C7C;
+    border-top: 1px solid #FFF;
+}
+
+.menu li a {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 2em;
+    
+    display: block;
+    color: #333;
+
+    background-color: #F4F4F4;
+    background-image: url("../img/flecha_inactiva.png");
+    background-repeat: no-repeat;
+    background-position: 3px;
+}
+
+.menu li a:hover, ul.menu li a:active {
+    background-color: #E4E4E4 ;
+    background-image: url("../img/flecha_activa.png");
+    background-repeat: no-repeat;
+    background-position: 3px;
+}

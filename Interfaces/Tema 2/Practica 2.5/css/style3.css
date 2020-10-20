@@ -1,0 +1,27 @@
+table, th, td {
+    border: 1px solid black;
+    color: blue;
+    text-align: center;
+}
+th, .lightblue {
+    color: darkblue;
+    background-color: lightblue;
+    border: 1px solid black;
+}
+td {
+    background-color: purple;
+}
+table, .borderRed {
+    border: 3px solid red;
+}
+
+.khaki {
+    background-color: khaki;
+}
+
+caption {
+    color: black;
+}
+#button:hover {
+    background: #FFFF66 !important;
+}
