@@ -20,7 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7780c598-e3e6-4d85-a2b4-347493afd7a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../MD5 Cracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MD5 Cracker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.php" beforeDir="false" afterPath="$PROJECT_DIR$/game.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603276945095</updated>
       <workItem from="1603276946354" duration="3730000" />
+      <workItem from="1603359016857" duration="106000" />
     </task>
     <servers />
   </component>
@@ -79,6 +83,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="538" y="193" width="824" height="691" key="#CLI_Interpreters" timestamp="1603276990319">
