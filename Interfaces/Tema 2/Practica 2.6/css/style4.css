@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: green;
+    width: 100%;
+}
+
+nav {
+    background-color: beige;
+    width: 10%;
+    height: 30em;
+    position: relative;
+}
+
+main {
+    background-color: gray;
+    width: 82%;
+    height: 30em;
+    position: relative;
+    bottom: 30em;
+    left: 8.4em;
+}
+
+article {
+    background-color: orange;
+    width: 200px;
+    height: 200px;
+}
+
+aside {
+    background-color: violet;
+    width: 8%;
+    height: 30em;
+    position: relative;
+    bottom: 60em;
+    left: 77.6em;
+}
+
+aside p {
+    background-color: purple;
+
+}
+
+footer {
+    background-color: green;
+    width: 100%;
+    position: absolute;
+    top: 34em;
+}
+
+/*Estructura general hasta aqui*/
+
+#logoNombre {
+    position: relative;
+    left: 5em;
+    bottom: 1em;
+}
+
+#art1 {
+    position: relative;
+    left: 5em;
+}
+#art2 {
+    position: relative;
+    left: 50em;
+    bottom: 12.5em;
+}
+#art3 {
+    position: relative;
+    left: 5em;
+    bottom: 10em;
+}
+#art4 {
+    position: relative;
+    left: 50em;
+    bottom: 22.5em;
+}
+
+#text1 {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: 1em;
+    left: 0.5em;
+}
+#text2 {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: 5em;
+    left: 0.5em;
+    
+}
+#text3 {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: 10em;
+    left: 0.5em;
+    
+}
+#textFooter {
+    position: relative;
+    left: 8em;
+    bottom: 0.5em;
+}
+#fixed {
+    position: fixed;
+    top: 30em;
+    left: 70em;
+    background-color: red;
+    width: 8em;
+    height: 8em;
+}
