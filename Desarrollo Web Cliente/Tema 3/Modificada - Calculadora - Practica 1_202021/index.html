@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="js.js" type="text/javascript"></script>
+</head>
+<body>
+
+  <header id="header">
+    <h1>Práctica Calculadora</h1>
+    <h2 id="info" class="grande" title="Info sobre número">Info Sobre Número</h2>
+  </header>
+
+  <section>
+
+    <table id="table">
+      <thead>
+        <tr>
+          <td colspan="3">
+            <label for="pantalla" id="textoNumero">Número:</label>
+            <input type="text" id="pantalla">
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="unitarias">
+            <h3 class="colorOperaciones">Operaciones Unitarias</h3>
+
+            <button id="cuadrado"">x<sup>2</sup></button>
+            <button id="modulo">mod</button>
+            <button id="factorial">Fact</button>
+          </td>
+          <td class="binarias">
+            <h3 class="colorOperaciones">Operaciones Binarias</h3>
+
+            <button id="suma">+</button>
+            <button id="multiplicacion">x</button>
+            <button id="igual">=</button>
+          </td>
+          <td class="csv">
+            <h3 class="colorOperaciones">Operaciones CSV</h3>
+
+            <button id="sumatorio">Σx</button>
+            <button id="ordenar">Ordenar</button>
+            <button id="revertir">Revertir</button>
+            <button id="quitar">Quitar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section> 
+
+ </body>
+</html>
