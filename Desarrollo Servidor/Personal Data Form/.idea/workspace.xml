@@ -43,7 +43,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Visit Counter with Cookies" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -61,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603386915046</updated>
       <workItem from="1603386916279" duration="3398000" />
+      <workItem from="1603738461838" duration="23000" />
     </task>
     <servers />
   </component>
@@ -77,6 +78,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="261" y="35" width="824" height="684" key="#CLI_Interpreters" timestamp="1603387742039">
@@ -87,6 +89,10 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="328" y="27" width="700" height="700" key="#PHP/0.27.1366.700@0.27.1366.700" timestamp="1603387743721" />
+    <state x="466" y="134" width="424" height="484" key="FileChooserDialogImpl" timestamp="1603738485625">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="466" y="134" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.700@0.27.1366.700" timestamp="1603738485625" />
     <state x="464" y="291" width="428" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603387976404">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
