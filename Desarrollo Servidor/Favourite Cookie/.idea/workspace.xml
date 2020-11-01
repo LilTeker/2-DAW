@@ -20,7 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ae5088c-3027-4981-a22c-977ad4845cee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Visit Counter with Cookies/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Visit Counter with Cookies/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/.idea/cookieIdioma.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/cookie_idioma_A.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/cookie_idioma_B.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/funciones.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/idiomas.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/en.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/en_50px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/es.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/es_50px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/fr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/fr_50px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/none.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookieIdioma/images/none_50px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fruits_cookie.php" beforeDir="false" afterPath="$PROJECT_DIR$/fruits_cookie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +62,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -56,6 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604001524562</updated>
       <workItem from="1604001526569" duration="692000" />
+      <workItem from="1604244281200" duration="6430000" />
     </task>
     <servers />
   </component>
@@ -72,6 +102,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="266" y="35" width="824" height="684" key="#CLI_Interpreters" timestamp="1604001592627">
