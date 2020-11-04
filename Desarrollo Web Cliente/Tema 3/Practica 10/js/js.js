@@ -15,7 +15,7 @@ function indexView (pelis) {
     return html + `</ul> <button id="new">Crear</button>`;
 };
 
-function showView (peli) {
+function showDetails (peli) {
     return `
     La película <b> ${peli.titulo}</b>, estrenada
     en el año <b> ${peli.estreno}</b>, fue
@@ -34,7 +34,7 @@ function newView() {
 
 // CONTROLADORES
 function indexContr() { document.getElementById("main").innerHTML = indexView(peliculas);};
-function showContr(i) { document.getElementById("main").innerHTML = showView(peliculas[i]);};
+function showContr(i) { document.getElementById("main").innerHTML = showDetails(peliculas[i]);};
 function deleteContr(i) {
     peliculas.splice(i, 1);
     indexContr();
