@@ -1,0 +1,40 @@
+Crea una web sobre “Star Wars” con navegación y 3 páginas
+1. Todas las páginas del sitio web contendrán: (2p)
+
+
+
+
+PONER LETRA DE STAR WARS EN ALGUN LADO
+
+h. Todos los enlaces que haya en la página tendrán definidas diferentes estilos
+según si pasamos el ratón por encima, pulsamos el enlace, o ya lo hemos
+visitado.
+
+
+
+
+2. Página Inicio (2p)
+b. Para indicar si pertenecen al lado oscuro o no. Los impares pertenecen a los
+Jedi y los pares a los Sith y cada uno tendrá su icono correspondiente
+(sith.png y jedi.png)
+
+
+
+c. Para mostrar visualmente cada uno:
+
+ii. Cada elemento de la lista se ajustará al tamaño del texto
+
+
+
+
+
+
+
+
+
+
+5. Haz uso de 2 de las Metaetiquetas que influían en el posicionamiento SEO (0.25p)
+
+
+
+6. Comprueba si el index.html es tiene el HTML validado (Inserta un pantallazo) (0.25p)

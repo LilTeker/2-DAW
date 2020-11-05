@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Star Wars - Nuevo Usuario - Miguel Robles Gámez</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="starwars examen miguel robles gámez">
+    <meta name="keywords" content="starwars">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="index.html"><img src="img/logo.png" alt="logotipo"></a>
+        <nav>
+            <ul>
+                <li><a href="nuevo_usuario.html">Nuevo Usuario</a></li>
+                <li><a href="peliculas.html">Películas</a></li>
+                <li><a href="#foot">Final de la Página</a></li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <h2>!Unete al club de fans de la mejor saga de toda la galaxia!</h2>
+        <form action="">
+            <h3>Datos Personales</h3>
+            <label for="nome">Nome: <input type="text" name="nome" id="nome"></label>
+            <label for="apellidos">Apellidos: <input type="text" name="apellidos" id="apellidos"></label>
+            <label for="direccion">Dirección: <input type="text" name="direccion" id="direccion"></label><br>
+            <label for="codPostal">Código Postal: <input type="text" name="codPostal" id="codPostal" pattern="[0-9]{5}"></label>
+            <label for="tlf">Teléfono: <input type="tel" name="tlf" id="tlf" placeholder="+1 123456789"></label>
+            <label for="dni">DNI: <input type="text" name="dni" id="dni" placeholder="12345678Z"  maxlength="9" pattern="[0-9]{8}[A-Za-z]{1}"></label><br>
+            <label for="birth">Fecha de Nacimiento: <input type="date" name="birth" id="birth"></label>
+            <label for="mail">Correo Electronico: <input type="email" name="mail" id="mail" placeholder="example@example.com"></label>
+            
+            <hr>
+            <h3>Datos Bancarios</h3>
+            <label for="numTarjeta">Número de Tarjeta: <input type="number" name="numTarjeta" id="numTarjeta" required></label>
+            <label for="caducidad">Fecha de Caducidad: <input type="text" name="caducidad" id="caducidad" required></label>
+            <label for="cvv">CVV: <input type="number" name="cvv" id="cvv" required></label>
+
+            <hr>
+            <h3>Área del Fan</h3>
+            <p>Escribe tus Momentos Favoritos de la saga</p>
+            <textarea name="areafan" id="areafan" cols="50" rows="10"></textarea><br>
+            <input type="submit"><input type="reset">
+        </form>
+    </article>    
+    <footer id="foot">
+
+        <p>Redes Sociales</p>
+        <a href="https://twitter.com"><img class="social" src="img/twitter.png" alt="Twitter"></a>
+        <a href="https://facebook.com"><img class="social" src="img/fb.png" alt="Facebook"></a>
+        <a href="https://www.lipsum.com/"><p>Derechos Reservados</p></a>
+        <a href="#header"><p>Principio de la página</p></a>
+    </footer>
+</body>
+</html>

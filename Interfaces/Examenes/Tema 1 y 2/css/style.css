@@ -1,0 +1,91 @@
+@font-face {
+    font-family: starWars;
+    src: url(../font-style/starWars.ttf);
+}
+* {
+    text-align: center;
+
+}
+
+nav ul li {
+    list-style: none;
+    margin-top: 1em;
+}
+
+body {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article ul li:nth-child(odd) {
+    list-style: url("../img/jedi.png");
+    border: 1px solid blue;
+    color: blue;
+    background-color: lightyellow;
+}
+article ul li:nth-child(even) {
+    list-style: url("../img/sith.png");
+    background-origin: 1px solid red;
+    color: red;
+    background-color: black;
+}
+article ul li:last-child {
+    list-style: url("../img/jedi.png");
+    border: 1px solid blue;
+    color: blue;
+    background-color: lightyellow;
+}
+article ul li {
+    margin: 10px;
+    padding: 10px;
+}
+
+.t1 {
+    text-transform: uppercase;
+}
+.t2 {
+    font-weight: bold;
+}
+.t3 {
+    font-style: italic;
+}
+.especial {
+    font-size: 2em;
+    border-radius: 10em;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    margin: auto;
+    padding: auto;
+}
+
+.primeraTri {
+    background-color: lightgreen;
+}
+.segundaTri {
+    background-color: lightsalmon;
+}
+.terceraTri {
+    background-color: lightskyblue;
+}
+
+input {
+    margin: 2em;
+}
+
+.social {
+    width: 6%;
+}
+
+li:hover {
+    background-color: red;
+}
+li:active {
+    background-color: black;
+}
+li:visited {
+    color: white;
+}
