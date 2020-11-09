@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+}
+
+header {
+    background-color: green;
+}
+
+header img {
+    width: 12em;
+}
+
+nav {
+    background-color: beige;
+}
+
+nav a {
+    list-style: none;
+    text-decoration: underline;
+    color: black;
+}
+
+main {
+    background-color: gray;
+}
+
+aside {
+    background-color: violet;
+}
+
+footer {
+    background-color: green;
+}
+
+article {
+    background-color: orange;
+}
+
+aside p {
+    background-color: purple;
+}
+
+#fixed {
+    background-color: red;
+}
+
+#twitter {
+    width: 8%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    * {
+        text-align: center;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    header img {
+        margin: 1em;
+        margin-right: 4em;
+    }
+
+    nav {
+        width: 100%;
+    }    
+
+    nav div a {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    article {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+   
+    * {
+        text-align: center;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    header img {
+        margin: 1em;
+        margin-right: 15em;
+    }
+
+    nav {
+        text-align: center;
+        float: left;
+        width: 25%;
+        height: 20em;
+    }
+
+    #contEnlacesNav  {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-around;
+    }
+
+    main {
+        float: left;
+        width: 75%;
+        height: 20em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    aside {
+        clear: both;
+    }
+}
