@@ -49,7 +49,7 @@ aside p {
 }
 
 #twitter {
-    width: 8%;
+    width: 5em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -140,4 +140,88 @@ aside p {
     aside {
         clear: both;
     }
+}
+
+@media only screen and (min-width: 901px) {
+
+    * {
+        text-align: center;
+    }
+
+    header {
+        width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: 2fr 10fr 4fr;
+        height: 25em;
+    }
+
+    nav {
+        padding-top: 4em;   
+    }
+
+    nav div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 15em;
+    }
+
+
+    main div {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    main div article {
+        margin-top: 2em;
+        width: 15em;
+    }
+
+    aside  {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 4em;
+    }
+
+    aside p {
+        margin: auto;
+        width: 12em;
+    }
+
+    footer, footer h3 {
+        text-align: left !important;
+    }
+    
+    footer {
+        display: flex;
+    }
+
+    footer h3 {
+        padding-top: 2em;
+        padding-bottom: 2em;
+        margin-left: 2em;
+    }
+    
+    #twitter {
+        margin-top: 0.5em;
+        margin-left: 4em;
+    }
+
+    #fixed {
+        position: fixed;
+        left: 60em;
+        bottom: 1em;
+        width: 6em;
+        height: 6em;
+    }
+
 }
