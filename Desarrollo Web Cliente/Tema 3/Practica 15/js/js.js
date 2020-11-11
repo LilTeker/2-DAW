@@ -8,8 +8,7 @@ let disco = [{disco: "nombreDisco", cantante: "cantante", año: "1990", tipoMusi
 
 function indexContr() { document.getElementById("main").innerHTML = indexView(disco); };
 function newDiscCont() { 
-    document.getElementById("main").innerHTML = newDiscView(); 
-    focusListener();
+    document.getElementById("main").innerHTML = newDiscView();
 }
 
 function guardar() {
@@ -20,14 +19,29 @@ function guardar() {
     let localizacion = document.getElementById("localizacion").value;
     let prestado = document.getElementById("prestado").value;
 
-    validar(nombreDisco, cantante, año, tipoMusica, localización, prestado);
-
-    disco.push({disco: nombreDisco, cantante: cantante, año: año, tipoMusica: tipoMusica, localizacion: localizacion, prestado: prestado});
+    validar(nombreDisco, cantante, año, tipoMusica, localizacion, prestado);
 }
 
-function validar(nombreDisco, cantante, año, tipoMusica, localización, prestado) {
+function validar(nombreDisco, cantante, año, tipoMusica, localizacion, prestado) {
 
-    //COMPLETAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+    let html = "";
+
+    if (nombreDisco.length > 20 || nombreDisco.length == 0) {
+        html = "<p>El nombre del disco debe tener 20 caracteres como máximo y es obligatorio</p>";
+    } else if (cantante.length > 20 || cantante.length == 0) {
+        html = "<p>El cantante del disco debe tener 20 caracteres como máximo y es obligatorio</p>";
+    } else if (año.length != 4 || isNaN(año)) {
+        html = "<p>El año debe ser un número con 4 dígitos</p>";
+    } else if ( tipoMusica == "rock" || tipoMusica == "pop" || tipoMusica == "indie" || tipoMusica == "punk") {
+        html = "<p>El tipo de musica debe ser rock, pop, indie o punk</p>";
+    } else if ( isNaN(localizacion) || localizacion.length == 0) {
+        html = "<p>La localización debe de ser un numero de estantería o estar vacío</p>";
+    } else {
+        html = "";
+        disco.push({disco: nombreDisco, cantante: cantante, año: año, tipoMusica: tipoMusica, localizacion: localizacion, prestado: prestado});
+    }
+
+    validarView(html);
 
 }
 
@@ -35,7 +49,7 @@ function vaciar(idElement) {                                        //Vaciar
     document.getElementById(idElement).value = "";
 }
 
-function showContr(i) { document.getElementById("main").innerHTML = showDetails(disco[i]);};
+function showContr(i) { document.getElementById("main").innerHTML = showDetails(i);};
 
 //VISTA
 
@@ -73,16 +87,19 @@ function newDiscView() {
 
 function showDetails (i) {
     return `
-    Titulo del disco ${disco[i].disco},
-    Cantante del disco ${disco[i].cantante},
-    Año del disco ${disco[i].año},
-    Tipo de música del disco ${disco[i].tipoMusica},
-    Localización del disco ${disco[i].localizacion},
-    Prestado: ${disco[i].prestado},
+    <p>Titulo del disco ${disco[i].disco}</p>
+    <p>Cantante del disco ${disco[i].cantante}</p>
+    <p>Año del disco ${disco[i].año}</p>
+    <p>Tipo de música del disco ${disco[i].tipoMusica}</p>
+    <p>Localización del disco ${disco[i].localizacion}</p>
+    <p>Prestado: ${disco[i].prestado}</p>
     <p><button id="index"> Volver </button></p>
     `
 }
 
+function validarView(html) {
+    document.getElementById("validacion").innerHTML = html;
+}
 
 //EVENTO
 document.addEventListener('DOMContentLoaded', evento => indexContr());
@@ -97,22 +114,4 @@ document.addEventListener("click", evento => {
     else if (evento.target.matches('#new')) newDiscCont();
     else if (evento.target.matches('#show'))  showContr(evento.target.dataset.myId);
     else if (evento.target.matches('#index')) indexContr();
-});
-
-
-
-document.addEventListener('DOMContentLoaded', evento => indexContr());
-document.addEventListener("click", evento => {
-
-    if (evento.target.matches("#disco")) vaciar("disco");
-    else if (evento.target.matches("#cantante")) vaciar("cantante");
-    else if (evento.target.matches("#año")) vaciar("año");
-    else if (evento.target.matches("#tipoMusica")) vaciar("tipoMusica");
-    else if (evento.target.matches("#localizacion")) vaciar("localizacion");
-    else if (evento.target.matches("#guardar")) guardar();
-    else if (evento.target.matches("#mostrar")) mostrar();
-    else if (evento.target.matches('#new')) newDiscCont();
-    else if (evento.target.matches('#show'))  showContr(evento.target.dataset.myId);
-    else if (evento.target.matches('#index')) indexContr();
-
 });
