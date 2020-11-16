@@ -1,0 +1,22 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    width: 95%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article:nth-child(even) img {
+    float: right;
+    margin-left: 2em;
+}
+
+article:nth-child(odd) img {
+    float: left;
+    margin-right: 2em;
+}
