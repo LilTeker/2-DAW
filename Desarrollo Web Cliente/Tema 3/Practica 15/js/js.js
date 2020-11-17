@@ -19,6 +19,8 @@ function guardar() {
     let localizacion = document.getElementById("localizacion").value;
     let prestado = document.getElementById("prestado").value;
 
+    console.log(tipoMusica);
+
     validar(nombreDisco, cantante, año, tipoMusica, localizacion, prestado);
 }
 
@@ -26,15 +28,17 @@ function validar(nombreDisco, cantante, año, tipoMusica, localizacion, prestado
 
     let html = "";
 
+    console.log(tipoMusica.localeCompare("rock") == 0);
+
     if (nombreDisco.length > 20 || nombreDisco.length == 0) {
         html = "<p>El nombre del disco debe tener 20 caracteres como máximo y es obligatorio</p>";
     } else if (cantante.length > 20 || cantante.length == 0) {
         html = "<p>El cantante del disco debe tener 20 caracteres como máximo y es obligatorio</p>";
     } else if (año.length != 4 || isNaN(año)) {
         html = "<p>El año debe ser un número con 4 dígitos</p>";
-    } else if ( tipoMusica == "rock" || tipoMusica == "pop" || tipoMusica == "indie" || tipoMusica == "punk") {
+    } else if (tipoMusica.localeCompare("rock") != 0 && tipoMusica.localeCompare("indie") != 0 && tipoMusica.localeCompare("pop") != 0 && tipoMusica.localeCompare("punk") != 0) {
         html = "<p>El tipo de musica debe ser rock, pop, indie o punk</p>";
-    } else if ( isNaN(localizacion) || localizacion.length == 0) {
+    } else if ( isNaN(localizacion) || (isNaN(localizacion) && localizacion.length == 0)) {
         html = "<p>La localización debe de ser un numero de estantería o estar vacío</p>";
     } else {
         html = "";
