@@ -1,0 +1,5 @@
+Como hacer que el hover funcione en un elemento debajo de otro
+
+posicionar bien las imagenes 5 por fila
+
+cuando hago hover sobre un elemento puedo cambiar valores de otros elementos
