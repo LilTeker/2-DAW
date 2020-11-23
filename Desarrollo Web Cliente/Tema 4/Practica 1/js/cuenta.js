@@ -1,6 +1,7 @@
+
 //MODELO
 
-let cuenta1 = null;
+let cuenta1;
 
 //CONTROLADOR
 
@@ -44,19 +45,32 @@ function createCount() {
     let saldo = document.getElementById("saldo").value;
     let interesAnual = document.getElementById("interesAnual").value;
 
-    var cuenta1 = new Cuenta(numero, titular, saldo, interesAnual);
+    cuenta1 = new Cuenta(numero, titular, saldo, interesAnual);
 }
 
 //VISTA
 
 
 
+
+
+
+
 //EVENTO
-//document.addEventListener('DOMContentLoaded', evento => indexContr());
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
+    document.addEventListener("click", evento => {
+        if (evento.target.matches("#submit")) createCount();
+    });
+});
+
+
+/*
+document.addEventListener('DOMContentLoaded', evento => indexContr());
 document.addEventListener("click", evento => {
-    if (evento.target.matches("#submit")) createCount();
-    /*
+    
     else if (evento.target.matches('#show'))  showContr(evento.target.dataset.myId);
     else if (evento.target.matches('#index')) indexContr();
-    */
+    
 });
+*/
