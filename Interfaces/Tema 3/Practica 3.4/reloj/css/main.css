@@ -1,0 +1,53 @@
+.start {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 5em;
+}
+
+#clock {
+    position: relative;
+    width: 378px;
+    height: 378px;
+    background-image: url('../img/clockFace.png');
+    left: 50%;
+    margin: 5em 0 0 -189px;
+}
+
+#clock div {
+    position: absolute;
+}
+
+
+/* ANIMACIONES Y TRANSFORMACIONES */
+
+#hour {
+    -webkit-animation: aguja 3600s infinite linear;
+    animation: aguja 3600s infinite linear;
+}
+#minute {
+    -webkit-animation: aguja 60s infinite linear;
+    animation: aguja 60s infinite linear;
+}
+#second {
+    -webkit-animation: aguja 1s 1 linear;
+    animation: aguja 1s 1 linear;
+}
+
+
+@keyframes aguja {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(90deg);}
+    50% {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes segundos {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(6deg);
+    }
+}

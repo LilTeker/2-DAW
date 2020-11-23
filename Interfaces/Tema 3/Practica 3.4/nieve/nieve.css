@@ -1,0 +1,66 @@
+body {
+    margin: 0px;
+}
+#container{
+    background: #666 url(ej03_tree.jpg) no-repeat -60px 0;
+    width: 420px;
+    height: 480px;
+    position: relative;
+}
+.snowflake {
+    color: #fff;
+    font-size: 2em;
+    position: absolute;
+}
+.snowflake.f1 {
+    left: 40px;
+    -webkit-animation: copoNieve1 4s infinite linear;
+    animation: copoNieve1 4s infinite linear;
+}
+.snowflake.f2 {
+    font-size: 1.8em;
+    left: 120px;
+    -webkit-animation: copoNieve2 4s infinite linear;
+    animation: copoNieve2 4s infinite linear;
+}
+.snowflake.f3 {
+    left: 200px;
+    -webkit-animation: copoNieve3 4s infinite linear;
+    animation: copoNieve3 4s infinite linear;
+}
+.snowflake.f4 {
+    font-size: 1.5em;
+    left: 280px;
+    -webkit-animation: copoNieve4 4s infinite linear;
+    animation: copoNieve4 4s infinite linear;
+}
+
+
+@keyframes copoNieve1 {
+    0% {transform: translateY(0) rotate(20deg);}
+    25% {transform: translate(2em, 3.5em) rotate(60deg);}
+    50% {transform: translate(5em, 6em) rotate(100deg);}
+    75% {transform: translate(3em, 9.5em) rotate(140deg);}
+    100% {transform: translateY(14em) rotate(180deg);}
+}
+@keyframes copoNieve2 {
+    0% {transform: translateY(0) rotate(20deg);}
+    25% {transform: translate(1em, 3.5em) rotate(60deg);}
+    50% {transform: translate(-2em, 6em) rotate(100deg);}
+    75% {transform: translate(2em, 9.5em) rotate(140deg);}
+    100% {transform: translateY(16em) rotate(180deg);}
+}
+@keyframes copoNieve3 {
+    0% {transform: translateY(0) rotate(20deg);}
+    25% {transform: translate(3em, 3.5em) rotate(60deg);}
+    50% {transform: translate(5em, 6em) rotate(100deg);}
+    75% {transform: translate(1em, 9.5em) rotate(140deg);}
+    100% {transform: translateY(14em) rotate(180deg);}
+}
+@keyframes copoNieve4 {
+    0% {transform: translateY(0) rotate(20deg);}
+    25% {transform: translate(-3em, 3.5em) rotate(60deg);}
+    50% {transform: translate(-1em, 6em) rotate(100deg);}
+    75% {transform: translate(0em, 9.5em) rotate(140deg);}
+    100% {transform: translateY(16em) rotate(180deg);}
+}
