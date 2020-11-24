@@ -22,32 +22,21 @@
 /* ANIMACIONES Y TRANSFORMACIONES */
 
 #hour {
+    -webkit-animation: aguja 43200s infinite linear;
+    animation: aguja 43200s infinite linear;
+}
+#minute {
     -webkit-animation: aguja 3600s infinite linear;
     animation: aguja 3600s infinite linear;
 }
-#minute {
+#second {
     -webkit-animation: aguja 60s infinite linear;
     animation: aguja 60s infinite linear;
-}
-#second {
-    -webkit-animation: aguja 1s 1 linear;
-    animation: aguja 1s 1 linear;
 }
 
 
 @keyframes aguja {
-    0% {transform: rotate(0deg);}
-    25% {transform: rotate(90deg);}
-    50% {transform: rotate(180deg);}
-    75% {transform: rotate(270deg);}
-    100% {transform: rotate(360deg);}
-}
-
-@keyframes segundos {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(6deg);
+    100% {
+      transform: rotateZ(360deg);
     }
 }
