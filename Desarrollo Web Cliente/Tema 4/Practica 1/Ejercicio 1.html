@@ -7,20 +7,36 @@
         <meta name="keywords" content="HTML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/cuenta.js"></script>
+        <script src="js/mvc.js"></script>
     </head>
     <body>
         <h1>Cuenta Bancaria</h1>
-        <form>
+        <form id="accountCreate">
             <label for="numero">Numero Bancario</label>
-            <input type="text" name="numero" id="numero">
+            <input type="text" name="numero" id="numero"><br>
             <label for="titular">Titular de la cuenta</label>
-            <input type="text" name="titular" id="titular">
+            <input type="text" name="titular" id="titular"><br>
             <label for="saldo">Saldo</label>
-            <input type="text" name="saldo" id="saldo">
+            <input type="text" name="saldo" id="saldo"><br>
             <label for="interesAnual">Interes Anual</label>
-            <input type="text" name="interesAnual" id="interesAnual">
+            <input type="text" name="interesAnual" id="interesAnual"><br>
             <button type="button" id="submit">Submit</button>
         </form>
-        <div id="divJS"></div>
+        <hr>
+        <form id="actions">
+
+            <input type="text" name="ingresoInput" id="ingresoInput">
+            <button type="button" id="ingreso">Ingresar</button><br>
+            
+            <input type="text" name="reintegroInput" id="reintegroInput">
+            <button type="button" id="reintegro">Retirar</button><br>
+
+            <button type="button" id="ingresoInteresMes">Realizar el ingreso mensual por intereses</button><br>
+
+            <button type="button" id="rojos">Mostrar si su cuenta se encuentra en rojos</button><br>
+
+            <button type="button" id="leerSaldo">Mostrar Saldo Actual</button><br>
+        </form>
+        <div id="info"></div>
     </body>
 </html>
