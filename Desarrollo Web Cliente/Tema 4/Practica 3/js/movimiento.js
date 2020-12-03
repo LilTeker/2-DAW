@@ -1,8 +1,4 @@
-//MODELO
-
-//CONTROLADOR
-
-class movimiento {
+class Movimiento {
     
     constructor(fecha, tipo, importe, saldo) {
         this.fecha = fecha;
@@ -12,17 +8,3 @@ class movimiento {
     }
 
 }
-
-//VISTA
-
-
-
-//EVENTO
-//document.addEventListener('DOMContentLoaded', evento => indexContr());
-document.addEventListener("click", evento => {
-    if (evento.target.matches("#submit")) createCount();
-    /*
-    else if (evento.target.matches('#show'))  showContr(evento.target.dataset.myId);
-    else if (evento.target.matches('#index')) indexContr();
-    */
-});

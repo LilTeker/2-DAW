@@ -1,7 +1,3 @@
-//MODELO
-
-//CONTROLADOR
-
 class Cuenta {
     
     constructor(numero, titular, saldo, interesAnual) {
@@ -9,52 +5,55 @@ class Cuenta {
         this.titular = titular;
         this.saldo = saldo;
         this.interesAnual = interesAnual;
+        this.movimientos = [];
     }
 
     ingreso(cantidad) {
-        saldo += cantidad;
+        this.saldo += cantidad;
+
+        this.registra("ingreso", cantidad);
     }
     
     reintegro(cantidad) {
-        saldo -= cantidad;
+        this.saldo -= cantidad;
+
+        this.registra("reintegro", cantidad);
     }
 
-    ingresoInteresMes() {
-        saldo = (interesAnual * saldo) / 12;
+    ingresoInteresMes() { //REVISAR COMO FUNCIONA ESTA FUNCION
+        let interes = (this.interesAnual * this.saldo) / 12;
+        this.saldo += interes;
+
+        this.registra("ingresoInteres", interes);
+
+        return interes;
     }
 
     enRojos() {
-        if (saldo < 0) {
+        if (this.saldo < 0) {
             return true;
         }
         return false;
     }
 
     leerSaldo() {
-        return saldo;
+        return this.saldo;
+    }
+
+    leerTitular() {
+        return this.titular.nombreCompleto();
+    }
+
+    salvar() {
+        let dataArray = [this.numero, this.titular.nombre, this.saldo, this.interesAnual];
+
+        localStorage.setItem(`cuenta${this.numero}`, JSON.stringify(dataArray));
+    }
+
+    registra(tipo, importe) {
+        let registro = new Movimiento(new Date(), tipo, importe, this.saldo);
+
+        this.movimientos.push(registro);
     }
 
 }
-
-function createCount() {
-    let numero = document.getElementById("numero").value;
-    let titular = document.getElementById("titular").value;
-    let saldo = document.getElementById("saldo").value;
-    let interesAnual = document.getElementById("interesAnual").value;
-
-    var cuenta1 = new Cuenta(numero, titular, saldo, interesAnual);
-}
-
-//VISTA
-
-
-
-//EVENTO
-//document.addEventListener('DOMContentLoaded', evento => indexContr());
-document.addEventListener("click", evento => {
-    if (evento.target.matches("#submit")) createCount();
-    /*
-    else if (evento.target.matches('#show'))  showContr(evento.target.dataset.myId);
-    else if (evento.target.matches('#index')) indexContr();
-    */
-});
