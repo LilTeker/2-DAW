@@ -21,7 +21,8 @@ if ( isset($_POST['who']) && isset($_POST['pass']) ) {
         $check = hash('md5', $salt.$_POST['pass']);
         if ( $check == $stored_hash ) {
             // Redirect the browser to game.php
-            header("Location: game.php?name=".urlencode($_POST['who']));
+            error_log("Login success ".$_POST['who']);
+            header("Location: autos.php?name=".urlencode($_POST['who']));
             return;
         } else {
             error_log("Login fail ".$_POST['who']." $check");
@@ -36,7 +37,7 @@ if ( isset($_POST['who']) && isset($_POST['pass']) ) {
 <html>
 <head>
 <?php require_once "bootstrap.php"; ?>
-<title>de29f569 Login Page</title>
+<title>61f57271 Login Page</title>
 </head>
 <body>
 <div class="container">
