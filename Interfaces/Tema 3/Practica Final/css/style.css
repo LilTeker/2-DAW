@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E4DFDA;
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+
+header {
+    background-color: #C1666B;
+    color: #D4B483;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#videoContainer {
+    background-color: #49111C;
+    color: white;
+}
+
+div.img img {
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+    -webkit-animation: imgAnim 1s ease-in-out;
+    animation: imgAnim 1s ease-in-out;
+}
+
+div.img img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+@keyframes imgAnim {
+    50% {transform: translateY(1em) rotate(180deg);}
+    100% {transform: translateY(0) rotate(360deg);}
+}
+
+.containerSongImg {
+    position: relative;
+}
+
+.elementsSongImg {
+    opacity: 0;
+    background-color: orange;
+    float: left;
+    z-index: 100;
+    position: absolute;
+    transition: opacity .2s, box-shadow .2s;
+    text-align: center;
+}
+
+.elementsSongImg:hover {
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 40px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.6;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    #imgContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .img {
+        padding-bottom: 1em;
+        padding-top: 1em;
+    }
+    
+    div.img img {
+        width: 200px;
+        height: 200px;
+    }
+
+
+    #videoContainer {
+        padding-top: 2em;
+        padding-bottom: 1em;
+        display: grid;
+        gap: 40px;
+    }
+
+    .video video {
+        width: 384px;
+        height: 216px;
+    }
+    
+    #songsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .song {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .song div img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .containerSongImg {
+        padding: auto;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+    }
+
+    .elementsSongImg {
+        width: 200px;
+        height: 200px;
+    }
+
+    iframe {
+        width: 80%;
+        margin: auto;
+        padding: auto;
+        padding-bottom: 1em;
+    }
+
+
+    #indicator {
+        display: none;
+    }
+
+}
