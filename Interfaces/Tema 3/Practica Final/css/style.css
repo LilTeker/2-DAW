@@ -58,6 +58,12 @@ div.img img:hover {
     opacity: 0.6;
 }
 
+#pausa {
+    display: none;
+}
+
+
+
 
 @media screen and (max-width: 600px) {
 
