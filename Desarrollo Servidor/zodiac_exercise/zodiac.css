@@ -1,0 +1,120 @@
+/**
+ * mclibre_php_soluciones_proyectos_comun.css
+ * 
+ * @author    Bartolomé Sintes Marco <bartolome.sintes+mclibre@gmail.com>
+ * @copyright 2011 Bartolomé Sintes Marco
+ * @license   http://www.gnu.org/licenses/agpl.txt AGPL 3 or later
+ * @version   2011-11-21
+ * @link      http://www.mclibre.org
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+html, body { 
+  background-color: #FDF0D9; 
+  color: black; 
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 { 
+  background-color: #EDA87D; 
+  color: white; 
+  text-transform: uppercase; 
+  margin: 0;
+  padding: 5px;
+}
+
+.page {
+  background-color: #F2BA5F;
+  padding: 5px;
+}
+
+div#menu { 
+  background-color: #F2BA5F; 
+  color: white; 
+  margin: 0;
+}
+
+div#menu ul { 
+  list-style-type: none; 
+  margin: 0 5px;
+  padding: 10px; 
+}
+
+div#menu li { 
+  display: inline; 
+  padding: 0 15px;
+}
+
+
+div#menu a { 
+  background-color: #F2BA5F; 
+  color: white; 
+  font-weight: bold; 
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+div#menu a:hover, div#menu a:active {
+   background-color: #8c99a4;
+   padding: 5px;
+}
+div#content { 
+  padding: 10px; 
+}
+
+input {
+  font-family: monospace;
+}
+
+.warning {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+img { 
+  border: none; 
+}
+
+tr.neg { 
+  background-color: #F9DDAE; 
+  color: black; 
+}
+
+td, th { 
+  padding-left: 5px; 
+  padding-right: 5px; 
+}
+
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+footer {
+  border-top: black solid 1px;
+  clear: both;
+  margin: 50px 20px 0;
+  padding: 5px 0 0;
+}
+
+p.license { 
+  text-align: center; 
+}
