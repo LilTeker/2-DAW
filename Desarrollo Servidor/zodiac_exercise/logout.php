@@ -1,5 +1,8 @@
 <?php
-/*  
-   Complete the code to destroy the session and the session coookie as well
-*/
+
+session_start();
+
+if (isset($_SESSION["userName"])) {
+    unset($_SESSION["userName"]);
+}
 header("Location: index.php");

@@ -31,11 +31,30 @@ require_once "zodiac_functions.php";
 
 pageTop("Log In", BACK_MENU);
 
-echo ($_POST['user']);
+session_start();
 
 if (isset($_POST["user"]) && isset($_POST["pass"])) {
     if (strlen($_POST["user"]) < 1 || strlen($_POST["pass"]) < 1) {
+        $_SESSION["error"] = "User and Password are required";
+        header("Location: index.php");
+        return;
+    } else {
+        $stored_hash = '$2y$10$YFhebj9wTFzwAgrVMV8TEuiIJMCtsXgV4gRe9JiIcBBAuiMhA0AuC';
+        if ($_POST["user"] && password_verify($_POST["pass"], $stored_hash)) {
+            $_SESSION["userName"] = $_POST["user"];
+            header("Location: zodiac.php");
+            return;
+        } else {
+            $_SESSION["error"] = "User or password are incorrect";
+            header("Location: index.php");
+            return;
+        }
     }
+}
+
+if (isset($_SESSION["error"])) {
+    echo('<p style="color: red">' . $_SESSION["error"] .'</p>');
+    unset($_SESSION["error"]);
 }
 ?>
   <form method="POST" action="index.php">

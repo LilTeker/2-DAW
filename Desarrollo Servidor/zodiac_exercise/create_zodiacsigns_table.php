@@ -30,14 +30,9 @@
 require_once "zodiac_functions.php";
 
 pageTop("Create zodiacsigns Table", BACK_MENU);
+require_once "pdo.php";
 
-echo "<p class='warning'>Complete the code to create the <strong><em>zodiacsigns</em> table</strong> in the zodiac database</p>";
-/*  
-   Complete the code  
-*/
-/* zodiac table from http://docstore.mik.ua/orelly/webprog/pcook/ch10_01.htm */
-
-$query = "CREATE TABLE IF NOT EXISTS zodiacsigns (
+$query = "CREATE TABLE zodiacsigns (
   id INT UNSIGNED NOT NULL, 
   sign CHAR(11), 
   symbol CHAR(13),
@@ -49,5 +44,15 @@ $query = "CREATE TABLE IF NOT EXISTS zodiacsigns (
   end_day TINYINT,
   PRIMARY KEY(id)
 );";
+
+try {
+    $pdo->exec("USE zodiac;");
+    $execResult = $pdo->exec($query);
+    echo "<p style='color: green'>Table zodiacsigns has been created</p>";
+} catch (Exception $e) {
+    echo ("<p style='color: red'>Could not create zodiacsigns table or it already exists</p>");
+}
+
+echo("<p>... and the connection is closed</p>");
 
 pageBottom("2020-11-20");

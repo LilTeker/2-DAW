@@ -30,8 +30,14 @@
 require_once "zodiac_functions.php";
 
 pageTop("Home", MAIN_MENU);
+session_start();
 
-echo "<h2 class='warning'>These pages should not be displayed without <em>log in</em></h2>";
+if (isset($_SESSION["userName"])) {
+    echo "<h2 style='color: green'>You are loged in as \"" . $_SESSION["userName"] . "\"</h2>";
+} else {
+    $_SESSION["error"] = "You are not logged in";
+    header("Location: index.php");
+}
 
 pageBottom("2020-11-20");
 

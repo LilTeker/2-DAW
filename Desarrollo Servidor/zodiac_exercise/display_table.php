@@ -31,10 +31,25 @@ require_once "zodiac_functions.php";
 
 pageTop("Display zodiacsigns table", BACK_MENU);
 
-echo "<p class='warning'>Complete the code to display the <strong><em>zodiacsigns</em> Table</strong></p>";
-/*  
-   Complete the code  
-*/
+require_once "pdo.php";
+
+try {
+    $pdo->exec("USE zodiac;");
+    $stmt = $pdo->query("SELECT * FROM zodiacsigns");
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo "<table>";
+    echo "<tr><th>Id</th><th>sign</th><th>symbol</th><th>planet</th><th>element</th><th>start_month</th><th>start_day</th><th>end_month</th><th>end_day</th></tr>";
+    foreach ($rows as $row) {
+        echo "<tr>";
+        echo("<td>" . $row["id"] . "</td><td>" . $row["sign"] . "</td><td>" . $row["symbol"] . "</td><td>" . $row["planet"] . "</td><td>" . $row["element"] . "</td><td>" . $row["start_month"] . "</td><td>" . $row["start_day"] . "</td><td>" . $row["end_month"] . "</td><td>" . $row["end_day"] . "</td>");
+        echo "</tr>";
+    }
+    echo "</table>";
+} catch (Exception $e) {
+    echo "<p style='color: red'>Could not retrieve the data from the database, maybe the db or the table is not created?</p>";
+}
+
+echo("<p>... and the connection is closed</p>");
 
 
 pageBottom("2020-11-20");

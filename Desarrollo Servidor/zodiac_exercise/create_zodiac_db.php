@@ -30,11 +30,19 @@
 require_once "zodiac_functions.php";
 
 pageTop("Create zodiac DB", BACK_MENU);
+require_once  "pdo.php";
 
-echo "<p class='warning'>Complete the code to create the <strong><em>zodiac</em> database</strong></p>";
-/*  
-   Complete the code
-*/
+try {
+    $execResult = $pdo->exec("CREATE DATABASE zodiac; USE zodiac;");
+
+    if ($execResult == 1) {
+        echo "<p style='color: green'>Zodiac database has been created</p>";
+    }
+} catch (Exception $e) {
+    echo "<p style='color: red'>Could not create <b>zodiac</b> db or it already exists</p>";
+}
+
+echo("<p>... and the connection is closed</p>");
 
 pageBottom("2020-11-20");
 

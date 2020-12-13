@@ -29,11 +29,16 @@
 require_once "zodiac_functions.php";
 
 pageTop("Drop zodiacsigns Table", BACK_MENU);
+require_once "pdo.php";
 
-echo "<p class='warning'>Complete the code to Delete the <strong><em>zodiacsigns</em> Table</strong></p>";
-/*  
-   Complete the code  
-*/
+try {
+    $pdo->exec("USE zodiac;");
+    $execResult = $pdo->exec("DROP TABLE zodiacsigns");
+    echo "<p style='color: green'>Table zodiacsigns has deleted</p>";
+} catch (Exception $e) {
+    echo ("<p style='color: red'>Could not delete zodiacsigns table or it has already been deleted</p>");
+}
+
+echo("<p>... and the connection is closed</p>");
 
 pageBottom("2020-11-20");
-

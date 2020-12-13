@@ -29,12 +29,17 @@
 require_once "zodiac_functions.php";
 
 pageTop("Drop zodiac DB", BACK_MENU);
+require_once "pdo.php";
 
-echo "<p class='warning'>Complete the code to Delete the <strong><em>zodiac</em> Database</strong></p>";
-/*  
-   Complete the code  
-*/
+try {
+    $pdo->exec("USE zodiac;");
+    $execResult = $pdo->exec("DROP DATABASE IF EXISTS zodiac");
+    echo "<p style='color: green'>Database zodiac has deleted</p>";
+} catch (Exception $e) {
+    echo ("<p style='color: red'>Could not delete zodiac db or it has already been deleted</p>");
+}
 
+echo("<p>... and the connection is closed</p>");
 
 pageBottom("2020-11-20");
 

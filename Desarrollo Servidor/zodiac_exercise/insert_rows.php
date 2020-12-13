@@ -31,12 +31,7 @@ require_once "zodiac_functions.php";
 
 pageTop("Insert Rows zodiacsigns table", BACK_MENU);
 
-echo "<p class='warning'>Complete the code to insert the rows in the <strong><em>zodiacsigns</em> table</strong></p>";
-/*  
-   Complete the code  
-*/
-
-/* zodiac table from http://docstore.mik.ua/orelly/webprog/pcook/ch10_01.htm */
+require_once "pdo.php";
 
 $query = "INSERT INTO zodiacsigns VALUES (1,'Aries','Ram','Mars','fire',3,21,4,19),
 (2,'Taurus','Bull','Venus','earth',4,20,5,20),
@@ -50,5 +45,15 @@ $query = "INSERT INTO zodiacsigns VALUES (1,'Aries','Ram','Mars','fire',3,21,4,1
 (10,'Capricorn','Goat','Saturn','earth',12,22,1,19),
 (11,'Aquarius','Water Carrier','Uranus','air',1,20,2,18),
 (12,'Pisces','Fishes','Neptune','water',2,19,3,20);";
+
+try {
+    $pdo->exec("USE zodiac;");
+    $execResult = $pdo->exec($query);
+    echo "<p style='color: green'>Rows have been inserted</p>";
+} catch (Exception $e) {
+    echo ("<p style='color: red'>Could not insert rows or they already are inserted</p>");
+}
+
+echo("<p>... and the connection is closed</p>");
 
 pageBottom("2020-11-20");
