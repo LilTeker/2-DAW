@@ -1,0 +1,33 @@
+// Ejercicio 01
+// Utilizando expresiones regulares, devuelve las palabras de 3 letras del string ex1.
+
+ex1.match(\b[\w]{3}\b); 
+
+
+
+// Ejercicio 02
+// Utilizando expresiones regulares, elimina todos los numeros de la cadena ex2.
+
+ex2.replace(\d,"");
+
+
+
+// Ejercicio 03
+// Utilizando expresiones regulares, encuentra el valor de la cadena ex3
+
+ex3.match([$]\d\d*[.]\d*);
+
+
+
+// Ejercicio 04
+// Utilizando expresiones regulares, encuentra el nÃºmero de telÃ©fono de la cadena ex4
+
+ex4.match(\d{4}\s\d{3}\s\d{3});
+
+
+
+
+// Ejercicio 05
+// Utilizando expresiones regulares, devuelve la direcciÃ³n de correo que estÃ¡ en la cadena ex5
+
+ex4.match(\w+[@]\w+[.]\w+);
