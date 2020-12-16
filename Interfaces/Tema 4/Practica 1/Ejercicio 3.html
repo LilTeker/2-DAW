@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ejercicio 3 Bootstrap</title>
+		<link rel="stylesheet" href="css/ejerc3.css"> <!--Enlace a bootstrap remoto-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 header">
+					<p> Header</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class=" offset-lg-3 cuadrados col-md-3 col-sm-6">
+					<p>1</p>
+				</div>
+				<div class="cuadrados col-md-3 col-sm-6">
+					<p>2</p>
+				</div>
+				<div class="w-100 d-none d-lg-block"></div>
+				<div class="cuadrados col-md-3 col-sm-6">
+					<p>3</p>
+				</div>
+				<div class="offset-lg-6 cuadrados col-md-3 col-sm-6">
+					<p>4</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 desktop d-none d-md-block d-lg-none">
+					<p> Tablet</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="order-lg-4 cuadrados2 col-md-3 col-sm-6">
+					<p>a</p>
+				</div>
+				<div class="order-lg-3 cuadrados2 col-md-3 col-sm-6 ">
+					<p>b</p>
+				</div>
+				<div class="order-lg-2 cuadrados2 col-md-3 col-sm-6">
+					<p>c</p>
+				</div>
+				<div class="order-lg-1 cuadrados2 col-md-3 col-sm-6">
+					<p>d</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 desktop d-none d-sm-block d-md-none">
+					<p> Mobile</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 desktop d-none d-lg-block">
+					<p> Desktop</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 offset-lg-3 order-lg-1 caras col-md-6 order-md-2 d-none d-md-block">
+					<p>:(</p>
+				</div>
+				<div class="col-lg-3 order-lg-2 caras col-md-6 order-md-1">
+					<p>:D</p>
+				</div>
+			</div>
+				<div class="row">
+				<div class="col-lg-12 header d-none d-md-block">
+					<p> Footer</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
