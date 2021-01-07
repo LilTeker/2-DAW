@@ -1,0 +1,11 @@
+html {
+    font-size: xx-large;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th div, td div {
+    padding: 1em;
+}

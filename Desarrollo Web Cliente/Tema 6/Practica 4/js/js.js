@@ -42,6 +42,7 @@ function label() {
 
     //Busco el input y añado el label encima de el
     let targetInput = document.querySelector(`input[name=${input}]`);
+    console.log(targetInput);
 
     targetInput.parentNode.insertBefore(newLabel, targetInput);
 }
