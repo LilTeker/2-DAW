@@ -20,17 +20,12 @@ class square {
     setColor(color) {
         this.color = color;
     }
+
+    getColor() {
+        return this.color;
+    }
+
+    getNumber() {
+        return this.html;
+    }
 }
-
-/*
-    let input = prompt("Escriba el nombre del input al que va referido");
-
-    let newLabel = document.createElement("label");
-    newLabel.setAttribute("for", input);
-    newLabel.innerText = input;
-
-    //Busco el input y añado el label encima de el
-    let targetInput = document.querySelector(`input[name=${input}]`);
-
-    targetInput.parentNode.insertBefore(newLabel, targetInput);
-    */

@@ -8,4 +8,5 @@ table, th, td {
 
 th div, td div {
     padding: 1em;
+    width: 1em;
 }
