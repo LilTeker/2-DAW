@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40aaf65e-9a43-4e47-9847-26df57e705ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Favourite Cookie/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Favourite Cookie/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +33,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1khkfYuTiJCqJjmXyEvA4JGF84I" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="/opt/lampp/htdocs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -57,6 +61,7 @@
       <workItem from="1606160316225" duration="214000" />
       <workItem from="1606160592059" duration="911000" />
       <workItem from="1606844400612" duration="220000" />
+      <workItem from="1610640718229" duration="2420000" />
     </task>
     <servers />
   </component>
@@ -74,19 +79,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="444" y="160" width="467" height="432" key="#Web_Browsers" timestamp="1606160360317">
-      <screen x="0" y="27" width="1366" height="700" />
-    </state>
-    <state x="444" y="160" width="467" height="432" key="#Web_Browsers/0.27.1366.700@0.27.1366.700" timestamp="1606160360317" />
-    <state x="460" y="134" width="424" height="484" key="FileChooserDialogImpl" timestamp="1606844622761">
-      <screen x="0" y="27" width="1366" height="700" />
-    </state>
-    <state x="460" y="134" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.700@0.27.1366.700" timestamp="1606844622761" />
-    <state x="172" y="27" width="1012" height="700" key="SettingsEditor" timestamp="1606160515221">
-      <screen x="0" y="27" width="1366" height="700" />
-    </state>
-    <state x="172" y="27" width="1012" height="700" key="SettingsEditor/0.27.1366.700@0.27.1366.700" timestamp="1606160515221" />
   </component>
 </project>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<definitions name="Servicio" targetNamespace="urn:Aleatorio"
+     xmlns:tns="urn:Aleatorio"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+  <message name="Entrada">
+    <part name="min" type="xsd:int" />
+    <part name="max" type="xsd:int" />
+  </message>
+ 
+  <message name="Salida">
+    <part name="respuesta" type="xsd:int" />
+  </message>
+ 
+  <message name="SinEntrada">
+    <part name="nada" type="xsd:anyType" />
+  </message>
+
+  <portType name="Operaciones">
+    <operation name="genera_numero">
+      <input message="tns:Entrada" />
+      <output message="tns:Salida" />
+    </operation>
+    <operation name="tirar_dado">
+      <input message="tns:SinEntrada" />
+      <output message="tns:Salida" />
+    </operation>
+  </portType>
+ 
+  <binding name="Enlace" type="tns:Operaciones">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="genera_numero">
+        <soap:operation soapAction="urn:Aleatorio#genera_numero" />
+        <input>
+          <soap:body use="encoded" namespace="urn:Aleatorio" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:Aleatorio" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </output>
+    </operation>
+    <operation name="tirar_dado">
+        <soap:operation soapAction="urn:Aleatorio#tirar_dado" />
+        <input>
+          <soap:body use="encoded" namespace="urn:Aleatorio" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />      
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:Aleatorio" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />      
+        </output>
+    </operation>
+  </binding>
+ 
+  <service name="Servicio">
+    <port name="Operaciones" binding="tns:Enlace">
+      <soap:address location="http://localhost/wservice/08-soapserver-wsdl.php" />
+    </port>
+  </service>
+
+</definitions>
