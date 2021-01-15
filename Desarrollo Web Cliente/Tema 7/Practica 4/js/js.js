@@ -10,10 +10,8 @@
 //setInterval(() => {
 //   printDate(); 
 //}, 1000);
+let date = new Date();
 
-let promise = new Promise((resolve, reject) => {
-    if
-});
 
 
 async function getDate() {
@@ -30,7 +28,11 @@ setInterval(() => {
 }, 1000);
 
 document.addEventListener("click", () => {
+    let promise = new Promise((resolve, reject) => {
+        let date = new Date();
+        let tInicial = date.getTime();
 
+    });
 });
 
 //https://stackoverflow.com/questions/2330638/calculating-the-time-between-two-clicks-in-javascript
