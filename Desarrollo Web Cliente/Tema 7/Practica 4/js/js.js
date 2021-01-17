@@ -1,38 +1,27 @@
-//return new Date();
-//async function getDate() {
-//}
-//
-//async function printDate() {
-//    let date = await getDate();
-//    document.getElementById("data").innerHTML = date.toUTCString();
-//}
-//
-//setInterval(() => {
-//   printDate(); 
-//}, 1000);
+
 let date = new Date();
+let timeToClick = 10000;
 
-
-
-async function getDate() {
-    return new Date();
+function calculateTime(timeMs) {
+    return new Promise((resolve, reject) => {
+        let newTime = new Date();
+        let timeElapsed = newTime.getTime() - date.getTime();
+        if (timeElapsed < timeToClick) {
+            resolve(`Bien hecho hiciste click en ${timeElapsed} ms`);
+        } else {
+            reject(`Has tardado demasiado, hiciste click en ${timeElapsed} ms`);
+        }
+    });
 }
-
-async function printDate() {
-    let date = await getDate();
-    document.getElementById("data").innerHTML = date.toUTCString();
-}
-
-setInterval(() => {
-   printDate(); 
-}, 1000);
 
 document.addEventListener("click", () => {
-    let promise = new Promise((resolve, reject) => {
-        let date = new Date();
-        let tInicial = date.getTime();
-
+    
+    calculateTime(timeToClick)
+    .then(text => {
+        document.getElementById("data").innerHTML = text;
+    })
+    .catch(text => {
+        document.getElementById("data").innerHTML = text;
     });
-});
 
-//https://stackoverflow.com/questions/2330638/calculating-the-time-between-two-clicks-in-javascript
+});
