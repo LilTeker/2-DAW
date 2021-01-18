@@ -51,6 +51,8 @@
         $url = filter_var($url, FILTER_SANITIZE_URL);
         $url = explode('/', $url);
         return $url;
+      } else {
+          return Array('pages', 'index');
       }
     }
   } 

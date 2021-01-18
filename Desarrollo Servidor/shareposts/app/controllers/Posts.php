@@ -140,6 +140,7 @@
         // Check for owner
         if($post->user_id != $_SESSION['user_id']){
           redirect('posts');
+          return;
         }
 
         if($this->postModel->deletePost($id)){
