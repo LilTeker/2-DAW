@@ -1,0 +1,26 @@
+$font: "Coda Caption", sans-serif;
+$bck: #EAF7CF;
+
+@mixin fontStyle {
+    font-family: $font;
+}
+
+
+html {
+    body {
+        background-color: $bck;
+    }
+}
+
+.exampleMixin {
+    @include fontStyle;
+}
+
+.extendExample {
+    @extend .exampleMixin;
+    color: $bck;
+}
+
+#carouselExampleIndicators {
+    padding: 0;
+}

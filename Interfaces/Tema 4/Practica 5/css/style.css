@@ -1,0 +1,16 @@
+html body {
+  background-color: #EAF7CF;
+}
+
+.exampleMixin, .extendExample {
+  font-family: "Coda Caption", sans-serif;
+}
+
+.extendExample {
+  color: #EAF7CF;
+}
+
+#carouselExampleIndicators {
+  padding: 0;
+}
+/*# sourceMappingURL=style.css.map */
