@@ -1,8 +1,11 @@
 $(document).ready(function () {
-    $("p").nextUntil("p").css("color", "red");//??????????????????????
+    $("p:first").next().css("font-weight", "bold");
+
     $("[href]").css("border", "1px solid black");
 
-    $(":empty").text("Nodo Vacío");
+    $("ul li ul li:nth-child(2)").css("color", "red");
+
+    $(":empty").text("Nodo Vacío");    
 });
 
 

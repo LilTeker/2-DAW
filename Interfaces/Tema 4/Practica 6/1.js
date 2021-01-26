@@ -1,13 +1,19 @@
 $(document).ready(function () {
     $("h2").css({"color": "blue"});
+
     $("#vacations h2").text("VélezMálaga");
+
     $("#vacations").css("background-color", "red");
+
     $(".america").css("font-size", "30px");
+    
     $.each($(".details"), function () { 
         let value = $(this).text();
-        valueClean = value.replace("$","");
-        valueNew = (valueClean * 0.10) + valueClean;
-        console.log(valueNew);
+        valueStr1 = value.replace("$","");
+        valueStr2 = valueStr1.replace(",","");
+        let valueCleanInt = parseFloat(valueStr2);
+        valueNew = (valueCleanInt * 0.10) + valueCleanInt;
+        $(this).text("$" + valueNew);
     });
     
     let values = $(".details").text().slice();
