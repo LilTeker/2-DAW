@@ -1,0 +1,24 @@
+.imgTable {
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.respuestaPreguntas {
+  display: none;
+}
+
+#blockContainer {
+  width: 800px;
+  height: 200px;
+}
+
+#block {
+  width: 150px;
+  height: 150px;
+  margin: 50px;
+  background-color: blue;
+  float: left;
+}
+/*# sourceMappingURL=styles.css.map */

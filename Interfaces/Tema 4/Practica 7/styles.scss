@@ -1,0 +1,19 @@
+.imgTable {
+    transition: transform .2s;
+}
+.respuestaPreguntas {
+    display: none;
+}
+
+#blockContainer {
+    width: 800px;
+    height: 200px;
+}
+
+#block {
+    width: 150px;
+    height: 150px;
+    margin: 50px;
+    background-color: blue;
+    float: left;
+}
