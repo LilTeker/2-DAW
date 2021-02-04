@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Practicas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+</head>
+
+<body>
+    <h2>1. Pinta un tablero de ajedrez</h2>
+
+
+    <div id="chess">
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+
+        <br>
+
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+
+        <br>
+
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+
+        <br>
+
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+
+        <br>
+
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+
+        <br>
+
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+
+        <br>
+
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+
+        <br>
+
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+
+        <br>
+
+    </div>
+
+
+    <hr>
+    <h2>2. Crear un text área con un número de caracteres limitado y mostrar un
+        contador con el número de caracteres actual</h2>
+
+        <form>
+            <label for="inputText">Máximo 15 caracteres</label><br>
+            <input type="text" name="inputText" id="inputText">
+        </form>
+        <p id="infoText"></p>
+
+
+    <br>
+    <hr>
+    <h2>3. Mostrar un mensaje indicando el botón correspondiente, cuando el usuario pulse:
+        a. La tecla ‘Enter’
+        b. El botón izquierdo del ratón
+        c. El botón derecho del ratón</h2>
+
+        <p id="keyboardInputInfo"></p>
+
+    <br>
+    <hr>
+    <h2>4. Crea un input text en el que solo se permita introducir números</h2>
+
+    <form>
+        <label for="onlyNum">Solo puedes escribir numeros</label><br>
+        <input type="text" name="onlyNum" id="onlyNum">
+    </form>
+
+
+    <br>
+    <hr>
+    <h2>5. Un mensaje donde indique en el bloque donde estamos
+        interactuando y cambia algún aspecto de ese bloque</h2>
+
+    <section>
+        <h3 id="blockText">Estás en el Bloque 1</h3>
+        <div class="block" data-id="1">
+            <h3>Bloque 1</h3>
+        </div><br>
+        <div class="block" data-id="2">
+            <h3>Bloque 2</h3>
+        </div><br>
+        <div class="block" data-id="3">
+            <h3>Bloque 3</h3>
+        </div>
+    </section>
+
+    <br>
+    <hr>
+    <h2>6. Inserta una imagen de un elemento (por ejemplo una
+        bombilla) y haz que el pulsar sobre esta se cambie la
+        imagen por otra. Al volver a hacer click, esta cambiará de
+        nuevo a la anterior</h2>
+
+
+        <img src="img/bombillaOff.jpg" alt="bombilla" id="imgBombilla">
+
+</body>
+
+</html>

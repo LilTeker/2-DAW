@@ -1,0 +1,20 @@
+#chess {
+  width: 100%;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.block {
+  border: 1px solid black;
+  width: 100%;
+}
+
+#imgBombilla {
+  width: 275px;
+  height: 375px;
+}
+/*# sourceMappingURL=styles.css.map */
