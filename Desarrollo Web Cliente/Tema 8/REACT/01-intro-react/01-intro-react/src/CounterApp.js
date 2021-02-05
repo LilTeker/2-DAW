@@ -1,22 +1,30 @@
-import React, { Fragment} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const CounterApp  = ({val}) => { 
+const CounterApp  = ({value}) => { 
     
     //handleAdd
+    const handleAdd = (e) => {
+        value += 1;
+    }
+
+
+
     return( 
-        <Fragment>
-            <h1>Hola MUndo</h1>
-            <p> {val} </p>
-        </Fragment>
+        <>
+            <h1>CounterApp</h1>
+            <h2>{value}</h2>
+            <button onClick={  handleAdd }>+1</button>
+        </>
     );
 }
 
 CounterApp.propTypes = {
-    val: PropTypes.number
+    value: PropTypes.number
 }
 
 export default CounterApp;
+
 
 //import React, { Fragment} from 'react';
 //import PropTypes from 'prop-types';
