@@ -1,0 +1,217 @@
+code;name;pop;rank
+CHN;China;1397715;1
+IND;India;1366418;2
+USA;United States;328240;3
+IDN;Indonesia;270626;4
+PAK;Pakistan;216565;5
+BRA;Brazil;211050;6
+NGA;Nigeria;200964;7
+BGD;Bangladesh;163046;8
+RUS;Russian Federation;144374;9
+MEX;Mexico;127576;10
+JPN;Japan;126265;11
+ETH;Ethiopia;112079;12
+PHL;Philippines;108117;13
+EGY;Egypt, Arab Rep.;100388;14
+VNM;Vietnam;96462;15
+COD;Congo, Dem. Rep.;86791;16
+TUR;Turkey;83430;17
+DEU;Germany;83133;18
+IRN;Iran, Islamic Rep.;82914;19
+THA;Thailand;69626;20
+FRA;France;67060;21
+GBR;United Kingdom;66834;22
+ITA;Italy;60297;23
+ZAF;South Africa;58558;24
+TZA;Tanzania;58005;25
+MMR;Myanmar;54045;26
+KEN;Kenya;52574;27
+KOR;Korea, Rep.;51709;28
+COL;Colombia;50339;29
+ESP;Spain;47077;30
+ARG;Argentina;44939;31
+UKR;Ukraine;44385;32
+UGA;Uganda;44270;33
+DZA;Algeria;43053;34
+SDN;Sudan;42813;35
+IRQ;Iraq;39310;36
+AFG;Afghanistan;38042;37
+POL;Poland;37971;38
+CAN;Canada;37589;39
+MAR;Morocco;36472;40
+SAU;Saudi Arabia;34269;41
+UZB;Uzbekistan;33581;42
+PER;Peru;32510;43
+MYS;Malaysia;31950;44
+AGO;Angola;31825;45
+GHA;Ghana;30418;46
+MOZ;Mozambique;30366;47
+YEM;Yemen, Rep.;29162;48
+NPL;Nepal;28609;49
+VEN;Venezuela, RB;28516;50
+MDG;Madagascar;26969;51
+CMR;Cameroon;25876;52
+CIV;Côte d'Ivoire;25717;53
+PRK;Korea, Dem. People's Rep.;25666;54
+AUS;Australia;25364;55
+NER;Niger;23311;56
+LKA;Sri Lanka;21803;57
+BFA;Burkina Faso;20321;58
+MLI;Mali;19658;59
+ROU;Romania;19357;60
+CHL;Chile;18952;61
+MWI;Malawi;18629;62
+KAZ;Kazakhstan;18514;63
+ZMB;Zambia;17861;64
+ECU;Ecuador;17374;65
+NLD;Netherlands;17333;66
+SYR;Syrian Arab Republic;17070;67
+GTM;Guatemala;16604;68
+KHM;Cambodia;16487;69
+SEN;Senegal;16296;70
+TCD;Chad;15947;71
+SOM;Somalia;15443;72
+ZWE;Zimbabwe;14645;73
+GIN;Guinea;12771;74
+RWA;Rwanda;12627;75
+BEN;Benin;11801;76
+TUN;Tunisia;11695;77
+BDI;Burundi;11531;78
+BOL;Bolivia;11513;79
+BEL;Belgium;11484;80
+CUB;Cuba;11333;81
+HTI;Haiti;11263;82
+SSD;South Sudan;11062;83
+DOM;Dominican Republic;10739;84
+GRC;Greece;10716;85
+CZE;Czech Republic;10670;86
+SWE;Sweden;10285;87
+PRT;Portugal;10269;88
+JOR;Jordan;10102;89
+AZE;Azerbaijan;10023;90
+ARE;United Arab Emirates;9771;91
+HUN;Hungary;9770;92
+HND;Honduras;9746;93
+BLR;Belarus;9467;94
+TJK;Tajikistan;9321;95
+ISR;Israel;9053;96
+AUT;Austria;8877;97
+PNG;Papua New Guinea;8776;98
+CHE;Switzerland;8575;99
+TGO;Togo;8082;100
+SLE;Sierra Leone;7813;101
+HKG;Hong Kong SAR, China;7507;102
+LAO;Lao PDR;7169;103
+PRY;Paraguay;7045;104
+BGR;Bulgaria;6976;105
+SRB;Serbia;6945;106
+LBN;Lebanon;6856;107
+LBY;Libya;6777;108
+NIC;Nicaragua;6546;109
+KGZ;Kyrgyz Republic;6457;110
+SLV;El Salvador;6454;111
+TKM;Turkmenistan;5942;112
+DNK;Denmark;5819;113
+SGP;Singapore;5704;114
+FIN;Finland;5520;115
+SVK;Slovak Republic;5454;116
+COG;Congo, Rep.;5381;117
+NOR;Norway;5348;118
+CRI;Costa Rica;5048;119
+OMN;Oman;4975;120
+IRL;Ireland;4941;121
+LBR;Liberia;4937;122
+NZL;New Zealand;4917;123
+CAF;Central African Republic;4745;124
+PSE;West Bank and Gaza;4685;125
+MRT;Mauritania;4526;126
+PAN;Panama;4246;127
+KWT;Kuwait;4207;128
+HRV;Croatia;4068;129
+GEO;Georgia;3720;130
+URY;Uruguay;3462;131
+BIH;Bosnia and Herzegovina;3301;132
+MNG;Mongolia;3225;133
+PRI;Puerto Rico;3194;134
+ARM;Armenia;2958;135
+JAM;Jamaica;2948;136
+ALB;Albania;2854;137
+QAT;Qatar;2832;138
+LTU;Lithuania;2787;139
+MDA;Moldova;2658;140
+NAM;Namibia;2495;141
+GMB;Gambia, The;2348;142
+BWA;Botswana;2304;143
+GAB;Gabon;2173;144
+LSO;Lesotho;2125;145
+SVN;Slovenia;2088;146
+MKD;North Macedonia;2083;147
+GNB;Guinea-Bissau;1921;148
+LVA;Latvia;1913;149
+XKX;Kosovo;1794;150
+BHR;Bahrain;1641;151
+TTO;Trinidad and Tobago;1395;152
+GNQ;Equatorial Guinea;1356;153
+EST;Estonia;1327;154
+TLS;Timor-Leste;1293;155
+MUS;Mauritius;1266;156
+CYP;Cyprus;1199;157
+SWZ;Eswatini;1148;158
+DJI;Djibouti;974;159
+FJI;Fiji;890;160
+COM;Comoros;851;161
+GUY;Guyana;783;162
+BTN;Bhutan;763;163
+SLB;Solomon Islands;670;164
+MAC;Macao SAR, China;640;165
+MNE;Montenegro;622;166
+LUX;Luxembourg;620;167
+SUR;Suriname;581;168
+CPV;Cabo Verde;550;169
+MDV;Maldives;531;170
+MLT;Malta;503;171
+BRN;Brunei Darussalam;433;172
+BLZ;Belize;390;173
+BHS;Bahamas, The;389;174
+ISL;Iceland;361;175
+VUT;Vanuatu;300;176
+NCL;New Caledonia;288;177
+BRB;Barbados;287;178
+PYF;French Polynesia;279;179
+STP;São Tomé and Principe;215;180
+WSM;Samoa;197;181
+LCA;St. Lucia;183;182
+CHI;Channel Islands;172;183
+GUM;Guam;167;184
+CUW;Curaçao;158;185
+KIR;Kiribati;118;186
+FSM;Micronesia, Fed. Sts.;114;187
+GRD;Grenada;112;188
+VCT;St. Vincent and the Grenadines;111;189
+VIR;Virgin Islands (U.S.);107;190
+ABW;Aruba;106;191
+TON;Tonga;104;192
+SYC;Seychelles;98;193
+ATG;Antigua and Barbuda;97;194
+IMN;Isle of Man;85;195
+AND;Andorra;77;196
+DMA;Dominica;72;197
+CYM;Cayman Islands;65;198
+BMU;Bermuda;64;199
+MHL;Marshall Islands;59;200
+MNP;Northern Mariana Islands;57;201
+GRL;Greenland;56;202
+ASM;American Samoa;55;203
+KNA;St. Kitts and Nevis;53;204
+FRO;Faroe Islands;49;205
+SXM;Sint Maarten (Dutch part);41;206
+MCO;Monaco;39;207
+TCA;Turks and Caicos Islands;38;208
+LIE;Liechtenstein;38;209
+MAF;St. Martin (French part);38;210
+SMR;San Marino;34;211
+GIB;Gibraltar;34;212
+VGB;British Virgin Islands;30;213
+PLW;Palau;18;214
+NRU;Nauru;13;215
+TUV;Tuvalu;12;216
