@@ -8,7 +8,9 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <script src="js.js"></script>
 </head>
 
@@ -20,47 +22,45 @@
                     <label for="name" class="form-label">Nombre</label>
                     <input type="text" name="name" class="form-control" id="name" placeholder="Miguel">
                 </div>
-                <!--
                 <div class="col-md-6">
                     <label for="validationCustom02" class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Robles Gámez" required>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Robles Gámez">
                 </div>
                 <div class="col-md-6">
                     <label for="validationCustom02" class="form-label">DNI</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="DNI" required>
+                    <input type="text" class="form-control" id="dni" name="dni" placeholder="DNI">
                 </div>
                 <div class="col-md-6">
                     <label for="validationCustom02" class="form-label">Sexo</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Sex" required>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Sex">
                 </div>
                 <div class="col-md-4">
                     <label for="validationCustom02" class="form-label">Fecha de Nacimiento</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Fecha" required>
+                    <input type="date" class="form-control" placeholder="Seleccione su Fecha de Nacimiento">
                 </div>
                 <div class="col-md-8">
                     <label for="validationCustom03" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="validationCustom03" required>
+                    <input type="text" class="form-control" id="validationCustom03">
                 </div>
                 <div class="col-md-3">
                     <label for="validationCustom04" class="form-label">State</label>
-                    <select class="form-select" id="validationCustom04" required>
+                    <select class="form-select" id="validationCustom04">
                         <option selected disabled value="">Choose...</option>
                         <option>...</option>
                     </select>
                 </div>
                 <div class="col-md-3">
                     <label for="validationCustom05" class="form-label">Codigo Postal</label>
-                    <input type="text" class="form-control" id="validationCustom05" required>
+                    <input type="text" class="form-control" id="validationCustom05">
                 </div>
                 <div class="col-12">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
                         <label class="form-check-label" for="invalidCheck">
                             Agree to terms and conditions
                         </label>
                     </div>
                 </div>
-                -->
                 <div class="col-12">
                     <hr>
                     <input type="submit" class="btn btn-primary" value="Submit">
