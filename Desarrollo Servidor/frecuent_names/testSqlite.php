@@ -1,6 +1,8 @@
 <?php
 
-$link = new PDO('sqlite:dbTest.db');
+//phpinfo();
+
+$link = new PDO('sqlite:testSqlite.db');
 
 $link->exec("CREATE TABLE IF NOT EXISTS employees(
                     id INTEGER PRIMARY KEY, 
@@ -28,5 +30,4 @@ foreach($data as $row) {
     // Execute statement.
     $stmt->execute();
 }
-
 ?>

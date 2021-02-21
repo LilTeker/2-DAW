@@ -17,7 +17,7 @@ class PDF extends PDF_MySQL_Table
     {
         // Title
         $this->SetFont('Arial', '', 18);
-        $this->Cell(0, 6, 'World populations 2019', 0, 1, 'C');
+        $this->Cell(0, 6, 'Nombres mas frecuentes 2019', 0, 1, 'C');
         $this->Ln(10);
         // Ensure table header is printed
         parent::Header();
@@ -37,21 +37,24 @@ class PDF extends PDF_MySQL_Table
 
 // Connect to database
 //$link = mysqli_connect('localhost','root','root','test');
-$link = new PDO('mysql:host=localhost;port=3306;dbname=misc', 'fred', 'zap');
+$link = new PDO('sqlite:names.db');
 
 $pdf = new PDF();
 $pdf->AddPage();
 // First table: output all columns
-$pdf->Table($link, 'select * from country order by name');
+$pdf->Table($link, 'select * from names order by frecuencia DESC');
 $pdf->AddPage();
+
+
 // Second table: specify 3 columns
-$pdf->AddCol('rank', 20, '', 'C');
-$pdf->AddCol('name', 40, 'Country');
-$pdf->AddCol('pop', 40, 'Population (2019)', 'R');
+$pdf->AddCol('sexo', 20, 'Sexo', 'L');
+$pdf->AddCol('nombre', 40, 'NOMBRE');
+$pdf->AddCol('printf("%,d",frecuencia)', 40, 'Frecuencia', 'C');
 $prop = array('HeaderColor' => array(255, 150, 100),
     'color1' => array(210, 245, 255),
     'color2' => array(255, 255, 210),
     'padding' => 2);
-$pdf->Table($link, 'select name, format(pop*1000,0) as pop, rank from country order by rank limit 0,10', $prop);
+$pdf->Table($link, 'select sexo, nombre, printf("%,d",frecuencia) from names order by frecuencia DESC limit 0,10', $prop);
+
 $pdf->Output();
 ?>
