@@ -1,13 +1,23 @@
 function checkNameInput() {
 
   let input = $("#name").val();
-  let regex = new RegExp("[a-zA-Z\s]*");
+
+  if (input.match(/^[A-Za-z\s]+$/)) {
+    console.log("valid");
+  } else {
+    console.log("invalid");
+  }
+
+/*
+  let regex = new RegExp("/^[A-Za-z\s]+$/");
 
   if (regex.test(input)) {
     console.log("valid");
   } else {
     console.log("invalid");
   }
+
+   */
 }
 
 
