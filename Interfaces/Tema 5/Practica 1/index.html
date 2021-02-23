@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JQuery Practicas</title>
+    <title>Practica 5.1 - Formulario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
@@ -17,31 +17,55 @@
 <body>
     <div class="container">
         <div class="row">
-            <form class="row g-3" id="validate" method="POST" action="">
+            <form class="row g-3">
+
+
                 <div class="col-md-6">
                     <label for="name" class="form-label">Nombre</label>
                     <input type="text" name="name" class="form-control" id="name" placeholder="Miguel">
                 </div>
+
+
+
                 <div class="col-md-6">
-                    <label for="validationCustom02" class="form-label">Apellidos</label>
+                    <label for="lastName" class="form-label">Apellidos</label>
                     <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Robles Gámez">
                 </div>
+
+
+
                 <div class="col-md-6">
-                    <label for="validationCustom02" class="form-label">DNI</label>
+                    <label for="dni" class="form-label">DNI</label>
                     <input type="text" class="form-control" id="dni" name="dni" placeholder="DNI">
                 </div>
+
+
+
                 <div class="col-md-6">
                     <label for="validationCustom02" class="form-label">Sexo</label>
+
+                    <!--Completar con un radio button-->
+
                     <input type="text" class="form-control" id="validationCustom02" placeholder="Sex">
                 </div>
+
+
+
                 <div class="col-md-4">
-                    <label for="validationCustom02" class="form-label">Fecha de Nacimiento</label>
-                    <input type="date" class="form-control" placeholder="Seleccione su Fecha de Nacimiento">
+                    <label for="dateSelector" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="dateSelector" name="dateSelector" placeholder="Seleccione su Fecha de Nacimiento">
                 </div>
+
+
+
+
                 <div class="col-md-8">
-                    <label for="validationCustom03" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="validationCustom03">
+                    <label for="address" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="address" name="address">
                 </div>
+
+
+                <!--
                 <div class="col-md-3">
                     <label for="validationCustom04" class="form-label">State</label>
                     <select class="form-select" id="validationCustom04">
@@ -49,19 +73,32 @@
                         <option>...</option>
                     </select>
                 </div>
+                -->
+
+
+
                 <div class="col-md-3">
-                    <label for="validationCustom05" class="form-label">Codigo Postal</label>
-                    <input type="text" class="form-control" id="validationCustom05">
+                    <label for="zipCode" class="form-label">Codigo Postal</label>
+                    <input type="text" class="form-control" id="zipCode" name="zipCode">
                 </div>
+
+
+
                 <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
-                        <label class="form-check-label" for="invalidCheck">
-                            Agree to terms and conditions
-                        </label>
-                    </div>
+
+
+
+                    <!--Tarjeta de credito completar-->
+                
+                
+                
                 </div>
+
+
+
                 <div class="col-12">
+
+                    <!--Elegir uno de los dos-->
                     <hr>
                     <input type="submit" class="btn btn-primary" value="Submit">
                     <button class="btn btn-primary" type="submit">Submit form</button>

@@ -1,3 +1,61 @@
+function checkNameInput() {
+
+  let input = $("#name").val();
+  let regex = new RegExp("[a-zA-Z\s]*");
+
+  if (regex.test(input)) {
+    console.log("valid");
+  } else {
+    console.log("invalid");
+  }
+}
+
+
+
+
+function addListenersFormFirstHalf() {
+
+  $("#name").on("input", function () {checkNameInput()});
+
+  /*
+
+  name
+  lastName
+  dni
+  sex??????????
+  date???????
+  address
+
+  */
+
+
+}
+
+
+
+
+$(document).ready(function () {
+
+  addListenersFormFirstHalf();
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Intento de hacerlo con libreria validator de jquery
+/*
 //Añade  el metodo de validación para meter regex en el form.validate()
 $.validator.addMethod(
   "regex",
@@ -44,7 +102,13 @@ $(document).ready(function() {
       }
     });
   });
-/*
+
+
+
+
+
+
+
 $(document).ready(function() {
   $("#basic-form").validate({
     errorClass: "error fail-alert",
