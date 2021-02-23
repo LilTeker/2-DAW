@@ -20,10 +20,10 @@ class server {
     static function connect() {
 
         try {
-             $user = "root";
-             $pass = "";
+             $user = "fred";
+             $pass = "zap";
              $dbname = "students";
-             $host = "127.0.0.1";
+             $host = "localhost";
 	
              $con = new PDO("mysql:host=$host; dbname=$dbname", $user, $pass);
              $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
