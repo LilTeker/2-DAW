@@ -1,16 +1,14 @@
-let ej = "prueb";
 
 function showData() {
 
   $.ajax({
     type: "post",
-    url: "consultas.php",
-    data: {ejemplo: ej, salary: 7050},
+    url: "scripts/showBooks.php",
+    data: {nombre: "TEKER", mail: "miguel00rg@hotmail.com"},
     success: function (response) {
 
-      
+      $("#jsData").text(JSON.parse(response));
 
-      $("#jsData").text(response);
     }
   });
 
@@ -20,7 +18,7 @@ function showData() {
 
 
 
-function addListenersFormFirstHalf() {
+function addListeners() {
 
   $("#showData").on("click", function () {showData()});
 
@@ -31,6 +29,6 @@ function addListenersFormFirstHalf() {
 
 $(document).ready(function () {
 
-  addListenersFormFirstHalf();
+  addListeners();
 
 });

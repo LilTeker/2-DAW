@@ -7,17 +7,7 @@ function checkNameInput() {
   } else {
     console.log("invalid");
   }
-
-/*
-  let regex = new RegExp("/^[A-Za-z\s]+$/");
-
-  if (regex.test(input)) {
-    console.log("valid");
-  } else {
-    console.log("invalid");
-  }
-
-   */
+  
 }
 
 
@@ -26,18 +16,6 @@ function checkNameInput() {
 function addListenersFormFirstHalf() {
 
   $("#name").on("input", function () {checkNameInput()});
-
-  /*
-
-  name
-  lastName
-  dni
-  sex??????????
-  date???????
-  address
-
-  */
-
 
 }
 
