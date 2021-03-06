@@ -24,7 +24,7 @@ CREATE TABLE Users (
     mail varchar(255) NOT NULL,
     nombre varchar(255) NOT NULL,
     multaId INT,
-    contraseña varchar(255) NOT NULL,
+    contrasena varchar(255) NOT NULL,
     administrator boolean NOT NULL,
     PRIMARY KEY (mail),
     FOREIGN KEY (multaid) REFERENCES Multas(multaid)
@@ -82,7 +82,7 @@ INSERT INTO `Books` (`isbn`, `autor`, `titulo`, `genero`, `sinopsis`, `rutaimg`,
 
 /*INSERTS USERS*/
 
-INSERT INTO `Users` (`mail`, `nombre`, `multaId`, `contraseña`, `administrator`) VALUES ('miguel00rg@hotmail.com', 'TEKER', NULL, 'TEKER', '1');
+INSERT INTO `Users` (`mail`, `nombre`, `multaId`, `contrasena`, `administrator`) VALUES ('miguel00rg@hotmail.com', 'TEKER', NULL, 'TEKER', '1');
 
 
 /*INSERTS ALQUILER*/
