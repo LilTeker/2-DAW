@@ -1,1 +1,18 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+#infoLoginDiv {
+  display: none;
+  color: red;
+  padding-bottom: 1em;
+}
+
+#cabecera {
+  background-color: #A8D5E2;
+}
+
+.card {
+  width: 60%;
+}
+
+#searchFormHeader {
+  background-color: #A8D5E2;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,62 +1,112 @@
-function showData() {
-
-  $.getJSON("http://localhost/Biblioteca/scripts/php/showBooks.php", function(data) {
-    console.log(data);
-  });
-
-}
-
 function checkLogIn(e) {
 
   e.preventDefault();
 
+  let form_data = $("#loginForm").serializeToJSON();
 
-  let form_data = JSON.stringify($("#loginForm").serializeToJSON());
-  console.log(form_data);
-
-/*
-  $(document).on('submit', '#create-product-form', function(){
-        
-    // get form data
-    var form_data=JSON.stringify($(this).serializeObject());
-
-    // submit form data to api
+  if (form_data.email != "" || form_data.contrasena != "") {
+  
     $.ajax({
-        url: "http://localhost/api/product/create.php",
-        type : "POST",
-        contentType : 'application/json',
-        data : form_data,
-        success : function(result) {
-            // product was created, go back to products list
-            showProducts();
-        },
-        error: function(xhr, resp, text) {
-            // show error to console
-            console.log(xhr, resp, text);
+      type: "POST",
+      url: "http://localhost/Biblioteca/scripts/php/credentialsCheck.php",
+      data: form_data,
+      success: function (response) {
+        console.log(response);
+  
+        if (response == "correct") {
+          window.location.href="http://localhost/Biblioteca/";
+        } else {
+          $("#infoLoginDiv").css("display", "block");
         }
+        
+        //window.location.href="index.php";
+      },
+      error: function (xhr, resp, text){
+        console.log(xhr, resp, text);
+      }
     });
-    
-    
-    return false;
-    
-});
-*/
+
+  } else {
+    alert("Por favor rellena los campos antes de hacer login");
+  }
 
 }
 function checkRegister(e) {
   e.preventDefault();
 
 
-  let form_data = JSON.stringify($("#registerForm").serializeToJSON());
-  console.log(form_data);
+  let form_data = $("#registerForm").serializeToJSON();
+
+  if (form_data.mail != "" && form_data.contrasenaRegister != "" && form_data.nombre != "") {
+  
+    $.ajax({
+      type: "POST",
+      url: "http://localhost/Biblioteca/scripts/php/credentialsCheck.php",
+      data: form_data,
+      success: function (response) {
+        console.log(response);
+  
+        if (response == "correct") {
+          window.location.href="http://localhost/Biblioteca/";
+        } else {
+          $("#infoLoginDiv").css("display", "block");
+        }
+        
+        //window.location.href="index.php";
+      },
+      error: function (xhr, resp, text){
+        console.log(xhr, resp, text);
+      }
+    });
+
+  } else {
+    alert("Por favor rellena los campos antes de hacer registrarte");
+  }
+
+}
+
+async function printRecomendedBooks() {
+  
+  let container = $("#recomendedBooks");
+
+  let html = "";
+
+  loadBooks()
+  .then((books) => {
+    for (let index = 0; index < 3; index++) {
+    
+      let rand = Math.floor(Math.random() * 20);
+
+      let book = books[rand];
+      
+      html +=
+      `
+      <div class="col-sm-12 col-md-4 d-flex justify-content-center text-center py-4">
+        <div class="card">
+          <img src="img/books/${book.rutaimg}" class="card-img-top cardImg" alt="${book.rutaimg}">
+          <div class="card-body">
+            <h5 class="card-title">${book.titulo}</h5>
+            <p class="card-text">Autor - <b>${book.autor}</b></p>
+            <p class="card-text">Año - <b>${book.ano}</b></p>
+            <button class="btn btn-primary" data-="${book.isbn}">Saber Más</button>
+          </div>
+        </div>
+      </div>
+      `;
+      
+    }
+
+    container.html(html);
+
+  });
 
 }
 
 
 
+
 function addListeners() {
 
-  $("#showData").on("click", function () {showData()});
   $("#login").click(function (e) {checkLogIn(e)});
   $("#register").click(function (e) {checkRegister(e)});
 
@@ -67,6 +117,10 @@ function addListeners() {
 
 $(document).ready(function () {
 
+  printRecomendedBooks();
+
   addListeners();
+
+  return;
 
 });

@@ -1,0 +1,2 @@
+libros recomendados duplicados
+contraseña no case sensitive

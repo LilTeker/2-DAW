@@ -17,7 +17,6 @@ if ($num > 0) {
         extract($row);
 
 
-
         $book = array(
             "isbn" => $isbn,
             "autor" => $autor,
@@ -26,7 +25,7 @@ if ($num > 0) {
             "rutaimg" => $rutaimg,
             "ano" => $ano,
             "puntuacion" => $puntuacion,
-            "ano" => $ano
+            "titulo" => $titulo
         );
 
         array_push($booksArray["records"], $book);
