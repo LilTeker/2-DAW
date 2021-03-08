@@ -4,15 +4,26 @@
   padding-bottom: 1em;
 }
 
-#cabecera {
+.bckColorBlue {
   background-color: #A8D5E2;
 }
 
 .card {
-  width: 60%;
+  width: 75%;
 }
 
-#searchFormHeader {
-  background-color: #A8D5E2;
+.genreBubble {
+  color: white;
+  background-color: #2176FF;
+  display: inline;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 5em;
+}
+
+.alquilarContainer {
+  border-radius: 8px;
+  background-color: #504B43;
+  color: white;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,2 +1,3 @@
 libros recomendados duplicados
 contraseña no case sensitive
+arreglar novela_negra en book.php

@@ -88,7 +88,7 @@ async function printRecomendedBooks() {
             <h5 class="card-title">${book.titulo}</h5>
             <p class="card-text">Autor - <b>${book.autor}</b></p>
             <p class="card-text">Año - <b>${book.ano}</b></p>
-            <button class="btn btn-primary" data-="${book.isbn}">Saber Más</button>
+            <a class="btn btn-primary align-text-bottom" href="book.php?isbn=${book.isbn}">Saber Más</a>
           </div>
         </div>
       </div>
@@ -101,6 +101,22 @@ async function printRecomendedBooks() {
   });
 
 }
+
+async function printAllBooks() {
+
+  let container = $("#allBooksContainer");
+
+  let html = "";
+
+  loadBooks()
+  .then((books) => {
+
+    printBooks(books, container);
+
+  });
+
+}
+
 
 
 
@@ -119,8 +135,8 @@ $(document).ready(function () {
 
   printRecomendedBooks();
 
-  addListeners();
+  printAllBooks();
 
-  return;
+  addListeners();
 
 });
