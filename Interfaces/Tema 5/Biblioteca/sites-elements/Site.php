@@ -200,7 +200,14 @@ class Site
           </div>
           <div class="col-sm-6 col-md-1">
             <label for="puntuacion" class="form-label">Puntuación:</label>
-            <input type="number" value="5" class="form-control" min="0" max="5" id="puntuacion" name="puntuacion" aria-describedby="puntuacion">
+            <select name="puntuacion" class="form-control" id="puntuacion" aria-describedby="puntuacion">
+              <option value="null">^</option>
+              <option value="1">1 estrella</i></option>
+              <option value="2">2 estrella</i></option>
+              <option value="3">3 estrella</i></option>
+              <option value="4">4 estrella</i></option>
+              <option value="5">5 estrella</i></option>
+            </select>
           </div>
           <div class="col-sm-6 col-md-2">
             <label for="ano" class="form-label">Año:</label>
@@ -228,7 +235,8 @@ class Site
   <?php
   }
 
-  public function printFooter() {
+  public function printFooter()
+  {
   ?>
 
     <div class="row">
@@ -255,11 +263,12 @@ class Site
       </div>
     </div>
 
-<?php
+    <?php
   }
 
 
-  public function printBookBody() {
+  public function printBookBody()
+  {
     //comprobar si el usuario esta registrado para mostar el añadir comentario y el alquilar libro
 
     if (isset($_GET["isbn"])) {
@@ -268,6 +277,8 @@ class Site
 
       $book = getBook($isbn);
       $comments = getComments($isbn);
+      var_dump($comments);
+      $alquiler = isAlquiler($isbn);
 
       if ($book != null) {
 
@@ -280,28 +291,30 @@ class Site
         $ano = $book["records"][0]["ano"];
         $puntuacion = (int) $book["records"][0]["puntuacion"];
 
-        
-        ?>
+
+    ?>
 
         <div class="row mt-3">
           <div class="col-sm-12 text-center px-0 py-4 bckColorBlue">
-            <h2 class="pt-2"><?=$titulo?></h2>
+            <h2 class="pt-2"><?= $titulo ?></h2>
           </div>
         </div>
         <div class="row my-5">
           <div class="col-sm-12 col-md-4 d-flex justify-content-center text-center borderImgBook">
-            <img src="img/books/<?=$rutaimg?>" alt="<?=$rutaimg?>">
+            <img src="img/books/<?= $rutaimg ?>" alt="<?= $rutaimg ?>">
           </div>
           <div class="col-sm-12 col-md-8">
             <div class="row text-center mt-3">
               <div class="col-sm-12">
-                <h3>Autor - <?=$autor?></h3>
+                <h3>Autor - <?= $autor ?></h3>
               </div>
               <div class="col-sm-12">
-                <p class="genreBubble"><?=$genero?></p><p class="genreBubble"><?=$ano?></p><p class="genreBubble"><?=$puntuacion?> <i class="fa fa-star" aria-hidden="true"></i></p>
+                <p class="genreBubble"><?= $genero ?></p>
+                <p class="genreBubble"><?= $ano ?></p>
+                <p class="genreBubble"><?= $puntuacion ?> <i class="fa fa-star" aria-hidden="true"></i></p>
               </div>
               <div class="col-sm-12">
-                <p class="description mt-5"><?=$sinopsis?></p>
+                <p class="description mt-5"><?= $sinopsis ?></p>
               </div>
               <div class="offset-sm-3 col-sm-6 py-3 alquilarContainer">
                 <p><b>Alquilar este libro 2 semanas<b></p>
@@ -317,18 +330,56 @@ class Site
           </div>
           <div class="row">
             <div class="col-sm-12">
-              form
+
+              <form id="commentForm">
+                <div class="row">
+                  <div class="mb-3 col-sm-10 mt-2">
+                    <label for="comentario" class="form-label">¡Comparte tu propia opinión!</label>
+                    <textarea type="text" class="form-control" id="comentario" name="comentario" aria-describedby="Comentario" placeholder="Escriba su comentario aqui, evite comentar spoilers"></textarea>
+                  </div>
+                  <div class="mb-3 col-sm-2 mt-2">
+                    <label for="puntuacion" class="form-label">Puntuación:</label>
+                    <select name="puntuacionComentario" class="form-control" id="puntuacionComentario" aria-describedby="puntuacionComentario">
+                      <option value="null">Seleccione</option>
+                      <option value="1">1 estrella</i></option>
+                      <option value="2">2 estrella</i></option>
+                      <option value="3">3 estrella</i></option>
+                      <option value="4">4 estrella</i></option>
+                      <option value="5">5 estrella</i></option>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" id="submitComment" name="submitComment" class="btn btn-primary">Comentar</button>
+                  </div>
+
+                </div>
+              </form>
             </div>
+          </div>
+          <div class="row mx-0 my-3 p-0">
+            <?php
+
+            foreach ($comments as $comment) {
+              ?>
+
+              <div class="col-sm-12 pt-2 bckColorGray">
+                <h5><?=$comment["user"]["nombre"]?>, Ha puntuado con: <?=(int) $comment["puntuacion"]?><i class="fa fa-star" aria-hidden="true"></i></h5>
+              
+                <p class="my-2"><?=$comment["comentario"]?></p>
+              </div>
+
+              <?php
+            }
+
+            ?>
           </div>
         </div>
 
-        <?php
+<?php
       }
-
     } else {
       echo "<p class='mt-5'>No se ha conseguido un valor isbn, por favor intentelo más tarde</p>";
     }
-    
   }
 }
 ?>
