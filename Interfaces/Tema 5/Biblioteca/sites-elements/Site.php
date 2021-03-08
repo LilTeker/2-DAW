@@ -277,8 +277,9 @@ class Site
 
       $book = getBook($isbn);
       $comments = getComments($isbn);
-      var_dump($comments);
       $alquiler = isAlquiler($isbn);
+
+      echo var_dump($alquiler);
 
       if ($book != null) {
 
@@ -316,10 +317,26 @@ class Site
               <div class="col-sm-12">
                 <p class="description mt-5"><?= $sinopsis ?></p>
               </div>
-              <div class="offset-sm-3 col-sm-6 py-3 alquilarContainer">
-                <p><b>Alquilar este libro 2 semanas<b></p>
-                <button class="btn btn-primary">Alquilar</button>
-              </div>
+
+              <?php
+                if (isset($_SESSION["nombre"])) {
+                  ?>
+                  <div class="offset-sm-3 col-sm-6 py-3 alquilarContainer">
+                    <p><b>Alquilar este libro 2 semanas<b></p>
+                    <button class="btn btn-primary" id="buttonAlquiler">Alquilar</button>
+                  </div>
+                  <?php
+                } else {
+                  ?>
+                  <div class="offset-sm-3 col-sm-6 py-3 alquilarContainer">
+                    <p><b>Registrate para poder alquilar este libro<b></p>
+                  </div>
+                  <?php
+                }
+              ?>
+
+              
+
               <div class="offset-sm-3"></div>
             </div>
           </div>
@@ -328,51 +345,68 @@ class Site
           <div class="col-sm-12 text-center mt-5 bckColorBlue">
             <h2 class="py-3 px-0">Comentarios</h2>
           </div>
-          <div class="row">
-            <div class="col-sm-12">
 
-              <form id="commentForm">
-                <div class="row">
-                  <div class="mb-3 col-sm-10 mt-2">
-                    <label for="comentario" class="form-label">¡Comparte tu propia opinión!</label>
-                    <textarea type="text" class="form-control" id="comentario" name="comentario" aria-describedby="Comentario" placeholder="Escriba su comentario aqui, evite comentar spoilers"></textarea>
-                  </div>
-                  <div class="mb-3 col-sm-2 mt-2">
-                    <label for="puntuacion" class="form-label">Puntuación:</label>
-                    <select name="puntuacionComentario" class="form-control" id="puntuacionComentario" aria-describedby="puntuacionComentario">
-                      <option value="null">Seleccione</option>
-                      <option value="1">1 estrella</i></option>
-                      <option value="2">2 estrella</i></option>
-                      <option value="3">3 estrella</i></option>
-                      <option value="4">4 estrella</i></option>
-                      <option value="5">5 estrella</i></option>
-                    </select>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" id="submitComment" name="submitComment" class="btn btn-primary">Comentar</button>
-                  </div>
+          <?php
+          if (isset($_SESSION["nombre"])) {
+          ?>
+            <div class="row">
+              <div class="col-sm-12">
 
-                </div>
-              </form>
+                <form id="commentForm">
+                  <div class="row">
+                    <div class="mb-3 col-sm-10 mt-2">
+                      <label for="comentario" class="form-label">¡Comparte tu propia opinión!</label>
+                      <textarea type="text" class="form-control" id="comentario" name="comentario" aria-describedby="Comentario" placeholder="Escriba su comentario aqui, evite comentar spoilers"></textarea>
+                      <p id="textCommentaryHidden">No se ha podido enviar el comentario, intentalo de nuevo mas tarde</p>
+                    </div>
+                    <div class="mb-3 col-sm-2 mt-2">
+                      <label for="puntuacion" class="form-label">Puntuación:</label>
+                      <select name="puntuacionComentario" class="form-control" id="puntuacionComentario" aria-describedby="puntuacionComentario">
+                        <option value="null">Seleccione</option>
+                        <option value="1">1 estrella</i></option>
+                        <option value="2">2 estrella</i></option>
+                        <option value="3">3 estrella</i></option>
+                        <option value="4">4 estrella</i></option>
+                        <option value="5">5 estrella</i></option>
+                      </select>
+                    </div>
+                    <input type="hidden" name="isbn" value="<?= $isbn ?>">
+                    <div class="modal-footer">
+                      <button type="button" id="submitComment" name="submitComment" class="btn btn-primary">Comentar</button>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
+          <?php
+          }
+          ?>
           <div class="row mx-0 my-3 p-0">
             <?php
-
-            foreach ($comments as $comment) {
+            if ($comments != null) {
+              foreach ($comments as $comment) {
               ?>
-
-              <div class="col-sm-12 pt-2 bckColorGray">
-                <h5><?=$comment["user"]["nombre"]?>, Ha puntuado con: <?=(int) $comment["puntuacion"]?><i class="fa fa-star" aria-hidden="true"></i></h5>
-              
-                <p class="my-2"><?=$comment["comentario"]?></p>
-              </div>
-
+  
+                <div class="col-sm-12 pt-2 bckColorGray">
+                  <h5><?= $comment["user"]["nombre"] ?>, Ha puntuado con: <?= (int) $comment["puntuacion"] ?><i class="fa fa-star" aria-hidden="true"></i></h5>
+  
+                  <p class="my-2"><?= $comment["comentario"] ?></p>
+                </div>
+  
+              <?php
+              }
+            } else {
+              ?>
+                <div class="col-sm-12 pt-2 bckColorGray">
+                  <h5>No hay comentarios todavía, ¡regístrate y se el primero en comentar!</h5>
+                </div>
+                
               <?php
             }
-
             ?>
           </div>
+            
         </div>
 
 <?php

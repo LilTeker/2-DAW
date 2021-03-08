@@ -23,6 +23,7 @@ if (isset($_POST["tipoSolicitud"])) {
         if ($row = $stmt->fetch()) {
 
             $_SESSION["nombre"] = $row["nombre"];
+            $_SESSION["mail"] = $row["mail"];
             $_SESSION["privileges"] = $row["administrator"];
 
             echo "correct";

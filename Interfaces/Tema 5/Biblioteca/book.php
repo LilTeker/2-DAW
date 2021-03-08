@@ -42,6 +42,7 @@ $site = new Site();
         crossorigin="anonymous"></script>
     <script src="scripts/js/loadBooks.js"></script>
     <script src="scripts/js/printBooks.js"></script>
+    <script src="scripts/js/loginRegister.js"></script>
     <script src="scripts/js/bookJs.js"></script>
 </body>
 

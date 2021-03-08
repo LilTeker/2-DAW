@@ -106,37 +106,31 @@ function isAlquiler($isbn) {
     global $conn;
     
     try {
-        $stmt = $conn->prepare("SELECT * FROM Books WHERE isbn = $isbn");
+        $stmt = $conn->prepare("SELECT idalquiler, fechafinal FROM Alquiler WHERE isbn = :isbn");
+        $stmt->bindParam(":isbn", $isbn, PDO::PARAM_STR);
         $stmt->execute();
 
         $num = $stmt->rowCount();
 
         if ($num > 0) {
 
-            $booksArray = array();
-            $booksArray["records"] = array();
+            $alquilerArray = array();
 
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 
                 extract($row);
 
-                $book = array(
-                    "isbn" => $isbn,
-                    "autor" => $autor,
-                    "genero" => $genero,
-                    "sinopsis" => html_entity_decode($sinopsis),
-                    "rutaimg" => $rutaimg,
-                    "ano" => $ano,
-                    "puntuacion" => $puntuacion,
-                    "titulo" => $titulo
+                $alquiler = array(
+                    "id" => $idalquiler,
+                    "fechafinal" => $fechafinal,
                 );
 
-                array_push($booksArray["records"], $book);
+                array_push($alquilerArray, $alquiler);
 
             }
 
             // show products data in json format
-            return $booksArray;
+            return $alquilerArray;
 
 
         } else { // no books found 

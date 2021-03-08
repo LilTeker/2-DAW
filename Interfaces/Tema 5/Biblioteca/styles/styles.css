@@ -30,4 +30,9 @@
 .bckColorGray {
   background-color: #E3E1DE;
 }
+
+#textCommentaryHidden {
+  display: none;
+  color: red;
+}
 /*# sourceMappingURL=styles.css.map */
