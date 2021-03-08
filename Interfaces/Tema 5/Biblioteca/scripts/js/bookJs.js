@@ -12,6 +12,8 @@ async function submitComment(e) {
             success: function (response) {
               console.log(response);
         
+              
+
               if (response == "correct") {
                 window.location.href="http://localhost/Biblioteca/book.php?isbn=" + form_data.isbn;
               } else {
@@ -48,8 +50,12 @@ function rent(e) {
         data: {isbn: isbn, dateInicial: dateInicial, dateFinal: dateFinal},
         success: function (response) {
           
-            
-          
+            $("#buttonAlquiler").removeClass("btn-primary");
+            $("#buttonAlquiler").addClass("btn-warning");
+            $("#buttonAlquiler").text("El Libro ya esta alquilado");
+            $("#buttonAlquiler").off("click");
+            $("#buttonAlquiler").removeAttr("id");
+
           //window.location.href="http://localhost/Biblioteca/book.php?isbn=" + isbn;
         },
         error: function (xhr, resp, text){

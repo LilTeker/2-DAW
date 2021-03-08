@@ -320,12 +320,21 @@ class Site
 
               <?php
                 if (isset($_SESSION["nombre"])) {
-                  ?>
-                  <div class="offset-sm-3 col-sm-6 py-3 alquilarContainer">
-                    <p><b>Alquilar este libro 2 semanas<b></p>
-                    <button class="btn btn-primary" id="buttonAlquiler">Alquilar</button>
-                  </div>
-                  <?php
+                  if ($alquiler == null) {
+                    ?>
+                    <div id="containerButtonAlquiler" class="offset-sm-3 col-sm-6 py-3 alquilarContainer">
+                      <p><b>Alquilar este libro 2 semanas<b></p>
+                      <button class="btn btn-primary" id="buttonAlquiler">Alquilar</button>
+                    </div>
+                    <?php
+                  } else {
+                    ?>
+                    <div id="containerButtonAlquiler" class="offset-sm-3 col-sm-6 py-3 alquilarContainer">
+                      <p><b>Alquilar este libro 2 semanas<b></p>
+                      <button class="btn btn-warning">El Libro ya esta alquilado</button>
+                    </div>
+                    <?php
+                  }
                 } else {
                   ?>
                   <div class="offset-sm-3 col-sm-6 py-3 alquilarContainer">

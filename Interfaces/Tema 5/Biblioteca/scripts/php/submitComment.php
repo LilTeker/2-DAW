@@ -18,7 +18,45 @@ if (isset($_SESSION["mail"]) && isset($_POST["isbn"]) && isset($_POST["comentari
     $stmt->bindParam(":mail", $mail, PDO::PARAM_STR);
 
     if ($stmt->execute()) {
-        echo "correct";
+        $stmt2 = $conn->prepare("SELECT puntuacion FROM Comentarios WHERE isbn = :isbn");
+        $stmt2->bindParam(":isbn", $isbn, PDO::PARAM_STR);
+        $stmt2->execute();
+
+        $num = $stmt2->rowCount();
+
+        if ($num > 0) {
+
+            $puntuacionesArr = array();
+
+            while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+                
+                extract($row);
+
+                array_push($puntuacionesArr, $puntuacion);
+
+            }
+
+            $puntuacionesAverage = round(array_sum($puntuacionesArr)/count($puntuacionesArr), 2);
+            
+
+            if ($puntuacionesAverage != null) {
+                $stmt3 = $conn->prepare("UPDATE `Books` SET `puntuacion` = :puntuacion WHERE `Books`.`isbn` = :isbn");
+                $stmt3->bindParam(":puntuacion", $puntuacionesAverage, PDO::PARAM_STR);
+                $stmt3->bindParam(":isbn", $isbn, PDO::PARAM_STR);
+                
+                if ($stmt3->execute()) {
+                    echo "correct";
+                } else {
+                    echo "incorrect";
+                }
+            } else {
+                echo "incorrect";
+            }
+            
+        } else {
+            echo "incorrect";
+        }
+
     } else {
         echo "incorrect";
     }
