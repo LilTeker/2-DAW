@@ -279,8 +279,6 @@ class Site
       $comments = getComments($isbn);
       $alquiler = isAlquiler($isbn);
 
-      echo var_dump($alquiler);
-
       if ($book != null) {
 
         $titulo = $book["records"][0]["titulo"];
