@@ -430,19 +430,23 @@ class Site
     $rentUser = getRentUser();
     
     $allBooksRented = [];
-    
-    foreach ($rentUser as $rent) {
-      foreach ($books as $book ) {
-        
-        if ($rent["isbn"] == $book["isbn"]) {
-          $book["fechainicio"] = $rent["fechainicio"];
-          $book["fechafinal"] = $rent["fechafinal"];
-          $book["idalquiler"] = $rent["idalquiler"];
-          array_push($allBooksRented, $book);
-        }
 
+    if (sizeof($books) == 0 && sizeof($rentUser) == 0) {
+
+    } else {
+      foreach ($rentUser as $rent) {
+        foreach ($books as $book ) {
+          
+          if ($rent["isbn"] == $book["isbn"]) {
+            $book["fechainicio"] = $rent["fechainicio"];
+            $book["fechafinal"] = $rent["fechafinal"];
+            $book["idalquiler"] = $rent["idalquiler"];
+            array_push($allBooksRented, $book);
+          }
+  
+        }
       }
-    }
+    }   
 
 
     ?>
@@ -450,35 +454,159 @@ class Site
       <div class="row mt-3">
         <div class="col-sm-12 text-center px-0 py-4 bckColorBlue">
         <h2 class="pt-2">Bienvenido <?= $_SESSION["nombre"] ?></h2>
-        <h2 class="pt-2">Aqui podras ver los libros que tienes en alquiler y devolverlos.</h2>
+        <h2 class="pt-2">Aqui podrás ver los libros que tienes en alquiler y devolverlos.</h2>
         </div>
       </div>
       <div class="row">
         <?php
 
-        foreach ($allBooksRented as $book) {
-          
+        if (sizeof($allBooksRented) == 0) {
           ?>
-            <div class="col-sm-6 col-md-4 d-flex justify-content-center text-center py-4">
-              <div class="card">
-              <img src="img/books/<?=$book["rutaimg"]?>" class="card-img-top cardImg" alt="<?=$book["rutaimg"]?>">
-              <div class="card-body">
-                <h5 class="card-title"><?=$book["titulo"]?></h5>
-                <p class="card-text">Inicio del Alquiler <br><b><?=$book["fechainicio"]?></b></p>
-                <p class="card-text">Final del Alquiler <br><b><?=$book["fechafinal"]?></b></p>
-                <a class="btn btn-primary returnBook" data-id="<?=$book["idalquiler"]?>">Devolver</a>
-              </div>
-            </div>
-            </div>
-          <?php
 
-        }
+          <div class="col-sm-12 d-flex py-5 my-5 justify-content-center text-center py-4">
+            <h3 class="my-5 py-5 text-center">No tienes libros alquilados todavia, ¡encuentra alguno que te guste y alquílalo!</h3>
+          </div>
+          <div class="col-sm-12 d-flex py-2 my-2 justify-content-center text-center py-4">
+            
+          </div>
+
+          <?php
+        } else {
+          foreach ($allBooksRented as $book) {
+          
+            ?>
+              <div class="col-sm-6 col-md-4 d-flex justify-content-center text-center py-4">
+                <div class="card">
+                <img src="img/books/<?=$book["rutaimg"]?>" class="card-img-top cardImg" alt="<?=$book["rutaimg"]?>">
+                <div class="card-body">
+                  <h5 class="card-title"><?=$book["titulo"]?></h5>
+                  <p class="card-text">Inicio del Alquiler <br><b><?=$book["fechainicio"]?></b></p>
+                  <p class="card-text">Final del Alquiler <br><b><?=$book["fechafinal"]?></b></p>
+                  <a class="btn btn-primary returnBook" data-id="<?=$book["idalquiler"]?>">Devolver</a>
+                </div>
+              </div>
+              </div>
+            <?php
+  
+          }
+        }  
+        
         ?>
         <div class="col-sm-12">
           <p id="errorDevolucion">No se ha podido devolver el libro, intentelo de nuevo mas tarde<p>
         </div>
       </div>
     <?php
+
+  }
+
+  function printAdminBody() {
+    
+    $books = getAllBooks();
+    $users = getAllUsers();
+
+    if (sizeof($books) != 0 || sizeof($users) != 0) {
+      ?>
+
+      <div class="row">
+        <div class="col-sm-12 py-4 mt-3 text-center bckColorBlue">
+          <h2>Administrador de Usuarios</h2>
+        </div>
+          <?php
+            if (sizeof($users) > 0) {
+              ?>
+              <div class="row">
+                <div class="col-sm-12 mt-5 text-center">
+                  <table class="table">
+                    <tr>
+                      <th scope="col">Mail</th>
+                      <th scope="col">Nick</th>
+                      <th scope="col">Borrar</th>
+                    </tr>
+                    <?php
+                    foreach ($users as $user) {
+                      ?>
+                      <tr>
+                        <td><?=$user["mail"]?></td>
+                        <td><?=$user["nombre"]?></td>
+                        <td><button type="button" class="btn btn-warning buttonDeleteUser" data-id="<?=$user["mail"]?>">Borrar Usuario</button></td>
+                      </tr>
+                      <?php
+                    }
+                  ?>
+                  </table>
+                  <p id="errorBorrarUser">No se ha podido borrar el usuario, inténtelo de nuevo mas tarde</p>
+                </div>
+              </div>
+
+              <?php
+            } else {
+              ?>
+
+              <div class="row">
+                <div class="col-sm-12 mt-5 text-center">
+                  <h2>No hay usuarios registrados</h2>
+                </div>
+              </div>
+
+              <?php
+            }
+          ?>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 mx-0 py-4 mt-3 text-center bckColorBlue">
+          <h2>Administrador de Libros</h2>
+        </div>
+      </div>
+      <?php
+            if (sizeof($books) > 0) {
+              ?>
+              <div class="row">
+                <div class="col-sm-12 mt-5 text-center">
+                  <table class="table">
+                    <tr>
+                      <th scope="col">Img</th>
+                      <th scope="col">ISBN</th>
+                      <th scope="col">Título</th>
+                      <th scope="col">Autor</th>
+                      <th scope="col">Género</th>
+                      <th scope="col">Borrar</th>
+                    </tr>
+                    <?php
+                    foreach ($books as $book) {
+                      ?>
+                      <tr>
+                        <td><img class="imgAdmin" src="img/books/<?=$book["rutaimg"]?>" alt="<?=$book["rutaimg"]?>"></td>
+                        <td><?=$book["isbn"]?></td>
+                        <td><?=$book["titulo"]?></td>
+                        <td><?=$book["autor"]?></td>
+                        <td><?=$book["genero"]?></td>
+                        <td><button type="button" class="btn btn-warning buttonDeleteBook" data-id="<?=$book["isbn"]?>">Borrar Libro</button></td>
+                      </tr>
+                      <?php
+                    }
+                  ?>
+                  </table>
+                  <p id="errorBorrarBook">No se ha podido borrar el libro, inténtelo de nuevo mas tarde</p>
+                </div>
+              </div>
+
+              <?php
+            } else {
+              ?>
+
+              <div class="row">
+                <div class="col-sm-12 mt-5 text-center">
+                  <h2>No hay libros disponible actualmente</h2>
+                </div>
+              </div>
+
+              <?php
+            }
+          ?>
+
+      <?php
+    }
 
   }
 

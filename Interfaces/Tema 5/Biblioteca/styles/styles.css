@@ -40,4 +40,18 @@
   display: none;
   color: red;
 }
+
+#errorBorrarUser {
+  display: none;
+  color: red;
+}
+
+#errorBorrarBook {
+  display: none;
+  color: red;
+}
+
+.imgAdmin {
+  width: 30%;
+}
 /*# sourceMappingURL=styles.css.map */

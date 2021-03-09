@@ -107,9 +107,11 @@ function isAlquiler($isbn)
 
         $num = $stmt->rowCount();
 
+        $alquilerArray = array();
+
         if ($num > 0) {
 
-            $alquilerArray = array();
+            
 
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
@@ -127,7 +129,7 @@ function isAlquiler($isbn)
             return $alquilerArray;
         } else { // no books found 
 
-            return null;
+            return $alquilerArray;
         }
     } catch (Exception $e) {
         echo ("<p class='mt-5'>Hay un error en la consulta, intentelo mas tarde</p>");
@@ -167,7 +169,7 @@ function getAllBooks()
         return ($booksArray);
     } else {
 
-        return null;
+        return $booksArray;
     }
 }
 
@@ -186,6 +188,7 @@ function getRentUser()
     if ($num > 0) {
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
             extract($row);
 
             $rent = array(
@@ -202,6 +205,43 @@ function getRentUser()
         return ($userRentArray);
     } else {
 
-        return null;
+        return $userRentArray;
     }
+
+}
+
+function getAllUsers() {
+
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT * FROM Users");
+    $stmt->execute();
+
+    $num = $stmt->rowCount();
+
+    $userArr = array();
+
+    if ($num > 0) {
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            extract($row);
+
+            $user = array(
+                "mail" => $mail,
+                "nombre" => $nombre,
+                "multaId" => $multaId,
+                "contrasena" => $contrasena,
+                "administrator" => $administrator
+            );
+
+            array_push($userArr, $user);
+        }
+
+        return ($userArr);
+    } else {
+
+        return $userArr;
+    }
+
 }

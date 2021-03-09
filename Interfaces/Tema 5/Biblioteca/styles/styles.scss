@@ -1,5 +1,6 @@
 $bckColorBlue: #A8D5E2;
 
+
 #infoLoginDiv {
     display: none;
     color: red;
@@ -40,4 +41,18 @@ $bckColorBlue: #A8D5E2;
 #errorDevolucion {
     display: none;
     color: red;
+}
+
+#errorBorrarUser { 
+    display: none;
+    color: red;
+}
+
+#errorBorrarBook {
+    display: none;
+    color: red; 
+}
+
+.imgAdmin {
+    width: 30%;
 }

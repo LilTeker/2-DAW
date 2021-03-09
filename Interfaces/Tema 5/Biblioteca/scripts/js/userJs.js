@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
     $(".returnBook").click(function (e) {
@@ -24,5 +22,7 @@ $(document).ready(function () {
             }
         });
     });
+
+    
     
 });
