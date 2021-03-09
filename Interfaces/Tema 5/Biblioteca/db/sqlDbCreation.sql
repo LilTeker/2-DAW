@@ -1,3 +1,9 @@
+CREATE USER 'userBiblio'@'localhost' IDENTIFIED BY 'biblioteca';
+GRANT ALL ON *.* TO 'userBiblio'@'localhost';
+
+CREATE DATABASE IF NOT EXISTS biblioteca;
+use biblioteca;
+
 CREATE TABLE Books (
     isbn varchar(255) NOT NULL,
     autor varchar(255) NOT NULL,
@@ -82,16 +88,17 @@ INSERT INTO `Books` (`isbn`, `autor`, `titulo`, `genero`, `sinopsis`, `rutaimg`,
 
 /*INSERTS USERS*/
 
-INSERT INTO `Users` (`mail`, `nombre`, `multaId`, `contrasena`, `administrator`) VALUES ('miguel00rg@hotmail.com', 'TEKER', NULL, 'TEKER', '1');
+INSERT INTO `Users` (`mail`, `nombre`, `multaId`, `contrasena`, `administrator`) VALUES ('admin@admin.com', 'admin', NULL, 'admin', '1');
+INSERT INTO `Users` (`mail`, `nombre`, `multaId`, `contrasena`, `administrator`) VALUES ('user@user.com', 'user', NULL, 'user', '1');
 
 
 /*INSERTS ALQUILER*/
 
-INSERT INTO `Alquiler` (`idalquiler`, `mail`, `isbn`, `fechainicio`, `fechafinal`) VALUES (NULL, 'miguel00rg@hotmail.com', '9788466657662', '2021-03-03', '2021-03-17');
+INSERT INTO `Alquiler` (`idalquiler`, `mail`, `isbn`, `fechainicio`, `fechafinal`) VALUES (NULL, 'user@user.com', '9788466657662', '2021-03-03', '2021-03-17');
 
 /*INSERTS COMENTARIOS*/
 
-INSERT INTO `Comentarios` (`idcomentario`, `isbn`, `comentario`, `puntuacion`, `mail`) VALUES (NULL, '9788466657662', 'me ha gustao un monton ta chulo el libro nene', '4.2', 'miguel00rg@hotmail.com');
+INSERT INTO `Comentarios` (`idcomentario`, `isbn`, `comentario`, `puntuacion`, `mail`) VALUES (NULL, '9788466657662', 'me ha gustao un monton ta chulo el libro nene', '4.2', 'user@user.com');
 /*INSERTS MULTAS*/
 
 INSERT INTO `Multas` (`multaid`, `isbn`, `fechainicio`) VALUES (NULL, '9788466657662', '2021-03-02');

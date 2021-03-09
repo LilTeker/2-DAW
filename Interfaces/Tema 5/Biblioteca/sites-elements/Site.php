@@ -190,7 +190,7 @@ class Site
           </div>
           <div class="col-sm-12 col-md-3">
             <label for="genero" class="form-label">Genero:</label>
-            <select name="genero" class="form-control" id="genero" aria-describedby="genero">
+            <select name="genero" class="form-select" id="genero" aria-describedby="genero">
               <option value="genero">Cualquiera</option>
               <option value="COMIC&MANGA">Comics y Mangas</option>
               <option value="FANTASIA">Fantasía</option>
@@ -200,7 +200,7 @@ class Site
           </div>
           <div class="col-sm-6 col-md-1">
             <label for="puntuacion" class="form-label">Puntuación:</label>
-            <select name="puntuacion" class="form-control" id="puntuacion" aria-describedby="puntuacion">
+            <select name="puntuacion" class="form-select" id="puntuacion" aria-describedby="puntuacion">
               <option value="null">^</option>
               <option value="1">1 estrella</i></option>
               <option value="2">2 estrella</i></option>
@@ -368,7 +368,7 @@ class Site
                     </div>
                     <div class="mb-3 col-sm-2 mt-2">
                       <label for="puntuacion" class="form-label">Puntuación:</label>
-                      <select name="puntuacionComentario" class="form-control" id="puntuacionComentario" aria-describedby="puntuacionComentario">
+                      <select name="puntuacionComentario" class="form-select" id="puntuacionComentario" aria-describedby="puntuacionComentario">
                         <option value="null">Seleccione</option>
                         <option value="1">1 estrella</i></option>
                         <option value="2">2 estrella</i></option>
@@ -505,6 +505,8 @@ class Site
     $books = getAllBooks();
     $users = getAllUsers();
 
+
+
     if (sizeof($books) != 0 || sizeof($users) != 0) {
       ?>
 
@@ -521,6 +523,7 @@ class Site
                     <tr>
                       <th scope="col">Mail</th>
                       <th scope="col">Nick</th>
+                      <th scope="col">Admin</th>
                       <th scope="col">Borrar</th>
                     </tr>
                     <?php
@@ -529,6 +532,19 @@ class Site
                       <tr>
                         <td><?=$user["mail"]?></td>
                         <td><?=$user["nombre"]?></td>
+                        <td>
+                          <?php
+                          if ($user["administrator"] == 0) {
+                            ?>
+                            No
+                            <?php
+                          } else {
+                            ?>
+                            Si
+                            <?php
+                          }
+                          ?>
+                        </td>
                         <td><button type="button" class="btn btn-warning buttonDeleteUser" data-id="<?=$user["mail"]?>">Borrar Usuario</button></td>
                       </tr>
                       <?php
@@ -536,6 +552,9 @@ class Site
                   ?>
                   </table>
                   <p id="errorBorrarUser">No se ha podido borrar el usuario, inténtelo de nuevo mas tarde</p>
+                </div>
+                <div class="col-sm-12 my-3 text-center">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalCreateUser" class="btn btn-primary mx-2 my-md-0 my-sm-2">Crear Usuario</button>
                 </div>
               </div>
 
@@ -546,6 +565,9 @@ class Site
               <div class="row">
                 <div class="col-sm-12 mt-5 text-center">
                   <h2>No hay usuarios registrados</h2>
+                </div>
+                <div class="col-sm-12 my-3 text-center">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalCreateUser" class="btn btn-primary mx-2 my-md-0 my-sm-2">Crear Usuario</button>
                 </div>
               </div>
 
@@ -588,6 +610,9 @@ class Site
                   ?>
                   </table>
                   <p id="errorBorrarBook">No se ha podido borrar el libro, inténtelo de nuevo mas tarde</p>
+                  <div class="col-sm-12 my-3 text-center">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalCrearLibro" class="btn btn-primary mx-2">Crear Libro</button>
+                  </div>
                 </div>
               </div>
 
@@ -604,7 +629,99 @@ class Site
               <?php
             }
           ?>
-
+          <div class="modal fade" id="modalCreateUser" tabindex="-1" aria-labelledby="modalCreateUserLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCreateUserLabel">Crear Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <form id="createUserForm">
+                    <div class="mb-3">
+                      <label for="nombreNewUser" class="form-label">Nick:</label>
+                      <input type="text" class="form-control" id="nombreNewUser" name="nombreNewUser" aria-describedby="nombreNewUser" placeholder="hola1234">
+                    </div>
+                    <div class="mb-3">
+                      <label for="mailNewUser" class="form-label">Email:</label>
+                      <input type="email" class="form-control" id="mailNewUser" name="mailNewUser" aria-describedby="mailNewUser" placeholder="ejemplo@ejemplo.com">
+                    </div>
+                    <div class="mb-3">
+                      <label for="contrasena" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="contrasena" aria-describedby="contrasena" name="contrasena">
+                    </div>
+                    <div class="mb-3 form-group">
+                      <label for="privileges" class="form-label">Admin</label>
+                      <select class="form-select" name="privileges" id="privileges" aria-describedby="privileges">
+                        <option selected value="0">No</option>
+                        <option value="1">Si</option>
+                      </select>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" id="createUser" class="btn btn-primary">Crear Usuario</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modalCrearLibro" tabindex="-1" aria-labelledby="modalCrearLibroLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCrearLibroLabel">Crear Libro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <form id="createBookForm">
+                    <div class="mb-3">
+                      <label for="isbnNewBook" class="form-label">ISBN:</label>
+                      <input type="text" class="form-control" id="isbnNewBook" name="isbnNewBook" aria-describedby="isbnNewBook" placeholder="9788416401925">
+                    </div>
+                    <div class="mb-3">
+                      <label for="titulo" class="form-label">Título:</label>
+                      <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Harry Potter y la Piedra Filosofal">
+                    </div>
+                    <div class="mb-3">
+                      <label for="autor" class="form-label">Autor:</label>
+                      <input type="text" class="form-control" id="autor" name="autor" placeholder="J.K.Roling">
+                    </div>
+                    <div class="mb-3">
+                      <label for="fechaSalida" class="form-label">Año de Salida:</label>
+                      <input type="text" class="form-control" id="fechaSalida" name="fechaSalida" placeholder="2010">
+                    </div>
+                    <div class="mb-3">
+                      <label for="genero" class="form-label">Género:</label>
+                      <select class="form-select" name="genero" id="genero" aria-describedby="privileges">
+                        <option value="COMIC&MANGA">Comics y Mangas</option>
+                        <option value="FANTASIA">Fantasía</option>
+                        <option selected value="HISTORIA">Histórico</option>
+                        <option value="NOVELA_NEGRA">Novela Negra</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="sinopsis" class="form-label">Sinopsis:</label>
+                      <textarea name="sinopsis" class="form-control" id="sinopsis"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="rutaimg" class="form-label">Ruta de la IMG:</label>
+                      <input type="text" class="form-control" id="rutaimg" name="rutaimg" placeholder="imagen.jpg">
+                    </div>
+                    <input type="hidden" name="puntuacion" value="5">
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" id="createBook" class="btn btn-primary">Crear Libro</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       <?php
     }
 
