@@ -120,8 +120,8 @@ class Site
                   Buenas <?= $_SESSION["nombre"] ?>
                 </li>
               </ul>
-              <a href="#" class="btn btn-primary mx-2 my-md-0 my-sm-2"><i class="fa fa-tasks" aria-hidden="true"></i></a>
-              <a href="#" class="btn btn-primary mx-2 my-md-0 my-sm-2"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+              <a href="admin.php" class="btn btn-primary mx-2 my-md-0 my-sm-2"><i class="fa fa-tasks" aria-hidden="true"></i></a>
+              <a href="user.php" class="btn btn-primary mx-2 my-md-0 my-sm-2"><i class="fa fa-book" aria-hidden="true"></i></a>
               <a href="scripts/php/logout.php" class="btn btn-primary mx-2">Cerrar Sesión</a>
             </div>
           </nav>
@@ -147,7 +147,7 @@ class Site
                   Buenas <?= $_SESSION["nombre"] ?>
                 </li>
               </ul>
-              <a href="#" class="btn btn-primary mx-2 my-md-0 my-sm-2"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+              <a href="user.php" class="btn btn-primary mx-2 my-md-0 my-sm-2"><i class="fa fa-book" aria-hidden="true"></i></a>
               <a href="scripts/php/logout.php" class="btn btn-primary mx-2">Cerrar Sesión</a>
             </div>
           </nav>
@@ -422,5 +422,65 @@ class Site
       echo "<p class='mt-5'>No se ha conseguido un valor isbn, por favor intentelo más tarde</p>";
     }
   }
+
+  
+  public function printBodyUser() {
+
+    $books = getAllBooks();
+    $rentUser = getRentUser();
+    
+    $allBooksRented = [];
+    
+    foreach ($rentUser as $rent) {
+      foreach ($books as $book ) {
+        
+        if ($rent["isbn"] == $book["isbn"]) {
+          $book["fechainicio"] = $rent["fechainicio"];
+          $book["fechafinal"] = $rent["fechafinal"];
+          $book["idalquiler"] = $rent["idalquiler"];
+          array_push($allBooksRented, $book);
+        }
+
+      }
+    }
+
+
+    ?>
+
+      <div class="row mt-3">
+        <div class="col-sm-12 text-center px-0 py-4 bckColorBlue">
+        <h2 class="pt-2">Bienvenido <?= $_SESSION["nombre"] ?></h2>
+        <h2 class="pt-2">Aqui podras ver los libros que tienes en alquiler y devolverlos.</h2>
+        </div>
+      </div>
+      <div class="row">
+        <?php
+
+        foreach ($allBooksRented as $book) {
+          
+          ?>
+            <div class="col-sm-6 col-md-4 d-flex justify-content-center text-center py-4">
+              <div class="card">
+              <img src="img/books/<?=$book["rutaimg"]?>" class="card-img-top cardImg" alt="<?=$book["rutaimg"]?>">
+              <div class="card-body">
+                <h5 class="card-title"><?=$book["titulo"]?></h5>
+                <p class="card-text">Inicio del Alquiler <br><b><?=$book["fechainicio"]?></b></p>
+                <p class="card-text">Final del Alquiler <br><b><?=$book["fechafinal"]?></b></p>
+                <a class="btn btn-primary returnBook" data-id="<?=$book["idalquiler"]?>">Devolver</a>
+              </div>
+            </div>
+            </div>
+          <?php
+
+        }
+        ?>
+        <div class="col-sm-12">
+          <p id="errorDevolucion">No se ha podido devolver el libro, intentelo de nuevo mas tarde<p>
+        </div>
+      </div>
+    <?php
+
+  }
+
 }
 ?>
