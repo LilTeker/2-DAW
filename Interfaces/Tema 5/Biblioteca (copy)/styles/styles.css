@@ -1,0 +1,57 @@
+#infoLoginDiv {
+  display: none;
+  color: red;
+  padding-bottom: 1em;
+}
+
+.bckColorBlue {
+  background-color: #A8D5E2;
+}
+
+.card {
+  width: 75%;
+}
+
+.genreBubble {
+  color: white;
+  background-color: #2176FF;
+  display: inline;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 5em;
+}
+
+.alquilarContainer {
+  border-radius: 8px;
+  background-color: #504B43;
+  color: white;
+}
+
+.bckColorGray {
+  background-color: #E3E1DE;
+}
+
+#textCommentaryHidden {
+  display: none;
+  color: red;
+}
+
+#errorDevolucion {
+  display: none;
+  color: red;
+}
+
+#errorBorrarUser {
+  display: none;
+  color: red;
+}
+
+#errorBorrarBook {
+  display: none;
+  color: red;
+}
+
+.imgAdmin {
+  width: 30%;
+}
+/*# sourceMappingURL=styles.css.map */
