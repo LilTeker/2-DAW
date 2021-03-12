@@ -3,3 +3,15 @@ Instalas xampp,
 con xamp una vez ya instalado abres phpmyadmin y vas a la pestaña de sql, ahi pegas todo el alchivo sqlDbCreation.sql que hay en la carpeta sqlDbCreation
 
 y abres localhost/Biblioteca y ya
+
+usuarios son:
+
+admin:
+
+user -admin@admin.com
+pass - admin
+
+user:
+
+user - user@user.com
+pass - user
