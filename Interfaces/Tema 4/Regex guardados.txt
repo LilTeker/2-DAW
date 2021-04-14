@@ -1,0 +1,5 @@
+Nombre, acepta tildes y nombres compuestos (Miguel Ángel)
+
+js -> /^[a-zA-Z\u00C0-\u00FF\s]*$/
+
+
