@@ -1,0 +1,5 @@
+los requerimientos funcionales (36) y no funcionales del sistema. (37) -> pag 35 --Completado (rellenar introducción)--
+
+Casos de Uso: Diagrama Frontera  y descripcion de todos los casos de uso -> pág 38 --Completado (rellenar introducción)--
+
+Modelo de dominio. -> pag 46
