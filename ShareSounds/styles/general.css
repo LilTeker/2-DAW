@@ -1,4 +1,50 @@
 body {
   background-color: lightgray;
+  font-family: 'Roboto', sans-serif;
+}
+
+#logo-img {
+  height: 43px;
+}
+
+#container-navbar-playlists {
+  background-color: #1f1f1f;
+  margin-top: 4.1em;
+  color: #f4d80a;
+  padding: 20px 60px;
+}
+
+.header-pl-text {
+  margin: 0;
+  padding: 3px 0;
+}
+
+#container-list-playlists {
+  background-color: red;
+  height: 100%;
+}
+
+.item-pl {
+  background-color: #ff8741;
+  border-bottom: 3px solid #e07200;
+}
+
+.img-pl {
+  height: 100px;
+  padding: 10px 0;
+}
+
+.text-pl {
+  margin: 0;
+  padding: 33px 0;
+  font-size: 22px;
+  color: #633302;
+}
+
+.pl-crud-icon {
+  font-size: 32px;
+  padding: 34px 0;
+  cursor: pointer;
+  color: #4a2500;
 }
 /*# sourceMappingURL=general.css.map */
