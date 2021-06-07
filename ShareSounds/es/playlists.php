@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize user not access in "wel
 	<?php
 	$site->print_head("Tus Playlists");
 	?>
-	<script src="../js/jquery.serializeToJSON.js"></script>
+	<!--<script src="../js/jquery.serializeToJSON.js"></script>-->
 	<script src="../js/playlists.js"></script>
 </head>
 
@@ -46,56 +46,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize user not access in "wel
 				<button type="button" class="btn btn-outline-warning mx-2">Exportar</button>
 			</div>
 		</div>
-		<div class="row" id="container-list-playlists">
-			<div class="col-sm-12 item-pl">
-				<div class="row ">
-					<div class="col-md-2">
-						<img src="../img/default_ss.svg" class="img-pl" alt="default_pl_img" />
-					</div>
-					<div class="col-md-8">
-						<p class="text-pl">Playlist de prueba</p>
-					</div>
-					<div class="col-md-1">
-						<i class="fas fa-trash-alt pl-crud-icon"></i>
-					</div>
-					<div class="col-md-1">
-						<i class="fas fa-pen-square pl-crud-icon"></i>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-12 item-pl">
-				<div class="row ">
-					<div class="col-md-2">
-						<img src="../img/default_ss.svg" class="img-pl" alt="default_pl_img" />
-					</div>
-					<div class="col-md-8">
-						<p class="text-pl">Playlist de prueba</p>
-					</div>
-					<div class="col-md-1">
-						<i class="fas fa-trash-alt pl-crud-icon"></i>
-					</div>
-					<div class="col-md-1">
-						<i class="fas fa-pen-square pl-crud-icon"></i>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-12 item-pl">
-				<div class="row ">
-					<div class="col-md-2">
-						<img src="../img/default_ss.svg" class="img-pl" alt="default_pl_img" />
-					</div>
-					<div class="col-md-8">
-						<p class="text-pl">Playlist de prueba</p>
-					</div>
-					<div class="col-md-1">
-						<i class="fas fa-trash-alt pl-crud-icon"></i>
-					</div>
-					<div class="col-md-1">
-						<i class="fas fa-pen-square pl-crud-icon"></i>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="row" id="container-list-playlists"></div>
 
 
 		<!--Modal window for new playlist-->
@@ -141,43 +92,6 @@ if (!isset($_SESSION['user_login']))	//check unauthorize user not access in "wel
 			</div>
 		</div>
 	</div>
-
-
-
-	<!--
-	<div class="wrapper mt-5">
-		<div class="container">
-
-			<div class="col-lg-12">
-				<center>
-					<h2>
-						<?php
-
-
-
-						$id = $_SESSION['user_login'];
-
-						$select_stmt = $db->prepare("SELECT * FROM user WHERE user_id=:uid");
-						$select_stmt->execute(array(":uid" => $id));
-
-						$row = $select_stmt->fetch(PDO::FETCH_ASSOC);
-
-						if (isset($_SESSION['user_login'])) {
-						?>
-							Welcome,
-						<?php
-							echo $row['username'];
-						}
-						?>
-					</h2>
-				</center>
-
-			</div>
-
-		</div>
-	</div>
-	-->
-
 </body>
 
 </html>

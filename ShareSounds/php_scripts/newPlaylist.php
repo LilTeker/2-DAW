@@ -5,7 +5,7 @@ require_once 'connection.php';
 
 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp', 'pdf', 'doc', 'ppt'); // valid extensions
-$path = '../img/'; // upload directory
+$path = '../users_img/'; // upload directory
 
 
 if (!empty($_POST['pl_name']) || !empty($_POST['access_type'])) {
@@ -28,19 +28,37 @@ if (!empty($_POST['pl_name']) || !empty($_POST['access_type'])) {
                 $pl_name = $_POST['pl_name'];
                 $access_type = $_POST['access_type'];
 
-                $stmt = $db->prepare("INSERT INTO 'playlists' ('pl_name', 'access_type', 'img_name') VALUES (:pl_name, :access_type, :img_name)");
+                $stmt = $db->prepare("INSERT INTO `playlist` (`user_id`, `pl_name`, `access_type`, `img_name`) VALUES (:user_id, :pl_name, :access_type, :img_name)");
+                $stmt->bindParam(":user_id", $_SESSION["user_login"]);
                 $stmt->bindParam(":pl_name", $_POST["pl_name"]);
-                    //insert form data in the database
-                    //$insert = $db->query("INSERT playlist (pl_name,access_type,img_name) VALUES ('" . $pl_name . "','" . $access_type . "','" . $path . "')");
-                    //echo $insert?'ok':'err';
-                ;
+                $stmt->bindParam(":access_type", $_POST["access_type"]);
+                $stmt->bindParam(":img_name", strtolower($final_image));
+
+                if ($stmt->execute()) {
+                    echo "valid";
+                } else {
+                    echo "could not execute query";
+                }
             }
         } else {
-            echo 'invalid';
+            echo json_encode('invalid');
         }
     } else {
-        //echo "no image";
+
+        $pl_name = $_POST['pl_name'];
+        $access_type = $_POST['access_type'];
+
+        $stmt = $db->prepare("INSERT INTO `playlist` (`user_id`, `pl_name`, `access_type`) VALUES (:user_id, :pl_name, :access_type)");
+        $stmt->bindParam(":user_id", $_SESSION["user_login"]);
+        $stmt->bindParam(":pl_name", $_POST["pl_name"]);
+        $stmt->bindParam(":access_type", $_POST["access_type"]);
+
+        if ($stmt->execute()) {
+            echo "valid";
+        } else {
+            echo "could not execute query";
+        }
     }
 } else {
-    echo "invalid";
+    echo json_encode("invalid");
 }

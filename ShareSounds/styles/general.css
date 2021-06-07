@@ -48,4 +48,12 @@ body {
   cursor: pointer;
   color: #4a2500;
 }
+
+#delete-pl {
+  text-align: right;
+}
+
+.error-message {
+  color: red;
+}
 /*# sourceMappingURL=general.css.map */

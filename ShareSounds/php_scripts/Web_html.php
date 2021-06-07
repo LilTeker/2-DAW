@@ -12,7 +12,7 @@ class Web_html
             <meta charset="utf-8">
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
-            <title>ShareSounds - <?= $title ?></title>
+            <title><?= $title ?> - ShareSounds</title>
 
             <script src="https://kit.fontawesome.com/18ffbc96ae.js" crossorigin="anonymous"></script>
             <link rel="preconnect" href="https://fonts.gstatic.com">
