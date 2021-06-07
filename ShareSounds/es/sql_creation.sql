@@ -10,7 +10,7 @@ CREATE TABLE `playlist` (
   `pl_id` int(11) NOT NULL AUTO_INCREMENT,
   `pl_name` varchar(40) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `img_name` varchar(255) DEFAULT 'default_ss.png',
+  `img_name` varchar(255) DEFAULT 'default_ss.svg',
   `access_type` boolean NOT NULL,
   PRIMARY KEY (`pl_id`),
   FOREIGN KEY (`user_id`) REFERENCES user(`user_id`)
