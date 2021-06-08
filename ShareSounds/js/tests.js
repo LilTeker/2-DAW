@@ -9,7 +9,7 @@ var match = url.match(regExp);
 
 
 
-//CONSEGUIR DATOS DE VIDEO
+//CONSEGUIR DATOS DE VIDEO YT
 let videoId = "2ikms80DTPg";
 let youtubeKey = "AIzaSyDJr9IEaJPNdBVcJHTsYSWUaxYA5OaO_yk";
 
@@ -25,7 +25,7 @@ async function getVideoData(videoId) {
 
 }
 
-//getVideoData(videoId);
+getVideoData(videoId);
 
 //FIN CONSEGUIR DATOS DE VIDEO
 
@@ -112,4 +112,20 @@ $(document).ready(function () {
 
 });
 
+//GET SOUNDCLOUD IFRAME FROM THE URL
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://soundcloud.com/oembed",
+    "method": "POST",
+    "headers": {},
+    "data": {
+        "format": "json",
+        "url": "https://soundcloud.com/startalk/cosmic-queries-the-deep"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
 
