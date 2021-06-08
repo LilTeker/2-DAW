@@ -71,8 +71,6 @@ if (isset($_REQUEST['btn_login']))	//button name is "btn_login"
 		?>
 	</div>
 
-
-	<!--CAMBIAR MARGINS TOP-->
 	<div class="wrapper mt-5">
 
 		<div class="container mt-5">
