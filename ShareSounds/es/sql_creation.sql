@@ -22,6 +22,9 @@ CREATE TABLE `song` (
   `link` varchar(255) NOT NULL,
   `type` varchar(40) NOT NULL,
   `pl_id` int(11) NOT NULL,
+  `data_frame` varchar(255),
   PRIMARY KEY (`song_id`),
   FOREIGN KEY (`pl_id`) REFERENCES playlist(`pl_id`)
 );
+
+INSERT INTO `song` (`song_id`, `name`, `link`, `type`, `pl_id`) VALUES (NULL, 'Zapatillas', 'https://www.youtube.com/watch?v=n9jzGmFBzx8', 'youtube', '22');

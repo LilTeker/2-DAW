@@ -97,20 +97,20 @@ function unMute() {
 let sc_player = "";
 
 
-$(document).ready(function () {
+// $(document).ready(function () {
 
-    //Care get the element when the document its ready
+//     //Care get the element when the document its ready
 
-    let iframeElement = document.querySelector("iframe");
-    sc_player = SC.Widget(iframeElement);
+//     let iframeElement = document.querySelector("iframe");
+//     sc_player = SC.Widget(iframeElement);
 
-    //Evento para pasar a siguiente cancion.
-    sc_player.bind(SC.Widget.Events.FINISH, function () {
-        alert("terminado")
-    })
+//     //Evento para pasar a siguiente cancion.
+//     sc_player.bind(SC.Widget.Events.FINISH, function () {
+//         alert("terminado")
+//     })
 
 
-});
+// });
 
 //GET SOUNDCLOUD IFRAME FROM THE URL
 var settings = {
@@ -125,7 +125,8 @@ var settings = {
     }
 }
 
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
+// $.ajax(settings).done(function (response) {
+//     console.log(response);
+// });
+
 

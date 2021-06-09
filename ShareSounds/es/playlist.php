@@ -45,7 +45,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                 $site->print_head($pl_name);
                 ?>
                 <!--<script src="../js/jquery.serializeToJSON.js"></script>-->
-                <script src="../js/tests.js"></script>
+                <!--<script src="../js/tests.js"></script>-->
                 <script src="../js/Song.js"></script>
                 <script src="../js/music.js"></script>
             </head>
@@ -66,23 +66,65 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                             <button type="button" class="btn btn-outline-warning mx-2">Exportar</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-8">
-                            <div class="row" id="player-container">
-                                <div class="col-sm-12">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2ikms80DTPg" 
-                                    title="SHINOVA - Solo Ruido (Lyric Video Oficial)" frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen></iframe>
+                    <div class="row mt-5">
+                        <div class="col-sm-12 col-lg-7">
+                            <div class="row">
+                                <div class="col-sm-12" id="player-container">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2ikms80DTPg" title="SHINOVA - Solo Ruido (Lyric Video Oficial)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-8">
+                        <div class="col-sm-12 col-lg-5">
                             <div class="row" id="music-container">
                                 <div class="col-sm-12">
-                                    <ul>
-                                        <li></li>
+                                    <ul id="container-music-list">
+                                        <li class="song-element" data-listid="0">
+                                            <p><i class="fab fa-youtube"></i> Zapatillas - El canto del Loco</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
+                                        <hr class="song-separator">
+                                        <li class="song-element" data-listid="1">
+                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                        </li>
                                     </ul>
+                                    <div id="add-song">
+                                        <p><i class="fas fa-plus"></i> Añade tu Música</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

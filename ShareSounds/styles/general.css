@@ -3,6 +3,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+p {
+  padding: 0;
+  margin: 0;
+}
+
 #logo-img {
   height: 43px;
 }
@@ -55,5 +60,51 @@ body {
 
 .error-message {
   color: red;
+}
+
+#container-music-list {
+  list-style: none;
+  background-color: #2b2b2b;
+  color: white;
+  padding: 15px;
+  border: 5px solid #1f1f1f;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.song-element {
+  color: white;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.song-separator {
+  border-bottom: 1px solid #f4d80af7;
+  margin: 0;
+  padding: 0;
+}
+
+#add-song {
+  text-align: center;
+  background-color: #f4d80a;
+  padding: 10px;
+  color: #2b2b2b;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+#player-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 500px;
 }
 /*# sourceMappingURL=general.css.map */
