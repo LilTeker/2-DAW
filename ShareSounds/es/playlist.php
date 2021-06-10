@@ -15,6 +15,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
     $pl_name = "";
     $access_type = "";
     $owner = "";
+    $pl_id = $_GET["pl_id"];
 
 
 
@@ -45,6 +46,8 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                 $site->print_head($pl_name);
                 ?>
                 <!--<script src="../js/jquery.serializeToJSON.js"></script>-->
+                <script src="https://www.youtube.com/iframe_api"></script>
+                <script src="https://w.soundcloud.com/player/api.js"></script>
                 <!--<script src="../js/tests.js"></script>-->
                 <script src="../js/Song.js"></script>
                 <script src="../js/music.js"></script>
@@ -52,7 +55,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
 
             <body>
 
-                <div class="container-fluid">
+                <div class="container-fluid" id="container-identificator" data-plid="<?=$pl_id?>">
 
                     <?php
                     $site->print_navbar();
@@ -70,7 +73,9 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                         <div class="col-sm-12 col-lg-7">
                             <div class="row">
                                 <div class="col-sm-12" id="player-container">
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2ikms80DTPg" title="SHINOVA - Solo Ruido (Lyric Video Oficial)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <!--here should be div id="player" for the youtube iframe api when needed-->
+                                    <div id="player"></div>
+                                    <!--<iframe width="100%" height="100%" src="https://www.youtube.com/embed/2ikms80DTPg" title="SHINOVA - Solo Ruido (Lyric Video Oficial)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                                 </div>
                             </div>
                         </div>
@@ -128,6 +133,9 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div id="error-msg">
+                    
                     </div>
 
                 </div>

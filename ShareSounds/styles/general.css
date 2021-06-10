@@ -93,6 +93,7 @@ p {
   color: #2b2b2b;
   border: 2px solid black;
   cursor: pointer;
+  font-weight: bold;
 }
 
 #player-container {
@@ -106,5 +107,11 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   height: 500px;
+}
+
+.delete-song {
+  float: right;
+  padding: 5px 0;
+  cursor: pointer;
 }
 /*# sourceMappingURL=general.css.map */

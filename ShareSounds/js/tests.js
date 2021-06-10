@@ -1,4 +1,4 @@
-//CODIGO QUE CONSIGUE LA ID DE LA URL DE YOUTUBE
+//CODIGO QUE CONSIGUE LA ---ID--- DE LA URL DE YOUTUBE
 let url = "https://www.youtube.com/watch?v=2ikms80DTPg";
 
 var regExp = /^https?\:\/\/(?:www\.youtube(?:\-nocookie)?\.com\/|m\.youtube\.com\/|youtube\.com\/)?(?:ytscreeningroom\?vi?=|youtu\.be\/|vi?\/|user\/.+\/u\/\w{1,2}\/|embed\/|watch\?(?:.*\&)?vi?=|\&vi?=|\?(?:.*\&)?vi?=)([^#\&\?\n\/<>"']*)/i;
@@ -9,7 +9,7 @@ var match = url.match(regExp);
 
 
 
-//CONSEGUIR DATOS DE VIDEO YT
+//CONSEGUIR ---DATOS--- DE VIDEO YT
 let videoId = "2ikms80DTPg";
 let youtubeKey = "AIzaSyDJr9IEaJPNdBVcJHTsYSWUaxYA5OaO_yk";
 
@@ -25,7 +25,7 @@ async function getVideoData(videoId) {
 
 }
 
-getVideoData(videoId);
+//getVideoData(videoId);
 
 //FIN CONSEGUIR DATOS DE VIDEO
 
@@ -37,7 +37,7 @@ getVideoData(videoId);
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 
-/*
+
 var player;
 
 function onYouTubeIframeAPIReady() {
@@ -67,15 +67,21 @@ function onPlayerReady(event) {
     
 }
 
+function onStateChange(event) {
+    event.target
+}
+
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
-var done = false;
+/*CODIGO EJEMPLOS DE LA API*/
+//var done = false;
 
 function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
+    if (event.data == YT.PlayerState.ENDED) {
         //setTimeout(stopVideo, 6000);
-        done = true;
+        //done = true;
+        alert("terminao");
     }
 }
 
@@ -86,7 +92,7 @@ function stopVideo() {
 function unMute() {
     player.unMute();
 }
-*/
+
 
 //TERMINA CODIGO REPRODUCTOR DE YOUTUBE
 

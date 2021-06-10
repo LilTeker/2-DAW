@@ -8,7 +8,7 @@ require_once '../php_scripts/Web_html.php';
 $site = new Web_html();
 
 
-if (!isset($_SESSION['user_login']))	//check unauthorize user not access in "welcome.php" page
+if (!isset($_SESSION['user_login']))	//check unauthorize access
 {
 	header("location: index.php");
 }
