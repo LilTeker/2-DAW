@@ -54,10 +54,8 @@ if (isset($_POST["pl_id"])) {
         
                         echo json_encode($songsArr);
         
-                    } else {
-                        http_response_code(404);
-        
-                        echo json_encode("not found");
+                    } else {        
+                        echo json_encode("empty");
                     }
 
                 };

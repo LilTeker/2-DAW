@@ -6,13 +6,13 @@ class Song {
         this.link = link;
         this.type = type;
         this.pl_id = pl_id;
-        this.data_frame = this.getDataFrame(link, type);
+        this.data_frame = this.constructor.getDataFrame(link, type);
         this.active = active;
         this.icon = this.getIcon(type);
     }
 
     getHtml(index = 0) {
-        let html = `<li class="song-element" data-listid="${index}">
+        let html = `<li class="song-element" title="${this.getName()}" data-listid="${index}">
                         <p>${this.getIcon()} ${this.getName()}<i class="fas fa-trash-alt delete-song" data-listid="${index}"></i></p>
                     </li>`;
 
@@ -20,20 +20,36 @@ class Song {
 
     }
 
-    getIcon(type = "default") {
+    static validateUrl(url, type) {
 
-        if (type == "default") {
-            return this.icon;
-        } else if (type == "youtube") {
-            return `<i class="fab fa-youtube"></i>`;
-        } else if (type == "soundcloud") {
-            return `<i class="fab fa-soundcloud"></i>`;
+        let bool = false;
+        let regExp
+
+        switch (type) {
+            case "youtube":
+                    regExp = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+                    if (url.match(regExp)) {
+                        bool = true;
+                    } else {
+                        bool = false;
+                    }                
+                break;
+            case "soundcloud":
+                regExp = /^(?:(https?):\/\/)?(?:(?:www|m)\.)?(soundcloud\.com|snd\.sc)\/(.*)$/;
+                if (url.match(regExp)) {
+                    bool = true;
+                } else {
+                    bool = false;
+                }  
+                break;
+            default:
+                break;
         }
 
-        return this.icon;
+        return bool;
     }
 
-    getDataFrame(url, type) {
+    static getDataFrame(url, type) {
 
         if (type == "youtube") {
 
@@ -47,6 +63,19 @@ class Song {
             return null;
         }
         return null;
+    }
+
+    getIcon(type = "default") {
+
+        if (type == "default") {
+            return this.icon;
+        } else if (type == "youtube") {
+            return `<i class="fab fa-youtube"></i>`;
+        } else if (type == "soundcloud") {
+            return `<i class="fab fa-soundcloud"></i>`;
+        }
+
+        return this.icon;
     }
 
     getSong_id() {

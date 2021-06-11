@@ -8,6 +8,10 @@ p {
   margin: 0;
 }
 
+.err {
+  color: red;
+}
+
 #logo-img {
   height: 43px;
 }
@@ -78,6 +82,7 @@ p {
   color: white;
   padding: 5px;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .song-separator {
@@ -89,7 +94,6 @@ p {
 #add-song {
   text-align: center;
   background-color: #f4d80a;
-  padding: 10px;
   color: #2b2b2b;
   border: 2px solid black;
   cursor: pointer;
@@ -113,5 +117,23 @@ p {
   float: right;
   padding: 5px 0;
   cursor: pointer;
+}
+
+#text-start-music {
+  width: 75%;
+  font-size: 35px;
+  text-align: center;
+  color: #505050;
+}
+
+#new-song-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 10px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: 100%;
 }
 /*# sourceMappingURL=general.css.map */

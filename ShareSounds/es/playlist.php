@@ -55,8 +55,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
 
             <body>
 
-                <div class="container-fluid" id="container-identificator" data-plid="<?=$pl_id?>">
-
+                <div class="container-fluid" id="container-identificator" data-plid="<?= $pl_id ?>">
                     <?php
                     $site->print_navbar();
                     ?>
@@ -73,6 +72,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                         <div class="col-sm-12 col-lg-7">
                             <div class="row">
                                 <div class="col-sm-12" id="player-container">
+                                    <h3 id="text-start-music">Haz click en alguna de tus canciones para comenzar la reproducción</h3>
                                     <!--here should be div id="player" for the youtube iframe api when needed-->
                                     <div id="player"></div>
                                     <!--<iframe width="100%" height="100%" src="https://www.youtube.com/embed/2ikms80DTPg" title="SHINOVA - Solo Ruido (Lyric Video Oficial)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
@@ -84,58 +84,51 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                                 <div class="col-sm-12">
                                     <ul id="container-music-list">
                                         <li class="song-element" data-listid="0">
-                                            <p><i class="fab fa-youtube"></i> Zapatillas - El canto del Loco</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
-                                        </li>
-                                        <hr class="song-separator">
-                                        <li class="song-element" data-listid="1">
-                                            <p><i class="fab fa-soundcloud"></i> The Illusion of Free Will, with Sam Harris - StarTalk Radio</p>
+                                            <p><i class="fab fa-youtube"></i> No tienes ninguna canción en tu lista, ¡Añádela ahora!</p>
                                         </li>
                                     </ul>
                                     <div id="add-song">
-                                        <p><i class="fas fa-plus"></i> Añade tu Música</p>
+                                        <button type="button" data-toggle="modal" data-target="#newSongModal" id="new-song-button" class="mx-2"><i class="fas fa-plus"></i> Añade tu Música</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="error-msg">
-                    
+
+                    </div>
+
+                    <div class="modal fade" id="newSongModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <form id="newSongForm">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Añadir Canciones</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
+                                                <label for="source">Elije la fuente de tu música:</label>
+                                                <select class="form-control" name="source" id="source">
+                                                    <option value="null"></option>
+                                                    <option value="0">Youtube</option>
+                                                    <option value="1">Soundcloud</option>
+                                                </select>
+                                            </div>
+                                            <div id="form-container" class="col-sm-12"></div>
+                                            <div class="col-sm-12 err" id="err-song"></div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-primary">Añadir</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
