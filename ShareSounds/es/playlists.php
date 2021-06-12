@@ -103,6 +103,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 						</div>
 						<div class="modal-body">
 							<div class="row">
+
 								<div class="form-group col-sm-12">
 									<label for="search_pl_name">Nombre de la Playlist</label>
 									<input type="text" class="form-control" id="search_pl_name" name="search_pl_name" placeholder="Rock Español">
@@ -111,30 +112,59 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 									<label for="search_user_pl">Nombre del usuario creador</label>
 									<input type="text" class="form-control" id="search_user_pl" name="search_user_pl" placeholder="MúsicoGuay365">
 								</div>
-								<div class="col-sm-12" id="err"></div>
+
+								<div class="col-sm-12 err" id="err_shareForm"></div>
+
 								<hr class="searchSeparator">
+
 								<div class="col-sm-12">
-									<ul id="shareResults">
-										<li>
-											<a href="playlist.php#">
-												<div class="row searchElement">
-													<div class="col-sm-4">
-														<img class="img-pl" src="../users_img/1157458the-tree-wallpaper-1920x1080-wallpaper.jpg" alt="1157458the-tree-wallpaper-1920x1080-wallpaper.jpg">
-													</div>
-													<div class="col-sm-8">
-														<h4>Nombre Playlist</h4>
-														<p>Autor: Teker</p>
-													</div>
-												</div>
-											</a>
-										</li>
-									</ul>
+									<ul id="shareResults"></ul>
 								</div>
 							</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 							<button type="submit" class="btn btn-primary">Buscar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!--Modal to edit pl-->
+		<div class="modal fade" id="editPl" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<form id="editPlForm">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle">Editar Playlists</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+
+								<div class="form-group col-sm-12">
+									<label for="editPlName">Nuevo nombre de la playlist</label>
+									<input type="text" class="form-control" id="editPlName" name="editPlName" placeholder="Rock Español">
+								</div>
+								<div class="form-group col-sm-12">
+									<label for="editPlPrivacity">Privacidad:</label>
+									<select class="form-control" name="editPlPrivacity" id="editPlPrivacity">
+										<option value="0">Pública</option>
+										<option value="1">Privada</option>
+									</select>
+								</div>
+								<div class="col-sm-12 err" id="err_editForm"></div>
+								<div class="col-sm-12 success" id="success_editForm"></div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							<button type="submit" class="btn btn-primary">Aceptar</button>
 						</div>
 					</form>
 				</div>
