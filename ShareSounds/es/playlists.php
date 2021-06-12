@@ -41,9 +41,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 			</div>
 			<div class="col-sm-12 col-md-8 d-flex justify-content-end">
 				<button type="button" data-toggle="modal" data-target="#newPlModal" id="new-pl-button" class="btn btn-outline-warning mx-2">Nueva Playlist</button>
-				<button type="button" class="btn btn-outline-warning mx-2">Compartir</button>
-				<button type="button" class="btn btn-outline-warning mx-2">Importar</button>
-				<button type="button" class="btn btn-outline-warning mx-2">Exportar</button>
+				<button type="button" data-toggle="modal" data-target="#shareModal" id="share-button" class="btn btn-outline-warning mx-2">Compartir</button>
 			</div>
 		</div>
 		<div class="row" id="container-list-playlists"></div>
@@ -77,7 +75,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 								<div class="form-group col-sm-12">
 									<label for="access_type">Añade Una Imagen a la Lista:</label>
 									<input type="file" class="form-control-file" accept="image/*" id="pl_img" name="pl_img">
-									<div id="preview"><img src="../img/default_ss.svg" class="img-pl" alt="preview"/></div>
+									<div id="preview"><img src="../img/default_ss.svg" class="img-pl" alt="preview" /></div>
 									<p class="mt-3">Si no se añade ninguna imagen se usará la imagen por defecto :)</p>
 								</div>
 								<div class="col-sm-12" id="err"></div>
@@ -86,6 +84,57 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 							<button type="submit" class="btn btn-primary">Crear</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--Modal for share button-->
+		<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<form id="shareForm">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle">Buscar Playlists</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="form-group col-sm-12">
+									<label for="search_pl_name">Nombre de la Playlist</label>
+									<input type="text" class="form-control" id="search_pl_name" name="search_pl_name" placeholder="Rock Español">
+								</div>
+								<div class="form-group col-sm-12">
+									<label for="search_user_pl">Nombre del usuario creador</label>
+									<input type="text" class="form-control" id="search_user_pl" name="search_user_pl" placeholder="MúsicoGuay365">
+								</div>
+								<div class="col-sm-12" id="err"></div>
+								<hr class="searchSeparator">
+								<div class="col-sm-12">
+									<ul id="shareResults">
+										<li>
+											<a href="playlist.php#">
+												<div class="row searchElement">
+													<div class="col-sm-4">
+														<img class="img-pl" src="../users_img/1157458the-tree-wallpaper-1920x1080-wallpaper.jpg" alt="1157458the-tree-wallpaper-1920x1080-wallpaper.jpg">
+													</div>
+													<div class="col-sm-8">
+														<h4>Nombre Playlist</h4>
+														<p>Autor: Teker</p>
+													</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							<button type="submit" class="btn btn-primary">Buscar</button>
 						</div>
 					</form>
 				</div>

@@ -65,6 +65,10 @@ class Song {
         return null;
     }
 
+    getStoredDataFrame() {
+        return this.data_frame;
+    }
+
     getIcon(type = "default") {
 
         if (type == "default") {

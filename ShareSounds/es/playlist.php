@@ -63,10 +63,6 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                         <div class="col-sm-12 col-md-4">
                             <h3 class="header-pl-text"><?= $pl_name ?></h3>
                         </div>
-                        <div class="col-sm-12 col-md-8 d-flex justify-content-end">
-                            <a href="playlists.php" class="btn btn-outline-warning mx-2">Volver a Playlists</a>
-                            <button type="button" class="btn btn-outline-warning mx-2">Exportar</button>
-                        </div>
                     </div>
                     <div class="row mt-5">
                         <div class="col-sm-12 col-lg-7">

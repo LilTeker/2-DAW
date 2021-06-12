@@ -139,3 +139,20 @@ p {
     outline: inherit;
     width: 100%;
 }
+
+#shareResults {
+    list-style: none;
+    max-height: 300px;
+}
+
+.searchSeparator {
+    width: 100%;
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+}
+
+.searchElement {
+    justify-content: center;
+    align-items: center;
+}
+

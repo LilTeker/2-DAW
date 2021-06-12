@@ -2,9 +2,118 @@ let songs_arr = [];
 
 let now_playing = 0;
 
-function selectSong(e, element) {
-    console.log("select" + element.data("listid"));
+function changeElementColor(dataid) {
+    $('.song-element').each(function(i, obj) {
+        if ($(this).data("listid") == dataid) {
+            //color cuando activo
+            //background-color: #f4d80af7;
+            //color: black;
+            $(this).css("background-color", "#f4d80af7");
+            $(this).css("color", "black");
+        } else {
+            $(this).css("background-color", "initial");
+            $(this).css("color", "white");
+        }
+    });
 }
+
+async function selectSong(element) {
+
+    let elementToPlay = songs_arr[element];
+    let playerContainer = $("#player-container");
+
+    now_playing = element;
+
+    changeElementColor(element);
+
+    playerContainer.html("<h3 id='text-start-music'>Haz click en alguna de tus canciones para comenzar la reproducción</h3>");
+
+    
+
+    if (elementToPlay.getType() == "youtube") {
+
+        //crear div id=player
+
+        playerContainer.html("<div id='player'></div>");
+
+        let player;
+
+        player = new YT.Player('player', {
+            height: '100%',
+            width: '100%',
+            videoId: elementToPlay.getStoredDataFrame(),
+            playerVars: {
+                'playsinline': 1,
+                'autoplay': 1
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+            //setTimeout(unMute, 3000);
+            //player.playVideo();    
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                //setTimeout(stopVideo, 6000);
+                //done = true;
+                selectSong(now_playing + 1);
+            }
+        }
+
+
+    } else if (elementToPlay.getType() == "soundcloud") {
+
+        //GET SOUNDCLOUD IFRAME FROM THE URL
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://soundcloud.com/oembed",
+            "method": "POST",
+            "headers": {},
+            "data": {
+                "format": "json",
+                "url": "https://soundcloud.com/startalk/cosmic-queries-the-deep"
+            }
+        }
+
+        await $.ajax(settings).done(function (response) {
+
+            //Insert iframe node
+            let iframeHtml = $(response.html);
+            iframeHtml.attr("height", "100%");
+            iframeHtml.attr("allow", "autoplay");
+            iframeHtml.attr("src", iframeHtml.attr("src") + "&auto_play=true");
+
+            playerContainer.append(iframeHtml);
+
+
+
+            //control sc iframe, iframeElement MUST be querySelector('iframe')
+            let iframeElement = document.querySelector("iframe");
+            sc_player = SC.Widget(iframeElement);
+
+            //Event to move on to the next track
+            sc_player.bind(SC.Widget.Events.FINISH, function () {
+                selectSong(now_playing + 1);
+            })
+
+        });
+
+    }
+
+
+
+    /*
+    Cuando termine una canción, el listener del reproductor llamará a esta misma función con el elemento siguiente, sacado de now_playing + 1.
+    */
+}
+
 
 async function deleteSong(e, element) {
 
@@ -45,10 +154,10 @@ async function deleteSong(e, element) {
 }
 
 function addSongListListeners() {
-    $(".song-element").click(function (e) { selectSong(e, $(this)) });
+    $(".song-element").click(function (e) { selectSong($(this).data("listid")) });
     $(".delete-song").click(function (e) {
         e.stopPropagation();
-        deleteSong(e, $(this))
+        deleteSong(e, $(this));
     });
 
 }
@@ -97,7 +206,7 @@ async function getSongsList() {
                     let responseParsed = JSON.parse(response);
                     let newSong;
                     responseParsed.forEach(element => {
-    
+
                         newSong = new Song(element["song_id"], element["name"], element["link"], element["type"], element["pl_id"]);
                         songs_arr.push(newSong);
                     });
@@ -138,7 +247,7 @@ async function newSong(e) {
 
     let formData = new FormData(document.getElementById('newSongForm'));
     let source = $("#source").val();
-    
+
 
     if (source != 0 && source != 1) {
         $("#err-song").text("Debes elegir una fuente desde la que añadir la música");
@@ -152,27 +261,27 @@ async function newSong(e) {
                     if (Song.validateUrl(song_url_yt, "youtube")) {
 
                         $("#err-song").text("");
-                        
+
                         try {
 
                             let videoId = Song.getDataFrame(song_url_yt, "youtube");
 
                             await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=AIzaSyDJr9IEaJPNdBVcJHTsYSWUaxYA5OaO_yk`)
-                            .then(response => {
-                                return response.json();
-                            })
-                            .then(async data => {
-                                let videoTitle = data.items[0].snippet.title;
-                                
-                                await $.ajax({
-                                    type: "POST",
-                                    url: window.location.origin + "/php_scripts/newSong.php",
-                                    data: {name: videoTitle, link: song_url_yt, type: "youtube", pl_id: $("#container-identificator").data("plid"), data_frame: videoId},
-                                    success: function (response) {
-                                        getSongsList();                        
-                                    },
-                                    error: function (e) {
-                                        let errHtml = `
+                                .then(response => {
+                                    return response.json();
+                                })
+                                .then(async data => {
+                                    let videoTitle = data.items[0].snippet.title;
+
+                                    await $.ajax({
+                                        type: "POST",
+                                        url: window.location.origin + "/php_scripts/newSong.php",
+                                        data: { name: videoTitle, link: song_url_yt, type: "youtube", pl_id: $("#container-identificator").data("plid"), data_frame: videoId },
+                                        success: function (response) {
+                                            getSongsList();
+                                        },
+                                        error: function (e) {
+                                            let errHtml = `
                                         <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
                                             <strong style="color:red;">Error:</strong> No se han podido añadir tu canción, inténtalo de nuevo más tarde y, si el problema persiste, contáctanos por email.
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -180,15 +289,15 @@ async function newSong(e) {
                                             </button>
                                         </div>
                                         `;
-                                        $("#error-msg").html(errHtml);
-                                    }
+                                            $("#error-msg").html(errHtml);
+                                        }
+                                    });
+
                                 });
 
-                            });
 
-                            
 
-                            
+
                         } catch (error) {
                             let errHtml = `
                                     <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
@@ -199,14 +308,14 @@ async function newSong(e) {
                                     </div>
                                     `;
                             $("#error-msg").html(errHtml);
-                        }                       
+                        }
 
                     } else {
                         $("#err-song").text("Por favor inserta una url válida");
                     }
                 } else {
                     $("#err-song").text("Por favor rellena los datos");
-                }                
+                }
 
                 break;
             case "1":
@@ -224,12 +333,12 @@ async function newSong(e) {
                             await $.ajax({
                                 type: "POST",
                                 url: window.location.origin + "/php_scripts/newSong.php",
-                                data: {name: song_name_sc, link: song_url_sc, type: "soundcloud", pl_id: $("#container-identificator").data("plid")},
+                                data: { name: song_name_sc, link: song_url_sc, type: "soundcloud", pl_id: $("#container-identificator").data("plid") },
                                 success: function (response) {
 
                                     console.log(response);
                                     getSongsList();
-                    
+
                                 },
                                 error: function (e) {
                                     let errHtml = `
@@ -244,7 +353,7 @@ async function newSong(e) {
                                 }
                             });
 
-                            
+
                         } catch (error) {
                             let errHtml = `
                                     <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
@@ -255,8 +364,8 @@ async function newSong(e) {
                                     </div>
                                     `;
                             $("#error-msg").html(errHtml);
-                        }        
-                        
+                        }
+
                     } else {
                         $("#err-song").text("Por favor inserta una url válida");
                     }
@@ -265,7 +374,7 @@ async function newSong(e) {
                     $("#err-song").text("Por favor rellena los datos");
                 }
 
-                
+
 
                 break;
             default:

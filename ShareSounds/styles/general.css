@@ -136,4 +136,24 @@ p {
   outline: inherit;
   width: 100%;
 }
+
+#shareResults {
+  list-style: none;
+  max-height: 300px;
+}
+
+.searchSeparator {
+  width: 100%;
+  border-bottom: 1px solid #dee2e6;
+  border-top: none;
+}
+
+.searchElement {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 /*# sourceMappingURL=general.css.map */
