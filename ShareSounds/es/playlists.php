@@ -78,7 +78,8 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 									<div id="preview"><img src="../img/default_ss.svg" class="img-pl" alt="preview" /></div>
 									<p class="mt-3">Si no se añade ninguna imagen se usará la imagen por defecto :)</p>
 								</div>
-								<div class="col-sm-12" id="err"></div>
+								<div class="col-sm-12 err" id="err"></div>
+								<div class="col-sm-12 success" id="success"></div>
 							</div>
 						</div>
 						<div class="modal-footer">
@@ -170,6 +171,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 				</div>
 			</div>
 		</div>
+		<div id="error-msg"></div>
 	</div>
 </body>
 

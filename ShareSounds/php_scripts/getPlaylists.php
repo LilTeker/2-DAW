@@ -7,51 +7,56 @@ require_once 'connection.php';
 
 
 if (isset($_SESSION["user_login"])) {
-    
-    $stmt = $db->prepare("SELECT * FROM playlist WHERE user_id = :user_id");
-    $stmt->bindParam(":user_id", $_SESSION["user_login"], PDO::PARAM_INT);
 
-    if ($stmt->execute()) {
+    try {
+        $stmt = $db->prepare("SELECT * FROM playlist WHERE user_id = :user_id");
+        $stmt->bindParam(":user_id", $_SESSION["user_login"], PDO::PARAM_INT);
 
-        $numberRows = $stmt->rowCount();
+        if ($stmt->execute()) {
 
-        if ($numberRows > 0) {
+            $numberRows = $stmt->rowCount();
 
-            $plArray = array();
+            if ($numberRows > 0) {
 
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                extract($row);
+                $plArray = array();
 
-                $playlist = array(
-                    "pl_id" => $pl_id,
-                    "pl_name" => $pl_name,
-                    "img_name" => $img_name,
-                    "access_type" => $access_type 
-                );
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    extract($row);
 
-                array_push($plArray, $playlist);
+                    $playlist = array(
+                        "pl_id" => $pl_id,
+                        "pl_name" => $pl_name,
+                        "img_name" => $img_name,
+                        "access_type" => $access_type 
+                    );
 
+                    array_push($plArray, $playlist);
+
+                }
+
+                http_response_code(200);
+
+                echo json_encode($plArray);
+
+            } else {
+
+                http_response_code(200);
+
+                echo json_encode("empty");
             }
-
-            http_response_code(200);
-
-            echo json_encode($plArray);
 
         } else {
 
-            http_response_code(200);
+            http_response_code(404);
 
-            echo json_encode("empty");
+            echo "Could not retrieve playlists from the server, try again later";
         }
-
-    } else {
-
-        http_response_code(404);
+    } catch (Exception $e) {
+        http_response_code(500);
 
         echo "Could not retrieve playlists from the server, try again later";
     }
-
-
+    
 } else {
     
     http_response_code(403);
@@ -59,5 +64,3 @@ if (isset($_SESSION["user_login"])) {
     echo "You must be logged in to access this data";  
 
 }
-
-?>

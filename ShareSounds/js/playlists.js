@@ -5,33 +5,54 @@ let selectedPl = 0;
 async function deletePl(e,element) {
     let plId = element.attr("data-plid");
 
-
-    try {
-        await $.ajax({
-            type: "POST",
-            url: window.location.origin + "/php_scripts/deletePlaylist.php",
-            data: {pl_id: plId},
-            success: function (response) {
-                if (response.includes("deleted")) {
-                    console.log(response)
-                    console.log("deleted");
-
-                    loadPlaylists();
-
-                } else if (response.includes("forbidden")) {
-                    console.log(response)
-                    console.log("Users are not allowed to delete other's playlists");
-                } else {
-                    console.log(response)
-                    console.log("Could not process the request now, try again later");
+    if (confirm("¿Está seguro de que quiere borrar esta lista?")) {
+        try {
+            await $.ajax({
+                type: "POST",
+                url: window.location.origin + "/php_scripts/deletePlaylist.php",
+                data: {pl_id: plId},
+                success: function (response) {
+                    if (response.includes("deleted")) {
+    
+                        loadPlaylists();
+    
+                    } else if (response.includes("forbidden")) {
+                        let errHtml = `
+                        <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
+                            <strong style="color:red;">Error:</strong> Lo usuarios no tienen permitido borrar las listas de otros usuarios
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        `;
+                            $("#error-msg").html(errHtml);
+                    } else {
+                        let errHtml = `
+                        <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
+                            <strong style="color:red;">Error:</strong> No se ha podido procesar la solicitud, inténtelo de nuevo más tarde
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        `;
+                            $("#error-msg").html(errHtml);
+                    }
+                },
+                error: function (e) {
+                    $("#err").html("No se ha podido completar la solicitud ahora mismo, inténtelo más tarde").fadeIn();
                 }
-            },
-            error: function (e) {
-                $("#err").html("No se ha podido completar la solicitud ahora mismo, inténtelo más tarde").fadeIn();
-            }
-        });
-    } catch (error) {
-        console.log(e);
+            });
+        } catch (error) {
+            let errHtml = `
+                        <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
+                            <strong style="color:red;">Error:</strong> No se ha podido procesar la solicitud, inténtelo de nuevo más tarde
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        `;
+                            $("#error-msg").html(errHtml);
+        }
     }
 
 }
@@ -94,7 +115,15 @@ async function loadPlaylists() {
         );
 
     } catch (e) {
-        console.log(e);
+        let errHtml = `
+                        <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
+                            <strong style="color:red;">Error:</strong> No se han podido cargar tus listas en este momento, inténtelo de nuevo mas tarde
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        `;
+                            $("#error-msg").html(errHtml);
     }
 
 }
@@ -106,44 +135,45 @@ function newPl(e) {
     e.preventDefault(e);
 
     let formData = new FormData(document.getElementById('newPlForm'));
+    $("#err").html("");
+    $("#success").text("");
 
     if ($("#pl_name").val() == "" || ($("#access_type").val() != "1" && $("#access_type").val() != "0")) {
-        console.log("vacio");
-        $("#err").html("<p class='error-message'>Por favor rellene todos los campos correctamente</p>");
+        $("#err").text("Por favor rellene todos los campos correctamente");
     } else {
-
-        $.ajax({
-            url: window.location.origin + "/php_scripts/newPlaylist.php",
-            type: "POST",
-            data: formData,
-            contentType: false,
-            cache: false,
-            processData: false,
-            beforeSend: function () {
-                //$("#preview").fadeOut();
-                $("#err").fadeOut();
-            },
-            success: function (data) {
-                if (data.includes('invalid')) {
-                    console.log("No se ha podido completar la solicitud ahora mismo, inténtelo más tarde");
-                    // invalid file format.
-                    $("#err").html("El formato de imagen no es válido o no se ha podido completar la solicitud ahora mismo, inténtelo más tarde").fadeIn();
+        try {
+            $.ajax({
+                url: window.location.origin + "/php_scripts/newPlaylist.php",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false,
+                beforeSend: function () {
+                    //$("#preview").fadeOut();
+                    //$("#err").fadeOut();
+                },
+                success: function (data) {
+                    if (data.includes('invalid')) {
+                        // invalid file format.
+                        $("#err").html("El formato de imagen no es válido o no se ha podido completar la solicitud ahora mismo, inténtelo más tarde");
+                    }
+                    else {
+                        $("#success").text("Se ha creado la lista con éxito");
+                        // view uploaded file.
+                        $("#preview").html(data).fadeIn();
+                        $("#newPlForm")[0].reset();
+                        loadPlaylists();
+                    }
+                },
+                error: function (e) {
+                    $("#err").html("No se ha podido completar la solicitud ahora mismo, inténtelo más tarde");
                 }
-                else {
-                    console.log(data);
-                    // view uploaded file.
-                    $("#preview").html(data).fadeIn();
-                    $("#newPlForm")[0].reset();
-                    loadPlaylists();
-                }
-            },
-            error: function (e) {
-                $("#err").html("No se ha podido completar la solicitud ahora mismo, inténtelo más tarde").fadeIn();
-            }
-        });
-
+            });            
+        } catch (error) {
+            $("#err").html("No se ha podido completar la solicitud ahora mismo, inténtelo más tarde").fadeIn();
+        }        
     }
-
 }
 
 function printSearchResults(plData) {

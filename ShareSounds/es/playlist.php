@@ -33,9 +33,12 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
         $access_type = $row['access_type'];
         $owner = $row["user_id"];
 
+        $access_type_text = ($access_type == 0 ? "Pública" : "Privada");
+
         if ($access_type == 1 && ($owner != $_SESSION["user_login"])) {
             die("You are not the owner of this playlist and its private");
         } else {
+            $hiddenClass = ($owner != $_SESSION["user_login"] ? "hide" : "nohide");
 ?>
 
             <!DOCTYPE html>
@@ -60,8 +63,11 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                     $site->print_navbar();
                     ?>
                     <div class="row" id="container-navbar-playlists">
-                        <div class="col-sm-12 col-md-4">
+                        <div class="col-sm-12 col-md-8">
                             <h3 class="header-pl-text"><?= $pl_name ?></h3>
+                        </div>
+                        <div class="col-sm-12 col-md-4 text-right">
+                            <h3 class="header-pl-text"><?=$access_type_text?></h3>
                         </div>
                     </div>
                     <div class="row mt-5">
@@ -83,16 +89,14 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                                             <p><i class="fab fa-youtube"></i> No tienes ninguna canción en tu lista, ¡Añádela ahora!</p>
                                         </li>
                                     </ul>
-                                    <div id="add-song">
+                                    <div id="add-song" class="<?=$hiddenClass?>">
                                         <button type="button" data-toggle="modal" data-target="#newSongModal" id="new-song-button" class="mx-2"><i class="fas fa-plus"></i> Añade tu Música</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="error-msg">
-
-                    </div>
+                    <div id="error-msg"></div>
 
                     <div class="modal fade" id="newSongModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -115,6 +119,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                                                 </select>
                                             </div>
                                             <div id="form-container" class="col-sm-12"></div>
+                                            <div class="col-sm-12 success" id="success-song"></div>
                                             <div class="col-sm-12 err" id="err-song"></div>
                                         </div>
                                     </div>

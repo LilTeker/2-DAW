@@ -69,6 +69,7 @@ async function selectSong(element) {
 
     } else if (elementToPlay.getType() == "soundcloud") {
 
+        playerContainer.html("<div id='player'></div>");
         //GET SOUNDCLOUD IFRAME FROM THE URL
         var settings = {
             "async": true,
@@ -82,29 +83,40 @@ async function selectSong(element) {
             }
         }
 
-        await $.ajax(settings).done(function (response) {
+        try {
+            await $.ajax(settings).done(function (response) {
 
-            //Insert iframe node
-            let iframeHtml = $(response.html);
-            iframeHtml.attr("height", "100%");
-            iframeHtml.attr("allow", "autoplay");
-            iframeHtml.attr("src", iframeHtml.attr("src") + "&auto_play=true");
-
-            playerContainer.append(iframeHtml);
-
-
-
-            //control sc iframe, iframeElement MUST be querySelector('iframe')
-            let iframeElement = document.querySelector("iframe");
-            sc_player = SC.Widget(iframeElement);
-
-            //Event to move on to the next track
-            sc_player.bind(SC.Widget.Events.FINISH, function () {
-                selectSong(now_playing + 1);
-            })
-
-        });
-
+                //Insert iframe node
+                let iframeHtml = $(response.html);
+                iframeHtml.attr("height", "100%");
+                iframeHtml.attr("allow", "autoplay");
+                iframeHtml.attr("src", iframeHtml.attr("src") + "&auto_play=true");
+    
+                playerContainer.append(iframeHtml);
+    
+    
+    
+                //control sc iframe, iframeElement MUST be querySelector('iframe')
+                let iframeElement = document.querySelector("iframe");
+                sc_player = SC.Widget(iframeElement);
+    
+                //Event to move on to the next track
+                sc_player.bind(SC.Widget.Events.FINISH, function () {
+                    selectSong(now_playing + 1);
+                })
+    
+            });            
+        } catch (error) {
+            let errHtml = `
+                        <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
+                            <strong style="color:red;">Error:</strong> No se ha podido añadir tu pista de soundcloud, intente añadirla desde otra fuente o vuelva más tarde
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        `;
+                            $("#error-msg").html(errHtml);
+        }
     }
 
 
@@ -210,7 +222,6 @@ async function getSongsList() {
                         newSong = new Song(element["song_id"], element["name"], element["link"], element["type"], element["pl_id"]);
                         songs_arr.push(newSong);
                     });
-                    console.log(songs_arr);
                     fillSongList(songs_arr);
                 }
 
@@ -261,6 +272,7 @@ async function newSong(e) {
                     if (Song.validateUrl(song_url_yt, "youtube")) {
 
                         $("#err-song").text("");
+                        $("#success-song").text("");
 
                         try {
 
@@ -278,6 +290,7 @@ async function newSong(e) {
                                         url: window.location.origin + "/php_scripts/newSong.php",
                                         data: { name: videoTitle, link: song_url_yt, type: "youtube", pl_id: $("#container-identificator").data("plid"), data_frame: videoId },
                                         success: function (response) {
+                                            $("#success-song").text("Se ha añadido la pista correctamente");
                                             getSongsList();
                                         },
                                         error: function (e) {
@@ -336,7 +349,6 @@ async function newSong(e) {
                                 data: { name: song_name_sc, link: song_url_sc, type: "soundcloud", pl_id: $("#container-identificator").data("plid") },
                                 success: function (response) {
 
-                                    console.log(response);
                                     getSongsList();
 
                                 },

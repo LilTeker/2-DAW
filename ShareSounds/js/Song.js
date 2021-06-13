@@ -12,8 +12,11 @@ class Song {
     }
 
     getHtml(index = 0) {
+
+        let hide = $("#add-song").hasClass("hide") ? "hide" : "nohide";
+
         let html = `<li class="song-element" title="${this.getName()}" data-listid="${index}">
-                        <p>${this.getIcon()} ${this.getName()}<i class="fas fa-trash-alt delete-song" data-listid="${index}"></i></p>
+                        <p>${this.getIcon()} ${this.getName()}<i class="fas fa-trash-alt delete-song ${hide}" data-listid="${index}"></i></p>
                     </li>`;
 
         return html;
