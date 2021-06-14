@@ -1,35 +1,48 @@
 1 introduccion
-	1.1 presentacion y objetivos
-	1.2 Contexto y Planteamiento
-	1.3 Estructura del documento
+	//1.1 presentacion y objetivos
+	//1.2 Contexto y Planteamiento
+	//1.3 Estructura del documento
 
 2 Requisitos
-	2.1 Introduccion
-		2.1.1 Propósito
-		2.1.2 Referencias
-	2.2 Descripción de la aplicación
-		2.2.1 Enfoque de la aplicación
-		2.2.2 Funciones de la aplicación
-		2.2.3 Tipos de usuario y sus características
-		2.2.4 Dependencias
+	//2.1 Introduccion
+	//2.2 Descripción de la aplicación
+		//2.2.1 Enfoque de la aplicación
+		//2.2.2 Tipos de usuario y sus características
+		//2.2.3 Dependencias
 	2.3 Requerimientos
-		2.3.1 Requisitos Funcionales
-		2.3.2 Requisitos no Funcionales
+		//2.3.1 Requisitos Funcionales
+		//2.3.2 Requisitos no Funcionales
 
 3. Fase de Análisis
-	3.1 Introducción
-	3.2 Diagrama de Frontera
-	3.3 Casos de Uso
+	//3.1 Introducción
+	//3.2 Diagrama de Frontera
+	//3.3 Casos de Uso (RELLENAR FIGURA NºX)
 
 		3.3.1 dependiendo de los casos de uso que saquemos etc
 
+	3.4 Hipotesis de trabajo (cuanto tardaremos en hacer las cosas y eso)??
 		
 4. Diseño
-	4.1 Introducción
-	4.2 Capa de presentacion Presentación
-	4.3 Lógica de la aplicación (hablar de los lenguajes a usar)
-	4.4 Capa de Persistencia de Datos (diagrama entidad relación, explicar tablas)
+	//4.1 Introducción
+	//4.2 Capa de presentacion Presentación (Poner imagen de la ventana del reproductor y hablar de las partes y 	sus funciones)
+	4.3 Lógica de la aplicación (hablar de los lenguajes a usar, como la aplicacion js hablar con el servidor 	php y este a la vez se conecta a la base de datos etc.)
+	//4.4 Capa de Persistencia de Datos (diagrama entidad relación, explicar tablas)
+
 5. Implementación
-	5.1 Tecnologías usadas en el proyecto
-	
+	//5.1 Arquitectura de la Aplicacion (mirar proyecto javier)
+	//5.1 Tecnologías usadas en el proyecto (proyecto random)
+
+6. Evaluación???
+
+//7. Conclusiones
+(evaluación personal, mejoras de futuro (proyecto random))
+
+
+Bibliografía
+
+Anexo A - Palabras de la libreta
+Anexo B Imagenes de la Aplicacion web en funcionamiento (Portada, list)
+Anexo C -> Enlace al manual de uso de la web.
+
+Indice de figuras?????
 	
