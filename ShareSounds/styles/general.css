@@ -320,6 +320,7 @@ p {
 
 div#compatible-services {
   text-align: center;
+  background-color: #f3f3f3;
 }
 
 div#compatible-services h3 {
@@ -346,5 +347,86 @@ div#compatible-services i.fa-soundcloud {
 
 #first-steps {
   background-color: white;
+  text-align: center;
+}
+
+#img-firststeps {
+  width: 100%;
+}
+
+#first-steps div div.row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div#first-steps h3 {
+  font-size: 35px;
+}
+
+div#first-steps h4 {
+  font-size: 30px;
+}
+
+div#first-steps p {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1124px) {
+  #sharesounds-title {
+    font-size: 75px;
+  }
+  #title-index {
+    padding-bottom: 250px;
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  #title-index {
+    padding-bottom: 250px;
+  }
+  #advantages-container div.row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #sharesounds-title {
+    font-size: 100px;
+  }
+  #container-footer div.text-right {
+    text-align: center !important;
+    padding: 10px 0;
+  }
+  #container-footer div.text-left {
+    text-align: center !important;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #title-index {
+    padding-bottom: 250px;
+    font-size: 50px;
+  }
+  #advantages-container div.row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #sharesounds-title {
+    font-size: 50px;
+  }
+  #container-footer div.text-right {
+    text-align: center !important;
+    padding: 10px 0;
+  }
+  #container-footer div.text-left {
+    text-align: center !important;
+    padding: 10px 0;
+  }
 }
 /*# sourceMappingURL=general.css.map */

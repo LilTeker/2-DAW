@@ -98,7 +98,7 @@ $site = new Web_html();
 				</div>
 			</div>
 		</div>
-		<div class="row mt-5" id="compatible-services">
+		<div class="row py-5" id="compatible-services">
 			<div class="col-sm-12 mb-5">
 				<h3>Nuestros Servicios Compatibles</h3>
 			</div>
@@ -122,10 +122,30 @@ $site = new Web_html();
 				</p>
 			</div>
 		</div>
-		<div class="row" id="first-steps">
+		<div class="row py-5" id="first-steps">
 			<div class="col-sm-12">
 				<h3>Primeros Pasos</h3>
-				
+			</div>
+			<div class="col-sm-12 py-5">
+				<div class="row">
+					<div class="col-sm-12 col-md-6">
+						<h4>¿No sabes por dónde empezar?</h4>
+						<p>Puedes comenzar por leer nuestra guía para los usuarios novatos, ahí
+							explicamos como funciona nuestra aplicación por completo, no se escapa ningún detalle,
+							así que si no sabes por dónde empezar, aquí te presentamos tu mejor opción.
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<a href="howTo.php"><img id="img-firststeps" src="/img/first-steps.png" alt="first steps image"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 mt-5">
+				<h4>Si eres de esos confiados a los que les da igual todo...</h4>
+				<p class="mb-3">Puedes probar la aplicación directamente registrándote en el sistema, ¡Esperamos que
+					disfrutes!
+				</p>
+				<a class="btn btn-outline-warning border-dark m-2 my-sm-0" href="register.php">Registrarse</a>
 			</div>
 		</div>
 
