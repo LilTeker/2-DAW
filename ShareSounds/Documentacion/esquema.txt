@@ -45,4 +45,5 @@ Anexo B Imagenes de la Aplicacion web en funcionamiento (Portada, list)
 Anexo C -> Enlace al manual de uso de la web.
 
 Indice de figuras?????
+HABLAR DEL USO DE GITHUB, VSCODE EN EL DISEÑO O IMPLEMENTACIÓN.
 	

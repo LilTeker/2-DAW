@@ -28,9 +28,9 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 	<script src="../js/playlists.js"></script>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-	<div class="container-fluid">
+	<div class="container-fluid fix-for-footer">
 
 		<?php
 		$site->print_navbar();
@@ -84,7 +84,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-							<button type="submit" class="btn btn-primary">Crear</button>
+							<button type="submit" class="btn btn-outline-warning border-dark">Crear</button>
 						</div>
 					</form>
 				</div>
@@ -125,7 +125,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-							<button type="submit" class="btn btn-primary">Buscar</button>
+							<button type="submit" class="btn btn-outline-warning border-dark">Buscar</button>
 						</div>
 					</form>
 				</div>
@@ -165,14 +165,18 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-							<button type="submit" class="btn btn-primary">Aceptar</button>
+							<button type="submit" class="btn btn-outline-warning border-dark">Aceptar</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 		<div id="error-msg"></div>
+
 	</div>
+	<?php
+	$site->printFooter();
+	?>
 </body>
 
 </html>

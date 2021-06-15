@@ -56,9 +56,9 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                 <script src="../js/music.js"></script>
             </head>
 
-            <body>
+            <body class="d-flex flex-column min-vh-100">
 
-                <div class="container-fluid" id="container-identificator" data-plid="<?= $pl_id ?>">
+                <div class="container-fluid fix-for-footer" id="container-identificator" data-plid="<?= $pl_id ?>">
                     <?php
                     $site->print_navbar();
                     ?>
@@ -67,7 +67,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                             <h3 class="header-pl-text"><?= $pl_name ?></h3>
                         </div>
                         <div class="col-sm-12 col-md-4 text-right">
-                            <h3 class="header-pl-text"><?=$access_type_text?></h3>
+                            <h3 class="header-pl-text"><?= $access_type_text ?></h3>
                         </div>
                     </div>
                     <div class="row mt-5">
@@ -89,7 +89,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                                             <p><i class="fab fa-youtube"></i> No tienes ninguna canción en tu lista, ¡Añádela ahora!</p>
                                         </li>
                                     </ul>
-                                    <div id="add-song" class="<?=$hiddenClass?>">
+                                    <div id="add-song" class="<?= $hiddenClass ?>">
                                         <button type="button" data-toggle="modal" data-target="#newSongModal" id="new-song-button" class="mx-2"><i class="fas fa-plus"></i> Añade tu Música</button>
                                     </div>
                                 </div>
@@ -132,8 +132,12 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                         </div>
                     </div>
 
-                </div>
 
+
+                </div>
+                <?php
+                $site->printFooter();
+                ?>
             </body>
 
             </html>

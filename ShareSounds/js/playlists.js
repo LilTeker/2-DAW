@@ -63,29 +63,44 @@ function printPl(pl) {
     let container = $("#container-list-playlists");
     let completeHtml = ``;
 
-    pl.forEach(playlist => {
-
+    if (pl.length == 0) {
+        
         html = `
-        <div class="col-sm-12 item-pl">
-            <div class="row ">
-                
-                    <div class="col-md-2">
-                        <img src="../users_img/${playlist.img_name}" class="img-pl" alt="${playlist.img_name}" />
+            <div class="col-sm-12">
+                <div class="row" id="empty-pl">                    
+                        <div class="col-sm-10">
+                            <p>No tienes niguna Playlist creada, crea una ahora mismo desde el boton "Nueva Playlist"</p>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                    <a href="playlist.php?pl_id=${playlist.pl_id}"><p class="text-pl">${playlist.pl_name}</p></a>
+            </div>
+            `;
+            completeHtml = completeHtml + html;
+
+    } else {
+        pl.forEach(playlist => {
+
+            html = `
+            <div class="col-sm-12 item-pl">
+                <div class="row ">
+                    
+                        <div class="col-md-2">
+                            <img src="../users_img/${playlist.img_name}" class="img-pl" alt="${playlist.img_name}" />
+                        </div>
+                        <div class="col-md-8">
+                        <a href="playlist.php?pl_id=${playlist.pl_id}"><p class="text-pl">${playlist.pl_name}</p></a>
+                        </div>
+                        <div class="col-md-1">
+                            <i data-plid="${playlist.pl_id}" class="fas fa-trash-alt pl-crud-icon delete-pl"></i>
+                        </div>
+                        <div class="col-md-1">
+                            <button data-plid="${playlist.pl_id}" data-toggle="modal" data-target="#editPl" class="fas fa-edit pl-crud-icon edit-pl"></button>
+                        </div>
                     </div>
-                    <div class="col-md-1">
-                        <i data-plid="${playlist.pl_id}" class="fas fa-trash-alt pl-crud-icon delete-pl"></i>
-                    </div>
-                    <div class="col-md-1">
-                        <button data-plid="${playlist.pl_id}" data-toggle="modal" data-target="#editPl" class="fas fa-edit pl-crud-icon edit-pl"></button>
-                    </div>
-                </div>
-        </div>
-        `;
-        completeHtml = completeHtml + html;
-    });
+            </div>
+            `;
+            completeHtml = completeHtml + html;
+        });
+    }    
 
     container.html("");
     container.html(completeHtml);
@@ -105,14 +120,15 @@ async function loadPlaylists() {
 
         await $.getJSON(window.location.origin + "/php_scripts/getPlaylists.php", function (data, textStatus, jqXHR) {
 
-            data.forEach(element => {
-                pl.push(element);
-            });
-
+            if (data != "empty") {
+                data.forEach(element => {
+                    pl.push(element);
+                });
+            }
+            
             printPl(pl);
 
-        }
-        );
+        });
 
     } catch (e) {
         let errHtml = `

@@ -59,13 +59,13 @@ class Web_html
                         <?php
                         if (isset($_SESSION["user_login"])) {
                             ?>
-                            <a class="btn btn-outline-success m-2 my-sm-0" href="playlists.php">Mis Playlists</a>
-                            <a class="btn btn-outline-success m-2 my-sm-0" href="logout.php">Cerrar Sesión</a>
+                            <a class="btn btn-outline-warning border-dark m-2 my-sm-0" href="playlists.php">Mis Playlists</a>
+                            <a class="btn btn-outline-warning border-dark m-2 my-sm-0" href="logout.php">Cerrar Sesión</a>
                             <?php
                         } else {
                             ?>
-                            <a class="btn btn-outline-success m-2 my-sm-0" href="login.php">Identifícate</a>
-                            <a class="btn btn-outline-success m-2 my-sm-0" href="register.php">Registrarse</a>
+                            <a class="btn btn-outline-warning border-dark m-2 my-sm-0" href="login.php">Identifícate</a>
+                            <a class="btn btn-outline-warning border-dark m-2 my-sm-0" href="register.php">Registrarse</a>
                             <?php
                         }
                         ?>
@@ -79,6 +79,42 @@ class Web_html
 
     <?php
 
+    }
+
+    public function printFooter() {
+        ?>
+        <!--mt-5 to fix problems with empty pages-->
+        <div id="footer"> 
+            <div class="container-fluid">
+                <div class="row" id="container-footer">
+                    <div class="col-sm-12 col-md-4 order-2 order-md-1 text-right">
+                        <h3 class="header-footer">Contáctanos</h3>
+                        <p>+34 620 11 80 16 <i class="fas fa-mobile-alt" style="font-size: 20px;"></i></p>
+                        <p>sharesounds@contacto.com <i class="fas fa-envelope" style="font-size: 20px;"></i></p>
+                        <h3 class="header-footer">Dónde encontrarnos</h3>
+                        <p>Calle de los Milaneses <i class="fas fa-map-marked-alt" style="font-size: 20px;"></i><br>Número 6, <br> 28013 Madrid</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 order-1 order-md-2">
+                        <img id="img-footer" src="/img/default_ss.png" alt="logo">
+                        <p>
+                            <a href="https://www.facebook.com"><i class="fab fa-facebook-square icon-footer m-3"></i></a>
+                            <a href="https://www.instagram.com"><i class="fab fa-instagram icon-footer m-3"></i></a>
+                            <a href="https://www.twitter.com"><i class="fab fa-twitter-square icon-footer m-3"></i></a>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 order-3 order-md-3 text-left">
+                        <h3 class="header-footer">Acceso Rápido</h3>
+                        <p><i class="fas fa-chevron-circle-right m-2"></i><a href="index.php">Inicio</a></p>
+                        <p><i class="fas fa-chevron-circle-right m-2"></i><a href="about.php">Sobre ShareSounds</a></p>
+                        <p><i class="fas fa-chevron-circle-right m-2"></i><a href="howTo.php">Cómo Usar ShareSounds</a></p>
+                        <p><i class="fas fa-chevron-circle-right m-2"></i><a href="playlists.php">Mis Playlists</a></p>
+                        <p><i class="fas fa-chevron-circle-right m-2"></i><a href="logout.php">Cerrar Sesión</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
     }
 }
 

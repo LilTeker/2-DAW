@@ -19,11 +19,11 @@ if (isset($_REQUEST['btn_login']))	//button name is "btn_login"
 	$password	= strip_tags($_REQUEST["txt_password"]);			//textbox name "txt_password"
 
 	if (empty($username)) {
-		$errorMsg[] = "please enter username or email";	//check "username/email" textbox not empty 
+		$errorMsg[] = "Por favor inserte su usuario o correo electrónico";	//check "username/email" textbox not empty 
 	} else if (empty($email)) {
-		$errorMsg[] = "please enter username or email";	//check "username/email" textbox not empty 
+		$errorMsg[] = "Por favor inserte su usuario o correo electrónico";	//check "username/email" textbox not empty 
 	} else if (empty($password)) {
-		$errorMsg[] = "please enter password";	//check "passowrd" textbox not empty 
+		$errorMsg[] = "Por favor inserte la contraseña";	//check "passowrd" textbox not empty 
 	} else {
 		try {
 			$select_stmt = $db->prepare("SELECT * FROM user WHERE username=:uname OR email=:uemail"); //sql select query
@@ -37,16 +37,16 @@ if (isset($_REQUEST['btn_login']))	//button name is "btn_login"
 					if (password_verify($password, $row["password"])) //check condition user taypable "password" are match from database "password" using password_verify() after continue
 					{
 						$_SESSION["user_login"] = $row["user_id"];	//session name is "user_login"
-						$loginMsg = "Successfully Login...";		//user login success message
+						$loginMsg = "Registrado correctamente...";		//user login success message
 						header("refresh:2; playlists.php");			//refresh 2 second after redirect to "playlists.php" page
 					} else {
-						$errorMsg[] = "wrong password";
+						$errorMsg[] = "Datos de identificación incorrectos";
 					}
 				} else {
-					$errorMsg[] = "wrong username or email";
+					$errorMsg[] = "Datos de identificación incorrectos";
 				}
 			} else {
-				$errorMsg[] = "wrong username or email";
+				$errorMsg[] = "Datos de identificación incorrectos";
 			}
 		} catch (PDOException $e) {
 			$e->getMessage();
@@ -64,78 +64,81 @@ if (isset($_REQUEST['btn_login']))	//button name is "btn_login"
 	?>
 </head>
 
-<body>
-	<div class="container-fluid">
+<body class="d-flex flex-column min-vh-100">
+	<div class="container-fluid fix-for-footer">
 		<?php
 		$site->print_navbar();
 		?>
-	</div>
 
-	<div class="wrapper mt-5">
+		<div class="row mb-5" id="container-navbar-playlists">
+			<div class="col-sm-12 col-md-4">
+				<h3 class="header-pl-text">Identificarse</h3>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col-sm-12 text-center">
+				<h3>Formulario de Identificación</h3>
+			</div>
+		</div>
+		<form method="post" class="form-horizontal">
 
-		<div class="container mt-5">
+			<div class="row">
+				
 
-			<div class="col-lg-12 mt-5">
-
-				<?php
-				if (isset($errorMsg)) {
-					foreach ($errorMsg as $error) {
-				?>
-						<div class="alert alert-danger">
-							<strong><?php echo $error; ?></strong>
+				<div class="col-sm-6 offset-3">
+					<?php
+					if (isset($errorMsg)) {
+						foreach ($errorMsg as $error) {
+					?>
+							<div class="alert alert-danger">
+								<strong><?php echo $error; ?></strong>
+							</div>
+						<?php
+						}
+					}
+					if (isset($loginMsg)) {
+						?>
+						<div class="alert alert-success">
+							<strong><?php echo $loginMsg; ?></strong>
 						</div>
 					<?php
 					}
-				}
-				if (isset($loginMsg)) {
 					?>
-					<div class="alert alert-success">
-						<strong><?php echo $loginMsg; ?></strong>
-					</div>
-				<?php
-				}
-				?>
-				<center>
-					<h2>Login Page</h2>
-				</center>
-				<form method="post" class="form-horizontal">
+					<div class="row mt-5">
+						<div class="form-group col-sm-12">
+							<label class="col-sm-12 control-label">Usuario o Correo</label>
+							<div class="col-sm-12">
+								<input type="text" name="txt_username_email" class="form-control" placeholder="Por favor escriba su usuario o correo electrónico" />
+							</div>
+						</div>
 
-					<div class="form-group">
-						<label class="col-sm-3 control-label">Username or Email</label>
-						<div class="col-sm-6">
-							<input type="text" name="txt_username_email" class="form-control" placeholder="enter username or email" />
+						<div class="form-group col-sm-12">
+							<label class="col-sm-12 control-label">Contraseña</label>
+							<div class="col-sm-12">
+								<input type="password" name="txt_password" class="form-control" placeholder="Inserte su contraseña de acceso" />
+							</div>
+						</div>
+
+						<div class="form-group col-sm-12">
+							<div class="text-center">
+								<input type="submit" name="btn_login" class="btn btn-outline-warning btn-form-login-register" value="Identificarse">
+							</div>
+						</div>
+
+						<div class="form-group col-sm-12">
+							<div class="col-sm-offset-3 col-sm-9">
+								¿No tienes una cuenta en ShareSounds? 
+								<a href="register.php"><p class="text-info">Regístrate Aquí</p></a>
+							</div>
 						</div>
 					</div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label">Password</label>
-						<div class="col-sm-6">
-							<input type="password" name="txt_password" class="form-control" placeholder="enter passowrd" />
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="col-sm-offset-3 col-sm-9 m-t-15">
-							<input type="submit" name="btn_login" class="btn btn-success" value="Login">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="col-sm-offset-3 col-sm-9 m-t-15">
-							You don't have a account register here? <a href="register.php">
-								<p class="text-info">Register Account</p>
-							</a>
-						</div>
-					</div>
-
-				</form>
-
+				</div>
 			</div>
-
-		</div>
-
+		</form>
 	</div>
-
+	<?php
+	$site->printFooter();
+	?>
 </body>
 
 </html>

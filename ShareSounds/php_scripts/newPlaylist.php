@@ -56,7 +56,7 @@ try {
             $stmt->bindParam(":access_type", $_POST["access_type"]);
     
             if ($stmt->execute()) {
-                echo "valid";
+                echo '<img src="../users_img/default_ss.svg" class="img-pl" alt="default_ss.svg">';
             } else {
                 echo "could not execute query";
             }
