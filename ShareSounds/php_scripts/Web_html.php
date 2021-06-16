@@ -48,10 +48,10 @@ class Web_html
                             <a class="nav-link" href="index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre ShareSounds</a>
+                            <a class="nav-link" href="about.php">Sobre ShareSounds</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Cómo Usar ShareSounds</a>
+                            <a class="nav-link" href="howTo.php">Cómo Usar ShareSounds</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">

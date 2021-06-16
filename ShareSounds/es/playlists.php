@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 
 <body class="d-flex flex-column min-vh-100">
 
-	<div class="container-fluid fix-for-footer">
+	<div class="container-fluid fix-for-footer center-responsive">
 
 		<?php
 		$site->print_navbar();
@@ -39,7 +39,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 			<div class="col-sm-12 col-md-4">
 				<h3 class="header-pl-text">Tus Playlists</h3>
 			</div>
-			<div class="col-sm-12 col-md-8 d-flex justify-content-end">
+			<div class="col-sm-12 col-md-8 d-flex justify-content-end fix-responsive-navDark">
 				<button type="button" data-toggle="modal" data-target="#newPlModal" id="new-pl-button" class="btn btn-outline-warning mx-2">Nueva Playlist</button>
 				<button type="button" data-toggle="modal" data-target="#shareModal" id="share-button" class="btn btn-outline-warning mx-2">Compartir</button>
 			</div>
@@ -84,7 +84,7 @@ if (!isset($_SESSION['user_login']))	//check unauthorize access
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-							<button type="submit" class="btn btn-outline-warning border-dark">Crear</button>
+							<button type="submit" class="btn btn-outline-warning btn-form-login-register">Crear</button>
 						</div>
 					</form>
 				</div>

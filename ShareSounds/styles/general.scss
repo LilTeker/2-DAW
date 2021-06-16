@@ -346,6 +346,54 @@ div#first-steps p {
     font-size: 20px;
 }
 
+//howTo
+
+#container-intro {
+    background: black;
+    color: white;
+    padding-bottom: 30px;
+}
+
+#container-intro h2 {
+    font-size: 40px;
+    color: $colorheaders;
+}
+#container-intro h3 {
+    font-size: 30px;
+}
+#container-intro p {
+    font-size: 25px;
+    margin: 0 20px;
+}
+.img-howto {
+    width: 100%;
+}
+.number-howTo {
+    background-color: black;
+    color: #ffed68;
+    width: 20px;
+    height: 20px;
+    padding: 15px 20px;
+    font-size: 60px;
+}
+.p-howTo {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#howto-container {
+    overflow: hidden;
+}
+#howto-container div.row {
+    justify-content: center;
+    align-items: center;
+}
+#text-about {
+    
+    font-size: 20px;
+}
+
+
 @media screen and (min-width: 769px) and (max-width: 1124px){
 
     #sharesounds-title {
@@ -376,6 +424,15 @@ div#first-steps p {
         text-align: center !important;
         padding: 10px 0;
     }
+    .fix-responsive-navDark {
+        justify-content: center !important;
+    }
+    .center-responsive {
+        text-align: center !important;
+    }
+    .item-pl div.row {
+        margin: 25px 0px;
+    }
 
 }
 
@@ -402,5 +459,13 @@ div#first-steps p {
         text-align: center !important;
         padding: 10px 0;
     }
-
+    .number-howTo {
+        padding: 0px 20px;
+    }
+    .fix-responsive-navDark {
+        justify-content: center !important;
+    }
+    .center-responsive {
+        text-align: center !important;
+    }
 }

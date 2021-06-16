@@ -86,7 +86,7 @@ if (isset($_REQUEST['btn_register'])) {
 
 			<div class="row">
 
-				<div class="col-sm-6 offset-3">
+				<div class="col-sm-12 col-md-6 offset-md-3">
 
 					<?php
 					if (isset($errorMsg)) {
@@ -137,7 +137,7 @@ if (isset($_REQUEST['btn_register'])) {
 
 						<div class="form-group col-sm-12">
 							<div class="col-sm-offset-3 col-sm-9">¿Ya tienes una cuenta registrada en ShareSounds?
-								<a href="index.php">
+								<a href="login.php">
 									<p class="text-info">Identificarse</p>
 								</a>
 							</div>

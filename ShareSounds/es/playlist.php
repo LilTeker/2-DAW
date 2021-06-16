@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once '../vendor/autoload.php';
+//require_once '../vendor/autoload.php';
 require_once '../php_scripts/connection.php';
 require_once '../php_scripts/Web_html.php';
 
@@ -36,7 +36,8 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
         $access_type_text = ($access_type == 0 ? "Pública" : "Privada");
 
         if ($access_type == 1 && ($owner != $_SESSION["user_login"])) {
-            die("You are not the owner of this playlist and its private");
+            $err = urlencode("No eres el dueño de esta lista y es privada");
+            header("Location: /es/forbidden.php?err=$err");
         } else {
             $hiddenClass = ($owner != $_SESSION["user_login"] ? "hide" : "nohide");
 ?>
@@ -63,14 +64,14 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                     $site->print_navbar();
                     ?>
                     <div class="row" id="container-navbar-playlists">
-                        <div class="col-sm-12 col-md-8">
+                        <div class="col-sm-12 col-md-8 center-responsive">
                             <h3 class="header-pl-text"><?= $pl_name ?></h3>
                         </div>
-                        <div class="col-sm-12 col-md-4 text-right">
+                        <div class="col-sm-12 col-md-4 text-right center-responsive">
                             <h3 class="header-pl-text"><?= $access_type_text ?></h3>
                         </div>
                     </div>
-                    <div class="row mt-5">
+                    <div class="row my-5">
                         <div class="col-sm-12 col-lg-7">
                             <div class="row">
                                 <div class="col-sm-12" id="player-container">
@@ -125,7 +126,7 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-primary">Añadir</button>
+                                        <button type="submit" class="btn btn-outline-warning btn-form-login-register">Añadir</button>
                                     </div>
                                 </form>
                             </div>
@@ -145,7 +146,8 @@ if (isset($_SESSION["user_login"]) && isset($_GET["pl_id"])) {
         }
     }
 } else {
-    die("You MUST be identified and need to access throught the website to the playlist");
+    $err = urlencode("Debes estar identificado y acceder a la lista a través de la playlist para poder visualizarla");
+    header("Location: /es/forbidden.php?err=$err");
 }
 
 ?>

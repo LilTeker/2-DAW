@@ -79,7 +79,7 @@ async function selectSong(element) {
             "headers": {},
             "data": {
                 "format": "json",
-                "url": "https://soundcloud.com/startalk/cosmic-queries-the-deep"
+                "url": elementToPlay.getLink()
             }
         }
 

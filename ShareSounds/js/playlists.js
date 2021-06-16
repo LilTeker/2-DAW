@@ -83,16 +83,16 @@ function printPl(pl) {
             <div class="col-sm-12 item-pl">
                 <div class="row ">
                     
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-sm-12">
                             <img src="../users_img/${playlist.img_name}" class="img-pl" alt="${playlist.img_name}" />
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-sm-6">
                         <a href="playlist.php?pl_id=${playlist.pl_id}"><p class="text-pl">${playlist.pl_name}</p></a>
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-1 col-sm-3">
                             <i data-plid="${playlist.pl_id}" class="fas fa-trash-alt pl-crud-icon delete-pl"></i>
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-1 col-sm-3">
                             <button data-plid="${playlist.pl_id}" data-toggle="modal" data-target="#editPl" class="fas fa-edit pl-crud-icon edit-pl"></button>
                         </div>
                     </div>

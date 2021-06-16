@@ -7,38 +7,38 @@ require_once '../php_scripts/Web_html.php';
 
 $site = new Web_html();
 
-if (isset($_SESSION["user_login"]))	//check condition user login not direct back to index.php page
+if (isset($_SESSION["user_login"]))
 {
-	header("location: welcome.php");
+	header("location: index.php");
 }
 
-if (isset($_REQUEST['btn_login']))	//button name is "btn_login" 
+if (isset($_REQUEST['btn_login']))
 {
-	$username	= strip_tags($_REQUEST["txt_username_email"]);	//textbox name "txt_username_email"
-	$email		= strip_tags($_REQUEST["txt_username_email"]);	//textbox name "txt_username_email"
-	$password	= strip_tags($_REQUEST["txt_password"]);			//textbox name "txt_password"
+	$username	= strip_tags($_REQUEST["txt_username_email"]);
+	$email		= strip_tags($_REQUEST["txt_username_email"]);
+	$password	= strip_tags($_REQUEST["txt_password"]);
 
 	if (empty($username)) {
-		$errorMsg[] = "Por favor inserte su usuario o correo electrónico";	//check "username/email" textbox not empty 
+		$errorMsg[] = "Por favor inserte su usuario o correo electrónico";
 	} else if (empty($email)) {
-		$errorMsg[] = "Por favor inserte su usuario o correo electrónico";	//check "username/email" textbox not empty 
+		$errorMsg[] = "Por favor inserte su usuario o correo electrónico";
 	} else if (empty($password)) {
-		$errorMsg[] = "Por favor inserte la contraseña";	//check "passowrd" textbox not empty 
+		$errorMsg[] = "Por favor inserte la contraseña";
 	} else {
 		try {
-			$select_stmt = $db->prepare("SELECT * FROM user WHERE username=:uname OR email=:uemail"); //sql select query
-			$select_stmt->execute(array(':uname' => $username, ':uemail' => $email));	//execute query with bind parameter
+			$select_stmt = $db->prepare("SELECT * FROM user WHERE username=:uname OR email=:uemail");
+			$select_stmt->execute(array(':uname' => $username, ':uemail' => $email));
 			$row = $select_stmt->fetch(PDO::FETCH_ASSOC);
 
-			if ($select_stmt->rowCount() > 0)	//check condition database record greater zero after continue
+			if ($select_stmt->rowCount() > 0)
 			{
-				if ($username == $row["username"] or $email == $row["email"]) //check condition user taypable "username or email" are both match from database "username or email" after continue
+				if ($username == $row["username"] or $email == $row["email"])
 				{
-					if (password_verify($password, $row["password"])) //check condition user taypable "password" are match from database "password" using password_verify() after continue
+					if (password_verify($password, $row["password"]))
 					{
-						$_SESSION["user_login"] = $row["user_id"];	//session name is "user_login"
-						$loginMsg = "Registrado correctamente...";		//user login success message
-						header("refresh:2; playlists.php");			//refresh 2 second after redirect to "playlists.php" page
+						$_SESSION["user_login"] = $row["user_id"];
+						$loginMsg = "Identificado correctamente...";
+						header("refresh:2; playlists.php");
 					} else {
 						$errorMsg[] = "Datos de identificación incorrectos";
 					}
@@ -85,7 +85,7 @@ if (isset($_REQUEST['btn_login']))	//button name is "btn_login"
 			<div class="row">
 				
 
-				<div class="col-sm-6 offset-3">
+				<div class="col-sm-12 col-md-6 offset-md-3">
 					<?php
 					if (isset($errorMsg)) {
 						foreach ($errorMsg as $error) {
