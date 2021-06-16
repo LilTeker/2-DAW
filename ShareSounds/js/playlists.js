@@ -196,6 +196,7 @@ function printSearchResults(plData) {
 
 
     let completeHtml = "";
+    
 
     plData["pl"].forEach(pl => {
         
@@ -235,6 +236,7 @@ async function searchPl(e) {
 
     let pl_name = $("#search_pl_name").val();
     let user_pl = $("#search_user_pl").val();
+    $("#shareResults").html("");
 
     try {
         if (pl_name != "" || user_pl != "") {
@@ -246,6 +248,8 @@ async function searchPl(e) {
                 data: {pl_name: pl_name, user_name: user_pl},
                 success: function (response) {
                     if (response != "") {
+                        
+                        
                         let plData = JSON.parse(response);
 
                         printSearchResults(plData);

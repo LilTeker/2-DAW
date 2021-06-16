@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+error_reporting(0);
+
 
 require_once '../php_scripts/connection.php';
 require_once '../php_scripts/Web_html.php';
